@@ -83,7 +83,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-1 space-y-4">
             <Link href="/" className="inline-flex items-center space-x-2">
               <span className="text-3xl font-black tracking-tight text-white">NEFAB</span>
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#eb6608]"></span>
             </Link>
             <p className="text-xs text-gray-400 leading-relaxed">
               We save resources in supply chains, for a better tomorrow. Global leader in engineered packaging and logistics services since 1949.
@@ -137,37 +137,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/solutions#packaging" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#packaging" className="hover:text-[#eb6608] transition-colors">
                   Packaging Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#fiberflute" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#fiber" className="hover:text-[#eb6608] transition-colors">
                   FiberFlute™ Cushioning
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#expak" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#outer" className="hover:text-[#eb6608] transition-colors">
                   ExPak Plywood Crates
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#logistics" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#contract-logistics" className="hover:text-[#eb6608] transition-colors">
                   Contract Packing Services
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#pooling" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#pooling-services" className="hover:text-[#eb6608] transition-colors">
                   Returnable Pooling Systems
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#digital" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#digital" className="hover:text-[#eb6608] transition-colors">
                   Digital IoT Track & Trace
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#multimaterial" className="hover:text-emerald-400 transition-colors">
+                <Link href="/solutions#by-material" className="hover:text-[#eb6608] transition-colors">
                   Multi-Material Engineering
                 </Link>
               </li>
@@ -181,42 +181,42 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/industries#datacom" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#datacom" className="hover:text-[#eb6608] transition-colors">
                   Datacom & Cloud
                 </Link>
               </li>
               <li>
-                <Link href="/industries#telecom" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#telecom" className="hover:text-[#eb6608] transition-colors">
                   Telecom & Networks
                 </Link>
               </li>
               <li>
-                <Link href="/industries#energy" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#energy" className="hover:text-[#eb6608] transition-colors">
                   Energy & Power Grid
                 </Link>
               </li>
               <li>
-                <Link href="/industries#battery" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#battery" className="hover:text-[#eb6608] transition-colors">
                   LiB & E-Mobility (Batteries)
                 </Link>
               </li>
               <li>
-                <Link href="/industries#medtech" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#medtech" className="hover:text-[#eb6608] transition-colors">
                   Healthcare & MedTech
                 </Link>
               </li>
               <li>
-                <Link href="/industries#mining" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#vehicles" className="hover:text-[#eb6608] transition-colors">
                   Mining & Construction
                 </Link>
               </li>
               <li>
-                <Link href="/industries#semicon" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#semicon" className="hover:text-[#eb6608] transition-colors">
                   Semiconductors
                 </Link>
               </li>
               <li>
-                <Link href="/industries#aerospace" className="hover:text-emerald-400 transition-colors">
+                <Link href="/industries#aerospace" className="hover:text-[#eb6608] transition-colors">
                   Aerospace & Defense
                 </Link>
               </li>
@@ -230,38 +230,38 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/sustainability#purpose" className="hover:text-emerald-400 transition-colors">
+                <Link href="/sustainability#purpose" className="hover:text-[#eb6608] transition-colors">
                   Saving Resources Purpose
                 </Link>
               </li>
               <li>
-                <Link href="/sustainability#greencalc" className="hover:text-emerald-400 transition-colors flex items-center">
+                <Link href="/sustainability#greencalc" className="hover:text-[#eb6608] transition-colors flex items-center">
                   <span>GreenCalc™ LCA Tool</span>
-                  <span className="ml-1 text-[9px] bg-emerald-500/20 text-emerald-400 px-1 py-0.2 rounded">LCA</span>
+                  <span className="ml-1 text-[9px] bg-orange-500/20 text-[#eb6608] px-1 py-0.2 rounded">LCA</span>
                 </Link>
               </li>
               <li>
-                <Link href="/sustainability#circular" className="hover:text-emerald-400 transition-colors">
+                <Link href="/sustainability#circular" className="hover:text-[#eb6608] transition-colors">
                   Circular Economy Models
                 </Link>
               </li>
               <li>
-                <Link href="/sustainability#ppwr" className="hover:text-emerald-400 transition-colors">
+                <Link href="/sustainability#ppwr" className="hover:text-[#eb6608] transition-colors">
                   EU PPWR Regulatory Guide
                 </Link>
               </li>
               <li>
-                <Link href="/engineering#total-cost" className="hover:text-emerald-400 transition-colors">
+                <Link href="/engineering#our-approach" className="hover:text-[#eb6608] transition-colors">
                   The Total Cost Approach
                 </Link>
               </li>
               <li>
-                <Link href="/engineering#labs" className="hover:text-emerald-400 transition-colors">
+                <Link href="/engineering#labs" className="hover:text-[#eb6608] transition-colors">
                   ISTA Certified Test Labs
                 </Link>
               </li>
               <li>
-                <Link href="/engineering#engineers" className="hover:text-emerald-400 transition-colors">
+                <Link href="/engineering" className="hover:text-[#eb6608] transition-colors">
                   200+ Packaging Engineers
                 </Link>
               </li>
@@ -275,37 +275,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/about" className="hover:text-emerald-400 transition-colors">
+                <Link href="/about" className="hover:text-[#eb6608] transition-colors">
                   About Nefab Group
                 </Link>
               </li>
               <li>
-                <Link href="/about#history" className="hover:text-emerald-400 transition-colors">
-                  History (Founded 1949)
+                <Link href="/about#strategy" className="hover:text-[#eb6608] transition-colors">
+                  Corporate Strategy
                 </Link>
               </li>
               <li>
-                <Link href="/about#ownership" className="hover:text-emerald-400 transition-colors">
+                <Link href="/about#ownership" className="hover:text-[#eb6608] transition-colors">
                   Owners: FAM AB & Nordgren/Pihl
                 </Link>
               </li>
               <li>
-                <Link href="/about#locations" className="hover:text-emerald-400 transition-colors">
+                <Link href="/about#locations" className="hover:text-[#eb6608] transition-colors">
                   39 Countries & 145 Sites
                 </Link>
               </li>
               <li>
-                <Link href="/about#careers" className="hover:text-emerald-400 transition-colors">
+                <Link href="/about#careers" className="hover:text-[#eb6608] transition-colors">
                   Careers & Job Openings
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-emerald-400 transition-colors">
+                <Link href="/insights" className="hover:text-[#eb6608] transition-colors">
                   Press Releases & News
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-emerald-400 transition-colors font-medium text-emerald-400">
+                <Link href="/contact" className="hover:text-[#eb6608] transition-colors font-medium text-[#eb6608]">
                   Global Contact Directory
                 </Link>
               </li>

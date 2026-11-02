@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -19,6 +20,7 @@ import {
   ShieldCheck,
   CheckCircle2,
   Building2,
+  ChevronRight,
 } from "lucide-react";
 
 export default function IndustriesPage() {
@@ -32,6 +34,7 @@ export default function IndustriesPage() {
       name: "Datacom & Cloud Infrastructure",
       icon: Server,
       tag: "Hyper-scale Hardware",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
       summary: "Mission-critical protection for server racks, AI accelerator pods, and storage arrays with zero plastic foam and strict anti-vibration damping.",
       challenges: [
         "Server racks weighing up to 2,000 kg with delicate PCIe accelerators",
@@ -46,10 +49,30 @@ export default function IndustriesPage() {
       standards: ["ISTA 3E Vibration Tested", "100% Foam-Free", "ANSI/ESD S20.20"],
     },
     {
+      id: "battery",
+      name: "LiB & E-Mobility (Batteries)",
+      icon: BatteryCharging,
+      tag: "UN Dangerous Goods",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=800&auto=format&fit=crop",
+      summary: "Certified containment boxes and closed-loop pooling systems for lithium-ion cells, modules, and full electric vehicle battery packs.",
+      challenges: [
+        "Class 9 Dangerous Goods regulatory approvals (UN 3480 / UN 3481)",
+        "Thermal runaway propagation containment during highway and sea transit",
+        "High capital cost requiring closed-loop returnable container pooling",
+      ],
+      solutions: [
+        "UN-certified metal and thermoformed returnable packaging loops",
+        "Flame-retardant and thermal barrier composite interior linings",
+        "Smart IoT telemetry sensors reporting real-time container temperature and shock",
+      ],
+      standards: ["UN 3480 / UN 3481 Certified", "ADR / IMDG Compliant", "IoT Monitored"],
+    },
+    {
       id: "telecom",
       name: "Telecom & 5G Networks",
       icon: Radio,
       tag: "Rapid Field Deployment",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop",
       summary: "Scalable packaging and supply chain services for radio base stations, massive MIMO antenna arrays, and remote microwave units.",
       challenges: [
         "Massive global rollouts across remote field sites with extreme weather",
@@ -68,6 +91,7 @@ export default function IndustriesPage() {
       name: "Energy & Power Grid",
       icon: Zap,
       tag: "Heavy Project Cargo",
+      image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop",
       summary: "Heavy-duty engineered timber and steel crating built to transport massive power transformers, wind turbine components, and grid infrastructure.",
       challenges: [
         "Assets weighing 10 to 60+ tons with irregular geometric centers of gravity",
@@ -82,28 +106,11 @@ export default function IndustriesPage() {
       standards: ["Heavy Lift Rated", "VCI Marine Packaging", "ISPM 15 Compliant"],
     },
     {
-      id: "battery",
-      name: "LiB & E-Mobility (Batteries)",
-      icon: BatteryCharging,
-      tag: "UN Dangerous Goods",
-      summary: "Certified containment boxes and closed-loop pooling systems for lithium-ion cells, modules, and full electric vehicle battery packs.",
-      challenges: [
-        "Class 9 Dangerous Goods regulatory approvals (UN 3480 / UN 3481)",
-        "Thermal runaway propagation containment during highway and sea transit",
-        "High capital cost requiring closed-loop returnable container pooling",
-      ],
-      solutions: [
-        "UN-certified metal and thermoformed returnable packaging loops",
-        "Flame-retardant and thermal barrier composite interior linings",
-        "Smart IoT telemetry sensors reporting real-time container temperature and shock",
-      ],
-      standards: ["UN 3480 / UN 3481 Certified", "ADR / IMDG Compliant", "IoT Monitored"],
-    },
-    {
       id: "medtech",
       name: "Healthcare & MedTech",
       icon: Stethoscope,
       tag: "Cleanroom Precision",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop",
       summary: "Sterile-grade and cleanroom-assembled protective packaging for surgical robotics, MRI diagnostic systems, and life-critical medical devices.",
       challenges: [
         "Zero particle shedding tolerance inside sterile clinical environments",
@@ -122,6 +129,7 @@ export default function IndustriesPage() {
       name: "Semiconductors & Electronics",
       icon: Cpu,
       tag: "Sub-Micron Protection",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
       summary: "Ultra-clean electrostatic discharge (ESD) shielding and vibration isolation for front-end wafer pods, lithography optics, and chip testers.",
       challenges: [
         "Electrostatic charges that can destroy microscopic microchip transistor gates",
@@ -135,10 +143,48 @@ export default function IndustriesPage() {
       ],
       standards: ["ANSI/ESD S20.20 Certified", "Mil-PRF-81705", "Nitrogen Purge Compatible"],
     },
+    {
+      id: "aerospace",
+      name: "Aerospace & Defense",
+      icon: Plane,
+      tag: "Extreme Specification",
+      image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=800&auto=format&fit=crop",
+      summary: "Engineered transport skids, jet engine cradles, and avionics flight-line containers built to military specifications and aviation safety protocols.",
+      challenges: [
+        "Stringent Mil-Spec and FAA compliance mandates",
+        "Irregular, high-value turbine components requiring custom cradle molds",
+        "High G-force impact resistance during rough transport",
+      ],
+      solutions: [
+        "Heavy-duty aluminum-reinforced reusable transit cases",
+        "Hydro-pneumatic shock absorption cradles for commercial jet engines",
+        "Security-sealed tamper-evident locking systems",
+      ],
+      standards: ["Mil-Std-2073 Compliant", "FAA Recognized", "ATA 300 Category 1"],
+    },
+    {
+      id: "vehicles",
+      name: "Heavy Vehicles & Machinery",
+      icon: Pickaxe,
+      tag: "High Load Capacity",
+      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+      summary: "Powertrain packaging, transmission racks, and tractor assembly line returnable steel packaging engineered for heavy industrial equipment.",
+      challenges: [
+        "Dense metal parts causing extreme concentrated abrasive wear",
+        "Multi-supplier global inbound supply chains to final assembly lines",
+        "Strict ergonomic weight limits for assembly line operators",
+      ],
+      solutions: [
+        "Heavy-duty returnable steel racks with polyurethane dunnage nests",
+        "Corrugated sleeve pack bulk containers with drop-doors for easy access",
+        "Closed-loop container pooling between foundries and assembly plants",
+      ],
+      standards: ["Automotive Tier 1 Approved", "Ergonomic Drop-Door", "Stackable 4-High"],
+    },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-white text-[#0c2340] selection:bg-orange-100 selection:text-[#eb6608]">
       <Header
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => {
@@ -148,132 +194,130 @@ export default function IndustriesPage() {
       />
 
       <main className="flex-1">
-        {/* Hero */}
-        <div className="bg-gradient-to-b from-[#090d16] via-[#0f172a] to-[#0b1120] text-white py-20 lg:py-28 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-emerald-950/80 border border-emerald-500/40 rounded-full px-4 py-1 text-xs text-emerald-300">
-                <Building2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="font-semibold uppercase tracking-wider">
-                  Engineered Industry Solutions
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white">
-                Sector-Specific Supply Chain Protection
+        {/* =========================================================================
+            INDUSTRIES HERO
+            ========================================================================= */}
+        <section className="relative bg-[#0c2340] text-white py-20 lg:py-28 overflow-hidden">
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
+            <Image
+              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2000&auto=format&fit=crop"
+              alt="Electric vehicles and industrial manufacturing"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl space-y-5">
+              <span className="inline-block bg-[#13294b] border border-blue-400/30 text-blue-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Specialized Sector Engineering
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                Sustainable Packaging Solutions for Your Industry
               </h1>
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                Every sector faces distinct shipping hazards, cleanroom standards, and international regulations. Nefab engineers tailored packaging that meets your industry&apos;s most demanding criteria.
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                Every industry faces unique supply chain pressures—from UN hazardous battery transport and cleanroom medical standards to heavy power equipment crating. Discover how Nefab tailors engineering to your sector.
               </p>
-              <div className="pt-2 flex flex-wrap gap-4">
-                <button
-                  onClick={() => {
-                    setContactTopic("Sector Packaging Audit");
-                    setContactOpen(true);
-                  }}
-                  className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl shadow-lg transition-all"
-                >
-                  Schedule Sector Packaging Audit
-                </button>
-              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Industry Cards Grid */}
-        <section className="py-20">
+        {/* Industry Grid */}
+        <section className="py-20 bg-white" id="all-industries">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             {industries.map((ind, idx) => {
               const Icon = ind.icon;
+              const isEven = idx % 2 === 1;
+
               return (
                 <div
                   key={ind.id}
                   id={ind.id}
-                  className="bg-gray-50 border border-gray-200 rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow"
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center p-8 sm:p-10 rounded-3xl bg-[#f8fafc] border border-gray-200 ${
+                    isEven ? "lg:flex-row-reverse" : ""
+                  }`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div className="lg:col-span-8 space-y-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="p-3 bg-emerald-100 text-emerald-700 rounded-2xl">
-                          <Icon className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-                            {ind.tag}
-                          </span>
-                          <h2 className="text-2xl font-extrabold text-gray-950">
-                            {ind.name}
-                          </h2>
-                        </div>
+                  {/* Image Column */}
+                  <div className={`lg:col-span-5 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                    <div className="relative w-full h-72 sm:h-84 rounded-2xl overflow-hidden shadow-md">
+                      <Image
+                        src={ind.image}
+                        alt={ind.name}
+                        fill
+                        className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 left-4 bg-[#0c2340]/90 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full backdrop-blur-sm">
+                        {ind.tag}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Column */}
+                  <div className={`lg:col-span-7 space-y-5 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2.5 rounded-xl bg-orange-100 text-[#eb6608]">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-[#0c2340]">
+                        {ind.name}
+                      </h2>
+                    </div>
+
+                    <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                      {ind.summary}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                      <div className="p-4 bg-white rounded-xl border border-gray-200 space-y-1.5">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-rose-700">
+                          Specific Industry Challenges
+                        </h4>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                          {ind.challenges.map((c, i) => (
+                            <li key={i} className="flex items-start space-x-1.5">
+                              <span className="text-rose-500 font-bold">•</span>
+                              <span>{c}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {ind.summary}
-                      </p>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div className="p-4 bg-white rounded-xl border border-gray-200">
-                          <h3 className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">
-                            Key Sector Challenges
-                          </h3>
-                          <ul className="text-xs text-gray-600 space-y-1.5">
-                            {ind.challenges.map((ch, i) => (
-                              <li key={i} className="flex items-start space-x-1.5">
-                                <span className="text-red-500 font-bold">•</span>
-                                <span>{ch}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="p-4 bg-white rounded-xl border border-gray-200">
-                          <h3 className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-2">
-                            Nefab Solution Architecture
-                          </h3>
-                          <ul className="text-xs text-gray-600 space-y-1.5">
-                            {ind.solutions.map((sol, i) => (
-                              <li key={i} className="flex items-start space-x-1.5">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                                <span>{sol}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="pt-2">
-                        <button
-                          onClick={() => {
-                            setContactTopic(`${ind.name} Consultation`);
-                            setContactOpen(true);
-                          }}
-                          className="inline-flex items-center space-x-2 text-sm font-bold text-emerald-700 hover:text-emerald-800"
-                        >
-                          <span>Request {ind.name} technical specification</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </button>
+                      <div className="p-4 bg-white rounded-xl border border-gray-200 space-y-1.5">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-700">
+                          Nefab Engineered Solution
+                        </h4>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                          {ind.solutions.map((s, i) => (
+                            <li key={i} className="flex items-start space-x-1.5">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                              <span>{s}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
-                    <div className="lg:col-span-4 bg-gray-900 text-white rounded-2xl p-6 space-y-4">
-                      <div className="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                        <ShieldCheck className="w-4 h-4" />
-                        <span>Certified Testing & Compliance</span>
-                      </div>
-                      <div className="space-y-2">
-                        {ind.standards.map((st) => (
-                          <div
-                            key={st}
-                            className="p-2.5 rounded-lg bg-gray-800 border border-gray-700 text-xs font-semibold text-gray-200 flex items-center space-x-2"
+                    <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex flex-wrap gap-1.5">
+                        {ind.standards.map((std, i) => (
+                          <span
+                            key={i}
+                            className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-100"
                           >
-                            <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                            <span>{st}</span>
-                          </div>
+                            {std}
+                          </span>
                         ))}
                       </div>
-                      <p className="text-[11px] text-gray-400 pt-1">
-                        Validated across our global network of certified ISTA testing facilities.
-                      </p>
+
+                      <button
+                        onClick={() => {
+                          setContactTopic(`Inquiry for ${ind.name}`);
+                          setContactOpen(true);
+                        }}
+                        className="px-6 py-2.5 rounded-full bg-[#eb6608] hover:bg-[#d45600] text-white text-xs font-bold transition-all shadow-sm"
+                      >
+                        Inquire for {ind.name.split(" ")[0]} →
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -294,4 +338,3 @@ export default function IndustriesPage() {
     </div>
   );
 }
-

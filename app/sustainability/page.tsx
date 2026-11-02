@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SearchModal from "../../components/SearchModal";
@@ -21,6 +22,11 @@ import {
   TreePine,
   Sun,
   Flame,
+  Users,
+  Building2,
+  Scale,
+  Sparkles,
+  Layers,
 } from "lucide-react";
 
 export default function SustainabilityPage() {
@@ -29,7 +35,7 @@ export default function SustainabilityPage() {
   const [contactTopic, setContactTopic] = useState("Sustainability & PPWR");
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-white text-[#0c2340] selection:bg-orange-100 selection:text-[#eb6608]">
       <Header
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => {
@@ -39,157 +45,238 @@ export default function SustainabilityPage() {
       />
 
       <main className="flex-1">
-        {/* Sustainability Hero */}
-        <div className="bg-gradient-to-b from-[#061811] via-[#0b271d] to-[#090d16] text-white py-20 lg:py-28 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-emerald-950/80 border border-emerald-500/40 rounded-full px-4 py-1 text-xs text-emerald-300">
-                <Leaf className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="font-semibold uppercase tracking-wider">
-                  Our Corporate Mission
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+        {/* =========================================================================
+            SUSTAINABILITY HERO
+            ========================================================================= */}
+        <section className="relative bg-[#0c2340] text-white py-20 lg:py-28 overflow-hidden">
+          <div className="absolute inset-0 opacity-25 pointer-events-none">
+            <Image
+              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop"
+              alt="Sustainable circular packaging forest"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl space-y-5">
+              <span className="inline-block bg-[#a3d9a5] text-[#0c2340] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Our Purpose & Impact
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
                 Saving Resources in Supply Chains, for a Better Tomorrow
               </h1>
-              <p className="text-base sm:text-lg text-emerald-100 leading-relaxed">
-                By optimizing packaging designs, replacing single-use plastics with circular paper solutions, and deploying returnable logistics loops, Nefab helps businesses lower their carbon footprints and total costs simultaneously.
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                We believe in creating a circular economy by eliminating void space, phasing out fossil-fuel plastics with FiberFlute™, and empowering global brands to comply with strict EU packaging directives.
               </p>
               <div className="pt-2 flex flex-wrap gap-4">
                 <a
                   href="#greencalc"
-                  className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl shadow-lg transition-all"
+                  className="px-8 py-3.5 bg-[#eb6608] hover:bg-[#d45600] text-white font-bold text-sm rounded-full shadow-lg transition-all"
                 >
-                  Explore GreenCalc™ LCA Software
+                  Model with GreenCalc™ LCA
                 </a>
-                <button
-                  onClick={() => {
-                    setContactTopic("PPWR Compliance Audit");
-                    setContactOpen(true);
-                  }}
-                  className="px-6 py-3.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm rounded-xl transition-all"
+                <a
+                  href="#ppwr"
+                  className="px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-sm rounded-full backdrop-blur-sm transition-all"
                 >
-                  Request PPWR Readiness Review
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 4 Pillars of Nefab Sustainability */}
-        <section className="py-20 border-b border-gray-100" id="purpose">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
-                Core Strategy
-              </span>
-              <h2 className="text-3xl font-extrabold text-gray-950">
-                Our 4-Point Climate & Circularity Framework
-              </h2>
-              <p className="text-sm text-gray-600">
-                How we turn sustainability from a marketing buzzword into measurable, third-party certified metric savings.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                  01
-                </div>
-                <h3 className="text-base font-bold text-gray-950">
-                  Reduce & Optimize
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Eliminating excess void space, reducing container tare weight, and optimizing dimensional sizing to lower fuel burned per unit shipped.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                  02
-                </div>
-                <h3 className="text-base font-bold text-gray-950">
-                  Reuse with Pooling
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Deploying durable multi-trip containers (ExPak, steel, thermoformed trays) managed through closed-loop pooling hubs with 50+ reuse cycles.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                  03
-                </div>
-                <h3 className="text-base font-bold text-gray-950">
-                  Recycle in Closed Loops
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Designing all expendable products from 100% curbside-recyclable Scandinavian paper, corrugated fiber, and FSC® certified timber.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                  04
-                </div>
-                <h3 className="text-base font-bold text-gray-950">
-                  Replace Fossil Plastics
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Phasing out expanded polystyrene (EPS) and polyurethane foams with our patented 100% paper FiberFlute™ shock cushioning.
-                </p>
+                  Read PPWR Compliance Guide
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* GreenCalc Section */}
-        <GreenCalcCalculator
-          onOpenContactWithTopic={(topic) => {
-            setContactTopic(topic);
-            setContactOpen(true);
-          }}
-        />
-
-        {/* EU PPWR Regulatory Section */}
-        <section className="py-20 bg-gray-50 border-b border-gray-200" id="ppwr">
+        {/* 6 Core Pillars from Mega Menu (Screenshot 3) */}
+        <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="framework">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7 space-y-4">
-                <div className="inline-flex items-center space-x-2 text-emerald-700 text-xs font-bold uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-full">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Regulatory Compliance</span>
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#eb6608]">
+                Strategic Sustainability Architecture
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#0c2340] tracking-tight mt-1">
+                Our 6 Pillars of Sustainable Impact
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 mt-2">
+                Derived directly from our commitment to science-based targets, circular innovation, and corporate ethics.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* 1. OUR PURPOSE */}
+              <div id="purpose" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-orange-100 text-[#eb6608] flex items-center justify-center font-bold">
+                  <Sparkles className="w-6 h-6 text-[#eb6608]" />
                 </div>
-                <h2 className="text-3xl font-extrabold text-gray-950 tracking-tight">
-                  European Packaging and Packaging Waste Regulation (PPWR)
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    OUR PURPOSE
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    Driving Value through Sustainability
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  We look at supply chains holistically. By optimizing packaging materials and transport efficiency, we reduce both environmental impact and operational costs for our clients worldwide.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">Learn more about our purpose →</span>
+                </div>
+              </div>
+
+              {/* 2. CUSTOMER SUPPLY CHAINS */}
+              <div id="customer-chains" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                  <TrendingDown className="w-6 h-6 text-emerald-600" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    CUSTOMER SUPPLY CHAINS
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    Minimize Carbon Emissions by Improving Transport Efficiency
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Over 90% of packaging carbon emissions originate during actual transport. By engineering lighter crates, maximizing pallet cubing, and eliminating void space, we slash freight fuel consumption.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">Explore transport reduction models →</span>
+                </div>
+              </div>
+
+              {/* 3. CIRCULAR BUSINESS MODELS */}
+              <div id="circular" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#0066cc] flex items-center justify-center font-bold">
+                  <Recycle className="w-6 h-6 text-[#0066cc]" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    CIRCULAR BUSINESS MODELS
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    With Sustainable Packaging and Services
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Transitioning from linear "take-make-waste" habits to returnable packaging loops. We supply durable containers, manage reverse logistics, and repair units across 145 worldwide hubs.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">Discover circular pooling systems →</span>
+                </div>
+              </div>
+
+              {/* 4. OUR SUPPLY CHAIN */}
+              <div id="our-chain" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                  <TreePine className="w-6 h-6 text-amber-700" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    OUR SUPPLY CHAIN
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    Responsible Sourcing and Supplier Evaluation
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Every board of timber and sheet of plywood must satisfy strict FSC® / PEFC chain-of-custody standards. We evaluate 100% of strategic suppliers through EcoVadis ESG assessments.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">View supplier code of conduct →</span>
+                </div>
+              </div>
+
+              {/* 5. PEOPLE & ETHICS */}
+              <div id="ethics" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
+                  <Users className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    PEOPLE & ETHICS
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    Driven by our Core Values: Simplicity, Respect, Empowerment
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Creating safe, inclusive working environments for over 6,000 colleagues across 39 nations. We uphold human rights, zero tolerance for bribery, and empower frontline workers.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">Read our global ethics charter →</span>
+                </div>
+              </div>
+
+              {/* 6. REPORTS, GOVERNANCE & COMPLIANCE */}
+              <div id="governance" className="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                  <Scale className="w-6 h-6 text-emerald-700" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-1">
+                    REPORTS, GOVERNANCE & COMPLIANCE
+                  </h3>
+                  <h4 className="text-lg font-bold text-gray-900 leading-snug">
+                    Sustainability at the Heart of Nefab Corporate Governance
+                  </h4>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Transparent disclosures conforming to EU CSRD standards, verified ISO 14001 environmental management, and full compliance support for PPWR and EUDR regulations.
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-bold text-[#0066cc]">Download 2025 Sustainability Report →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            PPWR & EUDR REGULATORY DEEP DIVE
+            ========================================================================= */}
+        <section className="py-20 bg-white border-b border-gray-100" id="ppwr">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#eb6608] bg-orange-50 px-3 py-1 rounded-full">
+                  European Packaging Directives
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-[#0c2340] tracking-tight">
+                  EU Packaging and Packaging Waste Regulation (PPWR)
                 </h2>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  The European Union has mandated aggressive new legal thresholds for all transport packaging entering or moving within Europe:
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  The newly enacted European PPWR mandates sweeping structural transformations for all goods transported within the EU:
                 </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="p-3.5 bg-white rounded-xl border border-gray-200 flex items-start space-x-3">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div className="space-y-4">
+                  <div className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-200 flex items-start space-x-4">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs font-bold text-gray-900">Maximum 40% Empty Space Ratio</h4>
-                      <p className="text-xs text-gray-500">Packaging must eliminate empty void filler and fit products closely.</p>
+                      <h4 className="text-sm font-bold text-[#0c2340]">Mandatory 40% Maximum Void Space Ratio</h4>
+                      <p className="text-xs text-gray-600 mt-1">
+                        Packaging cannot contain more than 40% empty void space or filler. Our custom-engineered right-sized packaging guarantees exact dimensional compliance.
+                      </p>
                     </div>
                   </div>
 
-                  <div className="p-3.5 bg-white rounded-xl border border-gray-200 flex items-start space-x-3">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <div className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-200 flex items-start space-x-4">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs font-bold text-gray-900">Mandatory Recyclability Assessment</h4>
-                      <p className="text-xs text-gray-500">All materials must be recyclable in at-scale municipal waste streams (Design for Recycling).</p>
+                      <h4 className="text-sm font-bold text-[#0c2340]">Design for Recycling (DfR) Grade Requirements</h4>
+                      <p className="text-xs text-gray-600 mt-1">
+                        By 2030, all packaging must be recyclable at scale (Grade A or B). We replace complex multi-layer plastics with mono-material FiberFlute™ and paper pulp.
+                      </p>
                     </div>
                   </div>
 
-                  <div className="p-3.5 bg-white rounded-xl border border-gray-200 flex items-start space-x-3">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <div className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-200 flex items-start space-x-4">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs font-bold text-gray-900">Target Reuse Ratios for B2B Transport</h4>
-                      <p className="text-xs text-gray-500">Gradual phase-in of mandatory reusable pallet, box, and crate quotas.</p>
+                      <h4 className="text-sm font-bold text-[#0c2340]">Mandatory Reusable Transport Packaging Quotas</h4>
+                      <p className="text-xs text-gray-600 mt-1">
+                        Up to 40% of transport packaging between economic operators within the same member state must be returnable. Our pooling services provide instant compliance without capital expense.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -197,34 +284,49 @@ export default function SustainabilityPage() {
                 <div className="pt-2">
                   <button
                     onClick={() => {
-                      setContactTopic("PPWR Site Audit");
+                      setContactTopic("PPWR Compliance Audit");
                       setContactOpen(true);
                     }}
-                    className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition-colors"
+                    className="px-8 py-3.5 bg-[#eb6608] hover:bg-[#d45600] text-white font-bold text-sm rounded-full shadow-md transition-all"
                   >
-                    Request a PPWR Packaging Audit
+                    Request a PPWR Readiness Review
                   </button>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-emerald-950 text-white rounded-3xl p-8 space-y-4">
-                <div className="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                  <Award className="w-4 h-4" />
-                  <span>The Nefab PPWR Advantage</span>
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  Audit your entire fleet with our regulatory specialists
-                </h3>
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Nefab provides complete technical dossier generation, void-space redesigns, and automated LCA calculations to ensure your global operations remain 100% compliant without shipping disruptions.
-                </p>
-                <div className="pt-3 border-t border-emerald-800 text-xs text-emerald-200 space-y-1">
-                  <p>✓ 100% FiberFlute™ PPWR Curbside Certified</p>
-                  <p>✓ Turnkey Reusable Container Pooling Infrastructure</p>
-                  <p>✓ Documented Ecoinvent Recyclability Grading</p>
+              {/* Right Side: Container ship photo */}
+              <div className="lg:col-span-5">
+                <div className="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-xl border border-gray-200">
+                  <Image
+                    src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop"
+                    alt="International cargo ship navigating European waters"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
+                    <span className="text-xs font-bold uppercase tracking-wider text-orange-300">EUDR Compliance</span>
+                    <h3 className="text-lg font-black text-white mt-1">Zero Deforestation Regulation</h3>
+                    <p className="text-xs text-gray-300 mt-1">
+                      Nefab traces 100% of wood fiber back to geo-located forest plots with strict satellite monitoring.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            GREENCALC LCA CALCULATOR
+            ========================================================================= */}
+        <section id="greencalc" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <GreenCalcCalculator
+              onOpenContactWithTopic={(topic) => {
+                setContactTopic(topic);
+                setContactOpen(true);
+              }}
+            />
           </div>
         </section>
       </main>
@@ -240,4 +342,3 @@ export default function SustainabilityPage() {
     </div>
   );
 }
-

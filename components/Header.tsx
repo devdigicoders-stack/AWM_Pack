@@ -371,7 +371,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 1, Card 2 */}
                 <Link
-                  href="/sustainability#greencalc"
+                  href="/sustainability#customer-chains"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -399,7 +399,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 2, Card 4 */}
                 <Link
-                  href="/sustainability"
+                  href="/sustainability#our-chain"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -413,7 +413,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 2, Card 5 */}
                 <Link
-                  href="/about"
+                  href="/sustainability#ethics"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -427,7 +427,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 2, Card 6 */}
                 <Link
-                  href="/sustainability#ppwr"
+                  href="/sustainability#governance"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -454,7 +454,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <div className="grid grid-cols-3 gap-6">
                 {/* Row 1, Card 1 */}
                 <Link
-                  href="/engineering#total-cost"
+                  href="/engineering#our-approach"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -468,7 +468,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 1, Card 2 */}
                 <Link
-                  href="/solutions#multimaterial"
+                  href="/engineering#multi-material"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -496,7 +496,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                 {/* Row 2, Card 4 */}
                 <Link
-                  href="/engineering#labs"
+                  href="/engineering#testing"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -525,7 +525,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               </span>
               <div className="grid grid-cols-3 gap-6">
                 <Link
-                  href="/insights"
+                  href="/insights#news"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
@@ -551,7 +551,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 </Link>
 
                 <Link
-                  href="/insights#whitepapers"
+                  href="/insights#articles-grid"
                   onClick={() => setActiveDropdown(null)}
                   className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
                 >
