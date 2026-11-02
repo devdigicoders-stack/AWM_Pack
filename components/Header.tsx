@@ -461,3 +461,4 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
     </header>
   );
 }
+

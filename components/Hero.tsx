@@ -290,3 +290,4 @@ export default function Hero({ onOpenContact, onScrollToGreenCalc }: HeroProps) 
     </div>
   );
 }
+

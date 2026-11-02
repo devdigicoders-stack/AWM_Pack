@@ -243,3 +243,4 @@ export default function IndustrySolutions({ onOpenContact }: IndustrySolutionsPr
     </section>
   );
 }
+

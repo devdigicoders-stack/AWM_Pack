@@ -247,3 +247,4 @@ export default function GlobalFootprint({ onOpenContact }: GlobalFootprintProps)
     </section>
   );
 }
+

@@ -226,3 +226,4 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
     </div>
   );
 }
+

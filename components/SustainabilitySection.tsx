@@ -149,3 +149,4 @@ export default function SustainabilitySection({ onOpenContact }: SustainabilityS
     </section>
   );
 }
+

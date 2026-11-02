@@ -205,3 +205,4 @@ export default function CaseStudies({ onOpenContact }: CaseStudiesProps) {
     </section>
   );
 }
+

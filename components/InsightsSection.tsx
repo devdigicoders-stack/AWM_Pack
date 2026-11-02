@@ -167,3 +167,4 @@ export default function InsightsSection({ onOpenContact }: InsightsSectionProps)
     </section>
   );
 }
+

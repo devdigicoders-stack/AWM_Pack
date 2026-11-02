@@ -232,3 +232,4 @@ export default function TotalCostApproach({ onOpenContact }: TotalCostApproachPr
     </section>
   );
 }
+

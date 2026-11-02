@@ -342,7 +342,7 @@ export default function Footer() {
 
         {/* Bottom Legal Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© {new Date().getFullYear()} Nefab Group. All rights reserved.</p>
+          <p>© 2026 Nefab Group. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 sm:gap-6">
             <Link href="/about" className="hover:text-gray-400">Privacy Policy</Link>
             <Link href="/about" className="hover:text-gray-400">Cookie Settings</Link>

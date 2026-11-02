@@ -332,3 +332,4 @@ export default function SolutionsOverview({ onOpenContact }: SolutionsOverviewPr
     </section>
   );
 }
+
