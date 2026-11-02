@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   Search,
   Languages,
-  ChevronDown,
   Menu,
   X,
   ArrowRight,
@@ -37,8 +36,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
     <header className="sticky top-0 z-50 w-full bg-white transition-all duration-200">
       {/* Main Navigation Bar */}
       <nav
-        className={`w-full transition-all duration-200 bg-white border-b border-gray-100 ${
-          isScrolled ? "shadow-sm py-2" : "py-3"
+        className={`w-full transition-all duration-200 bg-white border-b border-gray-100 relative ${
+          isScrolled ? "shadow-sm py-2.5" : "py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -56,7 +55,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
           {/* Center Navigation Links */}
           <div className="hidden xl:flex items-center space-x-1.5">
-            {/* 1. SOLUTIONS (WITH EXACT MEGA MENU FROM USER SCREENSHOT) */}
+            {/* 1. SOLUTIONS */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("solutions")}
@@ -72,232 +71,6 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 Solutions
               </Link>
-
-              {/* Exact Mega Menu Dropdown */}
-              {activeDropdown === "solutions" && (
-                <div className="absolute top-full -left-20 pt-2 w-[920px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left animate-in fade-in slide-in-from-top-1 duration-150">
-                    <div className="grid grid-cols-12 gap-8">
-                      {/* Left Big Column: PACKAGING SOLUTIONS */}
-                      <div className="col-span-9 space-y-6">
-                        <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
-                          PACKAGING SOLUTIONS
-                        </h3>
-
-                        <div className="grid grid-cols-4 gap-6">
-                          {/* Col 1: By Type */}
-                          <div className="space-y-3">
-                            <h4 className="text-xs font-semibold text-gray-500">
-                              By Type
-                            </h4>
-                            <ul className="space-y-2.5 text-sm font-medium">
-                              <li>
-                                <Link
-                                  href="/solutions#inner"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Inner Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#outer"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Outer Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#trays"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Trays
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#pallets"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Pallets
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          {/* Col 2: By Material */}
-                          <div className="space-y-3">
-                            <h4 className="text-xs font-semibold text-gray-500">
-                              By Material
-                            </h4>
-                            <ul className="space-y-2.5 text-sm font-medium">
-                              <li>
-                                <Link
-                                  href="/solutions#fiber"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Fiber Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#plastic"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Plastic Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#plywood"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Plywood Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#wood"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Wood Packaging
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          {/* Col 3: By Requirement */}
-                          <div className="space-y-3">
-                            <h4 className="text-xs font-semibold text-gray-500">
-                              By Requirement
-                            </h4>
-                            <ul className="space-y-2.5 text-sm font-medium">
-                              <li>
-                                <Link
-                                  href="/solutions#returnable"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Returnable Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#expendable"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Expendable Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#dangerous-goods"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Dangerous Goods Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  More
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          {/* Col 4: Packaging Optimization */}
-                          <div className="space-y-3">
-                            <h4 className="text-xs font-semibold text-gray-500">
-                              Packaging Optimization
-                            </h4>
-                            <ul className="space-y-2.5 text-sm font-medium">
-                              <li>
-                                <Link
-                                  href="/solutions#digital"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Digital Solutions for Packaging
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/sustainability#greencalc"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Life Cycle Analysis with GreenCalc
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  href="/solutions#assessment"
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0066cc] hover:underline"
-                                >
-                                  Packaging Assessment
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right Column: LOGISTICS SERVICES (With Vertical Divider) */}
-                      <div className="col-span-3 border-l border-gray-200 pl-8 space-y-6">
-                        <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
-                          LOGISTICS SERVICES
-                        </h3>
-
-                        <ul className="space-y-3 text-sm font-medium">
-                          <li>
-                            <Link
-                              href="/solutions#logistics"
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Contract Logistics
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#packing"
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Packing Services
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#pooling"
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Pooling Services
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* 2. INDUSTRIES */}
@@ -316,95 +89,6 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 Industries
               </Link>
-
-              {activeDropdown === "industries" && (
-                <div className="absolute top-full -left-20 pt-2 w-[600px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-5">
-                      SECTOR-SPECIFIC PACKAGING SOLUTIONS
-                    </h3>
-                    <div className="grid grid-cols-2 gap-6 text-sm font-medium">
-                      <ul className="space-y-2.5">
-                        <li>
-                          <Link
-                            href="/industries#telecom"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Telecom
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#datacom"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Datacom & Cloud
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#energy"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Energy
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#battery"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            LiB & E-Mobility
-                          </Link>
-                        </li>
-                      </ul>
-
-                      <ul className="space-y-2.5">
-                        <li>
-                          <Link
-                            href="/industries#medtech"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Healthcare & MedTech
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#mining"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Mining & Construction
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#semicon"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Semicon
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/industries#aerospace"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-[#0066cc] hover:underline"
-                          >
-                            Aerospace & Defense
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* 3. SUSTAINABILITY */}
@@ -423,54 +107,6 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 Sustainability
               </Link>
-
-              {activeDropdown === "sustainability" && (
-                <div className="absolute top-full -left-20 pt-2 w-[520px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-5">
-                      SUSTAINABILITY STRATEGY & TOOLS
-                    </h3>
-                    <ul className="space-y-3 text-sm font-medium">
-                      <li>
-                        <Link
-                          href="/sustainability#purpose"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Our Purpose & Climate Targets
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/sustainability#greencalc"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          GreenCalc™ Life Cycle Analysis Software
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/sustainability#ppwr"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Are you prepared for the PPWR?
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/sustainability#circular"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Circular Packaging Systems
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* 4. ENGINEERING */}
@@ -489,48 +125,9 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 Engineering
               </Link>
-
-              {activeDropdown === "engineering" && (
-                <div className="absolute top-full -left-20 pt-2 w-[480px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-5">
-                      PACKAGING ENGINEERING & TESTING
-                    </h3>
-                    <ul className="space-y-3 text-sm font-medium">
-                      <li>
-                        <Link
-                          href="/engineering#total-cost"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          The Total Cost Approach
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/engineering#labs"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          ISTA Certified Testing Laboratories
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/engineering#engineers"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Design & Prototyping Capabilities
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
             </div>
 
-            {/* 5. NEWS & INSIGHTS (Exact label from screenshot) */}
+            {/* 5. NEWS & INSIGHTS */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("insights")}
@@ -546,45 +143,6 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 News & Insights
               </Link>
-
-              {activeDropdown === "insights" && (
-                <div className="absolute top-full -left-20 pt-2 w-[480px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-5">
-                      NEWS, CASES & WHITEPAPERS
-                    </h3>
-                    <ul className="space-y-3 text-sm font-medium">
-                      <li>
-                        <Link
-                          href="/insights"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Articles & Press Releases
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/insights#cases"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Customer Case Studies
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/insights#whitepapers"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Technical Guides & Playbooks
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* 6. ABOUT US */}
@@ -603,63 +161,15 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               >
                 About Us
               </Link>
-
-              {activeDropdown === "about" && (
-                <div className="absolute top-full -left-20 pt-2 w-[480px] z-50">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8 text-left">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-5">
-                      ABOUT NEFAB GROUP
-                    </h3>
-                    <ul className="space-y-3 text-sm font-medium">
-                      <li>
-                        <Link
-                          href="/about"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Company Overview
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/about#history"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          History Since 1949
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/about#ownership"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Ownership: FAM AB & Nordgren/Pihl
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/about#locations"
-                          onClick={() => setActiveDropdown(null)}
-                          className="text-[#0066cc] hover:underline block"
-                        >
-                          Global Presence (39 Countries)
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
 
-          {/* Right Action Icons & Button (Matching Exact User Screenshot) */}
+          {/* Right Action Icons & Button */}
           <div className="flex items-center space-x-4">
             {/* Dark Navy Rounded "Contact" Button */}
             <button
               onClick={onOpenContact}
-              className="bg-[#13294b] hover:bg-[#0c2340] text-white font-bold text-sm px-6 py-2.5 rounded-full shadow-sm hover:shadow transition-all"
+              className="bg-[#13294b] hover:bg-[#0c2340] text-white font-bold text-sm px-6 py-2 rounded-full shadow-sm hover:shadow transition-all"
             >
               Contact
             </button>
@@ -714,6 +224,421 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             </button>
           </div>
         </div>
+
+        {/* =========================================================================
+            FULL-WIDTH MEGA MENU PANELS (MATCHING EXACT USER SCREENSHOTS)
+            ========================================================================= */}
+
+        {/* 1. SOLUTIONS MEGA MENU */}
+        {activeDropdown === "solutions" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("solutions")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="bg-white rounded-none p-8 border border-gray-200/80 shadow-sm">
+                <div className="grid grid-cols-12 gap-8">
+                  {/* Left Column: PACKAGING SOLUTIONS */}
+                  <div className="col-span-9 space-y-6">
+                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                      PACKAGING SOLUTIONS
+                    </h3>
+
+                    <div className="grid grid-cols-4 gap-6">
+                      {/* By Type */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-medium text-gray-500">By Type</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li><Link href="/solutions#inner" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Inner Packaging</Link></li>
+                          <li><Link href="/solutions#outer" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Outer Packaging</Link></li>
+                          <li><Link href="/solutions#trays" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Trays</Link></li>
+                          <li><Link href="/solutions#pallets" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Pallets</Link></li>
+                        </ul>
+                      </div>
+
+                      {/* By Material */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-medium text-gray-500">By Material</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li><Link href="/solutions#fiber" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Fiber Packaging</Link></li>
+                          <li><Link href="/solutions#plastic" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Plastic Packaging</Link></li>
+                          <li><Link href="/solutions#plywood" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Plywood Packaging</Link></li>
+                          <li><Link href="/solutions#wood" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Wood Packaging</Link></li>
+                        </ul>
+                      </div>
+
+                      {/* By Requirement */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-medium text-gray-500">By Requirement</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li><Link href="/solutions#returnable" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Returnable Packaging</Link></li>
+                          <li><Link href="/solutions#expendable" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Expendable Packaging</Link></li>
+                          <li><Link href="/solutions#dangerous-goods" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Dangerous Goods Packaging</Link></li>
+                          <li><Link href="/solutions" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">More</Link></li>
+                        </ul>
+                      </div>
+
+                      {/* Packaging Optimization */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-medium text-gray-500">Packaging Optimization</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li><Link href="/solutions#digital" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Digital Solutions for Packaging</Link></li>
+                          <li><Link href="/sustainability#greencalc" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Life Cycle Analysis with GreenCalc</Link></li>
+                          <li><Link href="/solutions#assessment" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline">Packaging Assessment</Link></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: LOGISTICS SERVICES */}
+                  <div className="col-span-3 border-l border-gray-200 pl-8 space-y-6">
+                    <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                      LOGISTICS SERVICES
+                    </h3>
+
+                    <ul className="space-y-3 text-sm">
+                      <li><Link href="/solutions#logistics" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Contract Logistics</Link></li>
+                      <li><Link href="/solutions#packing" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Packing Services</Link></li>
+                      <li><Link href="/solutions#pooling" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Pooling Services</Link></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 2. INDUSTRIES MEGA MENU */}
+        {activeDropdown === "industries" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("industries")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-4 gap-6">
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-3">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">DATACOM & CLOUD</h3>
+                  <p className="text-xs text-gray-600 leading-snug">Server racks, AI accelerators and sensitive data infrastructure with zero foam.</p>
+                  <Link href="/industries#datacom" onClick={() => setActiveDropdown(null)} className="text-xs font-bold text-[#0066cc] hover:underline block pt-1">Explore Datacom →</Link>
+                </div>
+
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-3">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">LIB & E-MOBILITY</h3>
+                  <p className="text-xs text-gray-600 leading-snug">UN-certified dangerous goods solutions for EV lithium batteries and modules.</p>
+                  <Link href="/industries#battery" onClick={() => setActiveDropdown(null)} className="text-xs font-bold text-[#0066cc] hover:underline block pt-1">Explore Batteries →</Link>
+                </div>
+
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-3">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">TELECOM & ENERGY</h3>
+                  <p className="text-xs text-gray-600 leading-snug">Weatherproof 5G network towers and heavy-duty power transformer crating.</p>
+                  <Link href="/industries#telecom" onClick={() => setActiveDropdown(null)} className="text-xs font-bold text-[#0066cc] hover:underline block pt-1">Explore Telecom & Energy →</Link>
+                </div>
+
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-3">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">MEDTECH & SEMICON</h3>
+                  <p className="text-xs text-gray-600 leading-snug">ISO 13485 cleanroom medical packaging and ANSI/ESD static shielding.</p>
+                  <Link href="/industries#semicon" onClick={() => setActiveDropdown(null)} className="text-xs font-bold text-[#0066cc] hover:underline block pt-1">Explore High-Tech →</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3. SUSTAINABILITY MEGA MENU (MATCHING EXACT SCREENSHOT 1) */}
+        {activeDropdown === "sustainability" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("sustainability")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                {/* Row 1, Card 1 */}
+                <Link
+                  href="/sustainability#purpose"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    OUR PURPOSE
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Driving Value through Sustainability
+                  </p>
+                </Link>
+
+                {/* Row 1, Card 2 */}
+                <Link
+                  href="/sustainability#greencalc"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    CUSTOMER SUPPLY CHAINS
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Minimize carbon emissions by improving transport efficiency
+                  </p>
+                </Link>
+
+                {/* Row 1, Card 3 */}
+                <Link
+                  href="/sustainability#circular"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    CIRCULAR BUSINESS MODELS
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    With sustainable packaging and services
+                  </p>
+                </Link>
+
+                {/* Row 2, Card 4 */}
+                <Link
+                  href="/sustainability"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    OUR SUPPLY CHAIN
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Responsible sourcing and supplier evaluation
+                  </p>
+                </Link>
+
+                {/* Row 2, Card 5 */}
+                <Link
+                  href="/about"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    PEOPLE & ETHICS
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Driven by our core values of Simplicity, Respect and Empowerment
+                  </p>
+                </Link>
+
+                {/* Row 2, Card 6 */}
+                <Link
+                  href="/sustainability#ppwr"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    REPORTS, GOVERNANCE & COMPLIANCE
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Sustainability is at the heart of Nefab corporate governance
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 4. ENGINEERING MEGA MENU (MATCHING EXACT SCREENSHOT 2) */}
+        {activeDropdown === "engineering" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("engineering")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                {/* Row 1, Card 1 */}
+                <Link
+                  href="/engineering#total-cost"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    OUR APPROACH
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Engineered Solutions Tailored to Your Supply Chain
+                  </p>
+                </Link>
+
+                {/* Row 1, Card 2 */}
+                <Link
+                  href="/solutions#multimaterial"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    MULTI MATERIAL
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Save Resources with the Optimal Packaging Material
+                  </p>
+                </Link>
+
+                {/* Row 1, Card 3 */}
+                <Link
+                  href="/engineering#design"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    PACKAGING DESIGN
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Designing Optimized Packaging
+                  </p>
+                </Link>
+
+                {/* Row 2, Card 4 */}
+                <Link
+                  href="/engineering#labs"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    PACKAGING TESTING
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Safeguard Your Product through Packaging Testing
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 5. NEWS & INSIGHTS MEGA MENU (MATCHING EXACT SCREENSHOT 3) */}
+        {activeDropdown === "insights" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("insights")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-4">
+                NEWS & INSIGHTS
+              </span>
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/insights"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    NEWS & PRESS RELEASES
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Global facility expansions, acquisitions, corporate milestones, and partnership announcements.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/insights#cases"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    CUSTOMER CASES
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Documented success stories showcasing proven CO₂ reductions and freight cost savings for clients.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/insights#whitepapers"
+                  onClick={() => setActiveDropdown(null)}
+                  className="bg-white p-6 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow block text-left"
+                >
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340] mb-2">
+                    ARTICLES & WHITEPAPERS
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Deep dives into EU PPWR regulatory compliance, FiberFlute™ drop shock tests, and circular logistics.
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 6. ABOUT US MEGA MENU (MATCHING EXACT SCREENSHOT 4) */}
+        {activeDropdown === "about" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl animate-in fade-in duration-150"
+            onMouseEnter={() => setActiveDropdown("about")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-5 gap-6">
+                {/* Col 1: ABOUT NEFAB */}
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                    ABOUT NEFAB
+                  </h3>
+                  <ul className="space-y-2.5 text-sm">
+                    <li><Link href="/about#strategy" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Strategy</Link></li>
+                    <li><Link href="/about#policies" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Policies</Link></li>
+                    <li><Link href="/about#brands" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Acquired Brands</Link></li>
+                  </ul>
+                </div>
+
+                {/* Col 2: LOCATIONS */}
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                    LOCATIONS
+                  </h3>
+                  <ul className="space-y-2.5 text-sm">
+                    <li><Link href="/about#locations" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Americas</Link></li>
+                    <li><Link href="/about#locations" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Asia-Pacific</Link></li>
+                    <li><Link href="/about#locations" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Europe</Link></li>
+                  </ul>
+                </div>
+
+                {/* Col 3: ORGANIZATION */}
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                    ORGANIZATION
+                  </h3>
+                  <ul className="space-y-2.5 text-sm">
+                    <li><Link href="/about#leadership" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Corporate Leadership Team</Link></li>
+                    <li><Link href="/about#board" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Board of Directors</Link></li>
+                    <li><Link href="/about#ownership" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Nefab&apos;s Owners</Link></li>
+                  </ul>
+                </div>
+
+                {/* Col 4: CAREERS */}
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                    CAREERS
+                  </h3>
+                  <ul className="space-y-2.5 text-sm">
+                    <li><Link href="/about#careers" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Working at Nefab</Link></li>
+                    <li><Link href="/about#people" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Meet Our People</Link></li>
+                    <li><Link href="/about#trainee" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Global Trainee program</Link></li>
+                    <li><Link href="/about#jobs" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">Job opportunities</Link></li>
+                  </ul>
+                </div>
+
+                {/* Col 5: COMPLIANCE */}
+                <div className="bg-white p-6 border border-gray-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-[#0c2340]">
+                    COMPLIANCE
+                  </h3>
+                  <ul className="space-y-2.5 text-sm">
+                    <li><Link href="/sustainability#ppwr" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">PPWR</Link></li>
+                    <li><Link href="/sustainability#eudr" onClick={() => setActiveDropdown(null)} className="text-[#0066cc] hover:underline block">EUDR</Link></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
