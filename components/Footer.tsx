@@ -29,24 +29,24 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 text-gray-300 border-t border-gray-800">
       {/* Newsletter & Highlight Banner */}
-      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-gray-950 border-b border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#0c2340] border-b border-[#1b3a60] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-xl">
-            <div className="inline-flex items-center space-x-2 text-emerald-400 text-xs font-semibold tracking-wider uppercase mb-2">
+            <div className="inline-flex items-center space-x-2 text-[#eb6608] text-xs font-semibold tracking-wider uppercase mb-2">
               <Leaf className="w-3.5 h-3.5" />
               <span>Nefab Supply Chain Intelligence</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Stay informed on circular packaging & PPWR regulations
             </h3>
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-gray-300">
               Get our quarterly insights on reducing carbon footprints, Life Cycle Analyses (LCA), and engineered logistics innovations.
             </p>
           </div>
 
           <div className="w-full lg:w-auto">
             {subscribed ? (
-              <div className="flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/50 text-emerald-300 px-5 py-3 rounded-xl text-sm font-medium">
+              <div className="flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/50 text-emerald-300 px-5 py-3 rounded-full text-sm font-medium">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                 <span>Thank you for subscribing to Nefab Insights!</span>
               </div>
@@ -58,11 +58,11 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your corporate email..."
-                  className="px-4 py-3 bg-gray-900 border border-gray-700 text-white rounded-lg text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 w-full"
+                  className="px-4 py-3 bg-[#07172b] border border-[#1b3a60] text-white rounded-full text-sm focus:outline-none focus:border-[#eb6608] focus:ring-1 focus:ring-[#eb6608] w-full"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm rounded-lg whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                  className="px-6 py-3 bg-[#eb6608] hover:bg-[#d45600] text-white font-bold text-sm rounded-full whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-md"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="w-4 h-4" />

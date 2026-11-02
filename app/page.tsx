@@ -3,16 +3,8 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import SolutionsOverview from "../components/SolutionsOverview";
-import TotalCostApproach from "../components/TotalCostApproach";
+import NefabOfficialHome from "../components/NefabOfficialHome";
 import GreenCalcCalculator from "../components/GreenCalcCalculator";
-import IndustrySolutions from "../components/IndustrySolutions";
-import SustainabilitySection from "../components/SustainabilitySection";
-import CaseStudies from "../components/CaseStudies";
-import GlobalFootprint from "../components/GlobalFootprint";
-import InsightsSection from "../components/InsightsSection";
-import ContactSection from "../components/ContactSection";
 import SearchModal from "../components/SearchModal";
 import ContactModal from "../components/ContactModal";
 
@@ -26,101 +18,32 @@ export default function HomePage() {
     setContactOpen(true);
   };
 
-  const handleScrollToGreenCalc = () => {
-    const el = document.getElementById("greencalc");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 selection:bg-emerald-100 selection:text-emerald-900">
-      {/* Header */}
+    <div className="min-h-screen flex flex-col bg-white text-[#0c2340] selection:bg-orange-100 selection:text-[#eb6608]">
+      {/* 1. Official Header */}
       <Header
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => {
-          setContactTopic("Packaging Solutions");
+          setContactTopic("General Solutions Inquiries");
           setContactOpen(true);
         }}
       />
 
-      {/* Main Content Sections */}
+      {/* 2. Official Nefab 10-Section Homepage Matching Exact Screenshot */}
       <main className="flex-1">
-        {/* 1. Hero */}
-        <Hero
-          onOpenContact={() => {
-            setContactTopic("General Solutions Inquiries");
-            setContactOpen(true);
-          }}
-          onScrollToGreenCalc={handleScrollToGreenCalc}
-        />
-
-        {/* 2. Core Solutions Overview */}
-        <SolutionsOverview
-          onOpenContact={() => {
-            setContactTopic("Packaging Solutions Assessment");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 3. Total Cost Approach (Methodology) */}
-        <TotalCostApproach
-          onOpenContact={() => {
-            setContactTopic("Total Cost Approach Audit");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 4. Interactive GreenCalc™ Savings Calculator */}
-        <GreenCalcCalculator
+        <NefabOfficialHome
           onOpenContactWithTopic={handleOpenContactWithTopic}
         />
 
-        {/* 5. Industry-Specific Solutions */}
-        <IndustrySolutions
-          onOpenContact={() => {
-            setContactTopic("Industry Specific Solutions");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 6. Sustainability & Strategy 2030 */}
-        <SustainabilitySection
-          onOpenContact={() => {
-            setContactTopic("Sustainability & PPWR Review");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 7. Real Customer Case Studies */}
-        <CaseStudies
-          onOpenContact={() => {
-            setContactTopic("Customer Case Study Inquiries");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 8. Global Footprint (39 Countries, 145 Sites) */}
-        <GlobalFootprint
-          onOpenContact={() => {
-            setContactTopic("Local Facility Contact");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 9. Latest Insights & Whitepapers */}
-        <InsightsSection
-          onOpenContact={() => {
-            setContactTopic("Whitepaper & Research Consultation");
-            setContactOpen(true);
-          }}
-        />
-
-        {/* 10. Direct Contact / Consultation Section */}
-        <ContactSection />
+        {/* Bonus Interactive GreenCalc™ LCA Calculator */}
+        <div className="border-t border-gray-100">
+          <GreenCalcCalculator
+            onOpenContactWithTopic={handleOpenContactWithTopic}
+          />
+        </div>
       </main>
 
-      {/* Footer */}
+      {/* 3. Official Footer */}
       <Footer />
 
       {/* Modals */}
