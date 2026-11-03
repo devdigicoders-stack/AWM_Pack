@@ -110,27 +110,52 @@ export default function InsightsPage() {
         {/* =========================================================================
             INSIGHTS HERO
             ========================================================================= */}
-        <section className="relative bg-[#00223a] text-white py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <Image
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
-              alt="Industrial packaging production facility"
-              fill
-              priority
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl space-y-5">
-              <span className="inline-block bg-[#002b49] border border-blue-400/30 text-blue-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                AWMPACK Knowledge Hub & Press
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                News & Industrial Insights
-              </h1>
-              <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
-                Stay updated with the latest in wooden pallet engineering, ISPM 15 heat treatment standards, circular wood recycling, and customer case studies across Qatar&apos;s leading industrial sectors.
-              </p>
+        <section className="relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2000&auto=format&fit=crop"
+            alt="Industrial maritime logistics and packaging insights"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/75 to-[#002b49]/35"></div>
+
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="max-w-3xl space-y-3.5">
+                <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
+                  <span>AWMPACK Knowledge Hub &amp; Press</span>
+                </div>
+
+                <div className="space-y-1">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                    News &amp; Industrial Insights
+                  </h1>
+                  <p className="text-blue-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                    Pallet Engineering • ISPM 15 Export Guides • Qatar Market Trends
+                  </p>
+                </div>
+
+                <p className="text-xs sm:text-sm text-gray-200 max-w-2xl leading-relaxed">
+                  Stay updated with the latest in wooden pallet engineering, ISPM 15 heat treatment standards, circular wood recycling, and customer case studies across Qatar&apos;s leading industrial sectors.
+                </p>
+
+                <div className="pt-1.5 flex flex-wrap gap-3">
+                  <a
+                    href="#articles-grid"
+                    className="px-6 py-2.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs sm:text-sm rounded-full shadow-md hover:shadow-lg transition-all"
+                  >
+                    Browse Technical Articles
+                  </a>
+                  <a
+                    href="#cases"
+                    className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-xs sm:text-sm rounded-full backdrop-blur-sm transition-all"
+                  >
+                    Customer Success Stories
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

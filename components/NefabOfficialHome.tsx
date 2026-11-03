@@ -79,7 +79,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#001829] via-[#00223a]/85 to-[#002b49]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/75 to-[#002b49]/35"></div>
 
           {/* Hero Typography */}
           <div className="absolute inset-0 flex items-center">
@@ -380,7 +380,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#001829]/85 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/90 via-[#00223a]/75 to-[#002b49]/40"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto space-y-6 text-white">

@@ -124,27 +124,55 @@ export default function IndustriesPage() {
         {/* =========================================================================
             INDUSTRIES HERO
             ========================================================================= */}
-        <section className="relative bg-[#00223a] text-white py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <Image
-              src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
-              alt="Qatar Industrial Operations"
-              fill
-              priority
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl space-y-5">
-              <span className="inline-block bg-[#0099e5]/20 border border-[#0099e5]/40 text-[#0099e5] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                Specialized Sector Engineering • Qatar 🇶🇦
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                Packaging Solutions Engineered for Qatar&apos;s Core Industries
-              </h1>
-              <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl">
-                From Ras Laffan petrochemical plants and Hamad Port shipping lines to Qatar National Vision 2030 mega-infrastructure projects, AWMPACK delivers certified, heavy-duty packaging solutions.
-              </p>
+        <section className="relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2000&auto=format&fit=crop"
+            alt="Qatar Industrial Operations & Logistics Hub"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/75 to-[#002b49]/35"></div>
+
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="max-w-3xl space-y-3.5">
+                <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
+                  <span>Specialized Sector Engineering • Qatar 🇶🇦</span>
+                </div>
+
+                <div className="space-y-1">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                    Packaging Solutions Engineered for Qatar&apos;s Core Industries
+                  </h1>
+                  <p className="text-blue-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                    Petrochemicals • Infrastructure • Manufacturing • Logistics
+                  </p>
+                </div>
+
+                <p className="text-xs sm:text-sm text-gray-200 max-w-2xl leading-relaxed">
+                  From Ras Laffan petrochemical plants and Hamad Port shipping lines to Qatar National Vision 2030 mega-infrastructure projects, AWMPACK delivers certified, heavy-duty packaging solutions.
+                </p>
+
+                <div className="pt-1.5 flex flex-wrap gap-3">
+                  <a
+                    href="#all-industries"
+                    className="px-6 py-2.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs sm:text-sm rounded-full shadow-md hover:shadow-lg transition-all"
+                  >
+                    Explore Sectors
+                  </a>
+                  <button
+                    onClick={() => {
+                      setContactTopic("Sector Packaging Audit");
+                      setContactOpen(true);
+                    }}
+                    className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-xs sm:text-sm rounded-full backdrop-blur-sm transition-all"
+                  >
+                    Request Industry Audit
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

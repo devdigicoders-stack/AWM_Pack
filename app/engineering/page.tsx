@@ -69,43 +69,54 @@ export default function EngineeringPage() {
         {/* =========================================================================
             ENGINEERING HERO
             ========================================================================= */}
-        <section className="relative bg-[#00223a] text-white py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <Image
-              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2000&auto=format&fit=crop"
-              alt="AWMPACK Engineering and ISPM 15 Testing Facility"
-              fill
-              priority
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl space-y-5">
-              <span className="inline-block bg-[#0099e5]/20 border border-[#0099e5]/40 text-[#0099e5] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                Certified Quality &amp; Thermal Testing • Qatar
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                ISPM 15 Heat Treatment &amp; Pallet Engineering
-              </h1>
-              <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl">
-                Ensuring your high-value cargo travels safely across international borders. AWMPACK operates certified thermal heat-treatment kilns and CAD testing labs in Birkat Al-Awamer, Qatar.
-              </p>
-              <div className="pt-2 flex flex-wrap gap-4">
-                <button
-                  onClick={() => {
-                    setContactTopic("Book ISPM 15 Heat Treatment Batch");
-                    setContactOpen(true);
-                  }}
-                  className="px-8 py-3.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm rounded-full shadow-lg transition-all"
-                >
-                  Book ISPM 15 Heat Treatment Batch
-                </button>
-                <a
-                  href="#ispm15"
-                  className="px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-sm rounded-full backdrop-blur-sm transition-all"
-                >
-                  View ISPM 15 Specifications
-                </a>
+        <section className="relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2000&auto=format&fit=crop"
+            alt="AWMPACK Engineering and ISPM 15 Testing Facility"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/75 to-[#002b49]/35"></div>
+
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="max-w-3xl space-y-3.5">
+                <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
+                  <span>Certified Quality &amp; Thermal Testing • Qatar</span>
+                </div>
+
+                <div className="space-y-1">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                    ISPM 15 Heat Treatment &amp; Pallet Engineering
+                  </h1>
+                  <p className="text-blue-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                    IPPC Thermal Kilns • CAD Design • Load Testing Labs
+                  </p>
+                </div>
+
+                <p className="text-xs sm:text-sm text-gray-200 max-w-2xl leading-relaxed">
+                  Ensuring your high-value cargo travels safely across international borders. AWMPACK operates certified thermal heat-treatment kilns and CAD testing labs in Birkat Al-Awamer, Qatar.
+                </p>
+
+                <div className="pt-1.5 flex flex-wrap gap-3">
+                  <button
+                    onClick={() => {
+                      setContactTopic("Book ISPM 15 Heat Treatment Batch");
+                      setContactOpen(true);
+                    }}
+                    className="px-6 py-2.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs sm:text-sm rounded-full shadow-md hover:shadow-lg transition-all"
+                  >
+                    Book ISPM 15 Heat Treatment Batch
+                  </button>
+                  <a
+                    href="#ispm15"
+                    className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-xs sm:text-sm rounded-full backdrop-blur-sm transition-all"
+                  >
+                    View ISPM 15 Specifications
+                  </a>
+                </div>
               </div>
             </div>
           </div>
