@@ -70,7 +70,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           ========================================================================= */}
       <section className="relative w-full">
         {/* Hero Image Banner */}
-        <div className="relative w-full h-[540px] sm:h-[620px] lg:h-[700px] overflow-hidden">
+        <div className="relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
             alt="AWMPACK Industrial Wooden Pallets Warehouse Facility"
@@ -79,37 +79,39 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#001829] via-[#00223a]/80 to-[#002b49]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#001829] via-[#00223a]/85 to-[#002b49]/70"></div>
 
           {/* Hero Typography */}
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-3xl space-y-5">
-                <div className="inline-flex items-center space-x-2 bg-[#0099e5]/20 border border-[#0099e5]/40 text-[#0099e5] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full backdrop-blur-sm">
+              <div className="max-w-3xl space-y-3.5">
+                <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Waste to Usable Product • State of Qatar 🇶🇦</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
-                  Quality, Durability, and Reliability in Every Pallet
-                  <span className="block text-blue-200 font-semibold text-xl sm:text-3xl lg:text-4xl mt-3">
+                <div className="space-y-1">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                    Quality, Durability, and Reliability in Every Pallet
+                  </h1>
+                  <p className="text-blue-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
                     Al Waad Manufacturing Packaging Company (AWMPC)
-                  </span>
-                </h1>
+                  </p>
+                </div>
 
-                <p className="text-sm sm:text-base text-gray-200 max-w-2xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-200 max-w-2xl leading-relaxed">
                   Qatar&apos;s foremost manufacturer of industrial wooden pallets, custom export crates, certified ISPM 15 heat treatment, and compressed sawdust wood blocks. Based in Birkat Al-Awamer, Al Wukair.
                 </p>
 
-                <div className="pt-2 flex flex-wrap gap-4">
+                <div className="pt-1.5 flex flex-wrap gap-3">
                   <button
                     onClick={() => onOpenContactWithTopic("Pallet & Crating Quote Request")}
-                    className="px-8 py-3.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm rounded-full shadow-lg hover:shadow-xl transition-all"
+                    className="px-6 py-2.5 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs sm:text-sm rounded-full shadow-md hover:shadow-lg transition-all"
                   >
                     Request Factory Quote
                   </button>
                   <Link
                     href="/solutions"
-                    className="px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-sm rounded-full backdrop-blur-sm transition-all"
+                    className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-xs sm:text-sm rounded-full backdrop-blur-sm transition-all"
                   >
                     Explore Product Range
                   </Link>
@@ -120,14 +122,14 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         </div>
 
         {/* 4 Pillars White Section Below Hero */}
-        <div className="bg-white py-14 sm:py-16 border-b border-gray-100">
+        <div className="bg-white py-8 sm:py-10 border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                   Core Industrial Capabilities
                 </span>
-                <p className="text-xl sm:text-2xl font-black text-[#002b49] leading-snug mt-1">
+                <p className="text-lg sm:text-xl font-black text-[#002b49] leading-snug mt-0.5">
                   Pioneering Pallet Manufacturing &amp; Wood Recycling in Qatar
                 </p>
               </div>
