@@ -358,17 +358,38 @@ export default function SolutionsPage() {
                       </div>
                     </div>
 
-                    <div className="pt-6 mt-4 border-t border-gray-200/60 flex items-center justify-between">
-                      <button
-                        onClick={() => {
-                          setContactTopic(`Inquiry for ${prod.name}`);
-                          setContactOpen(true);
-                        }}
-                        className="w-full py-2.5 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#002b49] hover:text-white hover:border-[#002b49] transition-all text-center flex items-center justify-center space-x-1.5 shadow-2xs"
-                      >
-                        <span>Request Quote &amp; Specs</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
+                    <div className="pt-6 mt-4 border-t border-gray-200/60">
+                      {prod.id === "awmpc-pallets" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/awmpc-pallets"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>View Full Blueprint &amp; Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Factory Quote
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            setContactTopic(`Inquiry for ${prod.name}`);
+                            setContactOpen(true);
+                          }}
+                          className="w-full py-2.5 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#002b49] hover:text-white hover:border-[#002b49] transition-all text-center flex items-center justify-center space-x-1.5 shadow-2xs"
+                        >
+                          <span>Request Quote &amp; Specs</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      )}
                     </div>
                   </div>
                 );

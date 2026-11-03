@@ -372,11 +372,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/solutions#awmpc-pallets"
-                              onClick={() => handleNavClick("/solutions#awmpc-pallets")}
-                              className="text-[#0066cc] hover:underline block font-semibold"
+                              href="/solutions/awmpc-pallets"
+                              onClick={() => handleNavClick("/solutions/awmpc-pallets")}
+                              className="text-[#0099e5] hover:underline block font-bold"
                             >
-                              AWMPC Pallets
+                              AWMPC Pallets (Proprietary)
                             </Link>
                           </li>
                           <li>
@@ -983,21 +983,35 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 </p>
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <Link
-                    href="/solutions#wooden-pallets"
+                    href="/solutions/awmpc-pallets"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[#0099e5] font-bold py-1"
+                  >
+                    ★ AWMPC Pallets
+                  </Link>
+                  <Link
+                    href="/solutions#industrial-pallets"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
-                    Wooden Pallets
+                    Industrial Pallets
                   </Link>
                   <Link
-                    href="/solutions#custom-crates"
+                    href="/solutions#used-pallets"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                  >
+                    Used Pallets
+                  </Link>
+                  <Link
+                    href="/solutions#wooden-boxes-crates"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
                     Custom Crates
                   </Link>
                   <Link
-                    href="/solutions#sawdust-blocks"
+                    href="/solutions#compressed-sawdust-wood-blocks"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
@@ -1008,7 +1022,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
-                    ISPM 15 Heat Treatment
+                    ISPM 15 Treatment
                   </Link>
                 </div>
               </div>
