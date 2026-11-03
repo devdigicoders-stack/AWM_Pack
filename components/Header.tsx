@@ -91,31 +91,31 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-white transition-all duration-200">
       {/* Top Notification / Fast Contact Strip */}
-      <div className="bg-[#002b49] text-white text-[11px] py-1.5 px-4 hidden md:block border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-6">
+      <div className="bg-[#002b49] text-white text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 hidden md:block border-b border-blue-900/40">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap overflow-hidden">
             <span className="flex items-center text-blue-200 font-medium">
-              <MapPin className="w-3.5 h-3.5 mr-1 text-[#0099e5]" />
+              <MapPin className="w-3.5 h-3.5 mr-1 text-[#0099e5] flex-shrink-0" />
               Birkat Al-Awamer, Al Wukair, State of Qatar
             </span>
             <span className="flex items-center text-blue-200 font-medium">
-              <Phone className="w-3.5 h-3.5 mr-1 text-[#0099e5]" />
+              <Phone className="w-3.5 h-3.5 mr-1 text-[#0099e5] flex-shrink-0" />
               +974 4039 4581 / +974 5119 1223
             </span>
-            <span className="flex items-center text-blue-200 font-medium">
-              <Mail className="w-3.5 h-3.5 mr-1 text-[#0099e5]" />
+            <span className="hidden xl:flex items-center text-blue-200 font-medium">
+              <Mail className="w-3.5 h-3.5 mr-1 text-[#0099e5] flex-shrink-0" />
               maher@awmpack.com
             </span>
           </div>
 
-          <div className="flex items-center space-x-3 text-xs">
+          <div className="flex items-center space-x-2.5 sm:space-x-3 text-xs whitespace-nowrap flex-shrink-0">
             <span className="bg-[#0099e5]/20 text-[#0099e5] border border-[#0099e5]/40 px-2 py-0.5 rounded text-[10px] font-bold">
               ICV Certified
             </span>
             <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded text-[10px] font-bold">
               ISPM 15 Heat Treated
             </span>
-            <span className="text-gray-300">Made in Qatar 🇶🇦</span>
+            <span className="text-gray-300 font-medium">Made in Qatar 🇶🇦</span>
           </div>
         </div>
       </div>
@@ -146,8 +146,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </Link>
 
           {/* Center Navigation Links with Hover Bridge */}
-          <div className="hidden xl:flex items-center space-x-1 py-1">
-            {/* 1. PRODUCTS & SOLUTIONS */}
+          <div className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0">
+            {/* 1. SOLUTIONS */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter("solutions")}
@@ -156,13 +156,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/solutions"
                 onClick={() => handleNavClick("/solutions")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "solutions"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                Products & Solutions
+                Solutions
               </Link>
             </div>
 
@@ -175,17 +175,17 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/industries"
                 onClick={() => handleNavClick("/industries")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "industries"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                Industries Served
+                Industries
               </Link>
             </div>
 
-            {/* 3. SUSTAINABILITY & RECYCLING */}
+            {/* 3. SUSTAINABILITY */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter("sustainability")}
@@ -194,17 +194,17 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/sustainability"
                 onClick={() => handleNavClick("/sustainability")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "sustainability"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                Sustainability & Recycling
+                Sustainability
               </Link>
             </div>
 
-            {/* 4. ISPM 15 & ENGINEERING */}
+            {/* 4. ENGINEERING */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter("engineering")}
@@ -213,17 +213,17 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/engineering"
                 onClick={() => handleNavClick("/engineering")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "engineering"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                ISPM 15 & Quality
+                Engineering
               </Link>
             </div>
 
-            {/* 5. NEWS & CASE STUDIES */}
+            {/* 5. NEWS & INSIGHTS */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter("insights")}
@@ -232,13 +232,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/insights"
                 onClick={() => handleNavClick("/insights")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "insights"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                News & Projects
+                News & Insights
               </Link>
             </div>
 
@@ -251,28 +251,28 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/about"
                 onClick={() => handleNavClick("/about")}
-                className={`px-4 py-2 text-sm font-bold transition-all rounded-full ${
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "about"
-                    ? "bg-[#edf2f7] text-[#003366]"
-                    : "text-[#002b49] hover:text-[#0099e5]"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                About AWMPACK
+                About Us
               </Link>
             </div>
           </div>
 
           {/* Right Action Icons & Button */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
-            {/* Dark Blue "Contact Us" Button */}
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+            {/* Dark Blue "Contact" Button */}
             <button
               onClick={() => {
                 closeDropdown();
                 onOpenContact?.();
               }}
-              className="bg-[#003366] hover:bg-[#002244] text-white font-bold text-xs sm:text-sm px-5 sm:px-6 py-2.5 rounded-full shadow-sm hover:shadow transition-all"
+              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap"
             >
-              Contact Factory
+              Contact
             </button>
 
             {/* Search Icon */}
@@ -281,46 +281,47 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 closeDropdown();
                 onOpenSearch?.();
               }}
-              className="p-1.5 text-[#002b49] hover:text-[#0099e5] transition-colors"
+              className="p-2 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex-shrink-0"
               title="Search AWMPACK"
             >
               <Search className="w-5 h-5 stroke-[2.2]" />
             </button>
 
-            {/* Languages (A 文 Icon) */}
+            {/* Languages Icon */}
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="p-1.5 text-[#002b49] hover:text-[#0099e5] transition-colors flex items-center space-x-1"
+                className="p-2 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex items-center justify-center flex-shrink-0"
                 title="Select language"
               >
                 <Languages className="w-5 h-5 stroke-[2.2]" />
-                <span className="text-xs font-bold hidden sm:inline">EN / عربي</span>
               </button>
 
               {langMenuOpen && (
-                <div className="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-xl border border-gray-200 py-1.5 z-50 text-xs">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 py-1.5 z-50 text-xs">
                   <button
                     onClick={() => {
                       setSelectedLanguage("English");
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3.5 py-2 hover:bg-gray-50 ${
+                    className={`w-full text-left px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${
                       selectedLanguage === "English" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
                     }`}
                   >
-                    English (Qatar & Global)
+                    <span>English (Qatar & Global)</span>
+                    {selectedLanguage === "English" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
                   </button>
                   <button
                     onClick={() => {
                       setSelectedLanguage("العربية");
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-right px-3.5 py-2 hover:bg-gray-50 ${
+                    className={`w-full text-right px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${
                       selectedLanguage === "العربية" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
                     }`}
                   >
-                    العربية (دولة قطر)
+                    <span>العربية (دولة قطر)</span>
+                    {selectedLanguage === "العربية" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
                   </button>
                 </div>
               )}
@@ -329,7 +330,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#002b49] xl:hidden"
+              className="p-1.5 text-[#002b49] lg:hidden"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
