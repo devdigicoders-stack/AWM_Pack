@@ -315,6 +315,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-[#0099e5] transition-colors">
+                  Factory &amp; Product Gallery
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-[#0099e5] transition-colors font-bold text-[#0099e5]">
                   Contact &amp; Factory Location
                 </Link>

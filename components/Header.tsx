@@ -268,6 +268,17 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 About Us
               </Link>
             </div>
+
+            {/* 7. GALLERY */}
+            <div className="relative py-2">
+              <Link
+                href="/gallery"
+                onClick={() => handleNavClick("/gallery")}
+                className="px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
+              >
+                Gallery
+              </Link>
+            </div>
           </div>
 
           {/* Right Action Icons & Button */}
@@ -1095,6 +1106,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     className="block text-[#002b49] hover:text-[#0099e5]"
                   >
                     About AWMPACK
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-[#002b49] hover:text-[#0099e5]"
+                  >
+                    Factory Gallery
                   </Link>
                   <Link
                     href="/contact"
