@@ -415,11 +415,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                           </li>
                           <li>
                             <Link
-                              href="/solutions#special-pallets"
-                              onClick={() => handleNavClick("/solutions#special-pallets")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/special-pallets"
+                              onClick={() => handleNavClick("/solutions/special-pallets")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
-                              Special Pallets
+                              Special Pallets (Custom CAD)
                             </Link>
                           </li>
                           <li>
@@ -474,11 +474,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/solutions#heat-treatment"
-                              onClick={() => handleNavClick("/solutions#heat-treatment")}
+                              href="/solutions/heat-treatment"
+                              onClick={() => handleNavClick("/solutions/heat-treatment")}
                               className="text-[#0066cc] hover:underline block font-semibold text-amber-600"
                             >
-                              Heat Treatment (ISPM 15)
+                              ISPM 15 Heat Treatment Kilns
                             </Link>
                           </li>
                           <li>
