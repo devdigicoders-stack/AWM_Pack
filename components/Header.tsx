@@ -424,9 +424,9 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                           </li>
                           <li>
                             <Link
-                              href="/solutions#one-way-pallets"
-                              onClick={() => handleNavClick("/solutions#one-way-pallets")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/one-way-pallets"
+                              onClick={() => handleNavClick("/solutions/one-way-pallets")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
                               One-Way-Pallets (OWP)
                             </Link>
@@ -440,26 +440,26 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/solutions#wooden-boxes-crates"
-                              onClick={() => handleNavClick("/solutions#wooden-boxes-crates")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/wooden-boxes-crates"
+                              onClick={() => handleNavClick("/solutions/wooden-boxes-crates")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
                               Wooden Boxes &amp; Crates
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/solutions#pallet-collars"
-                              onClick={() => handleNavClick("/solutions#pallet-collars")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/pallet-collars"
+                              onClick={() => handleNavClick("/solutions/pallet-collars")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
                               Pallet Collars
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/solutions#compressed-sawdust-wood-blocks"
-                              onClick={() => handleNavClick("/solutions#compressed-sawdust-wood-blocks")}
+                              href="/solutions/compressed-sawdust-wood-blocks"
+                              onClick={() => handleNavClick("/solutions/compressed-sawdust-wood-blocks")}
                               className="text-[#0066cc] hover:underline block font-semibold text-emerald-700"
                             >
                               Compressed Sawdust Blocks
@@ -997,21 +997,21 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     Industrial Pallets
                   </Link>
                   <Link
-                    href="/solutions#used-pallets"
+                    href="/solutions/used-pallets"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
                     Used Pallets
                   </Link>
                   <Link
-                    href="/solutions#wooden-boxes-crates"
+                    href="/solutions/wooden-boxes-crates"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
                     Custom Crates
                   </Link>
                   <Link
-                    href="/solutions#compressed-sawdust-wood-blocks"
+                    href="/solutions/compressed-sawdust-wood-blocks"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >

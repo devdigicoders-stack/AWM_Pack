@@ -473,6 +473,82 @@ export default function SolutionsPage() {
                             Book Kiln Batch
                           </button>
                         </div>
+                      ) : prod.id === "pallet-collars" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/pallet-collars"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>Collapsible Collars Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Factory Quote
+                          </button>
+                        </div>
+                      ) : prod.id === "one-way-pallets" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/one-way-pallets"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>Single-Trip Export Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Factory Quote
+                          </button>
+                        </div>
+                      ) : prod.id === "wooden-boxes-crates" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/wooden-boxes-crates"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>Seaworthy Crates &amp; Boxes Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Custom Quote
+                          </button>
+                        </div>
+                      ) : prod.id === "compressed-sawdust-wood-blocks" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/compressed-sawdust-wood-blocks"
+                            className="w-full py-2.5 px-4 rounded-full bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-600 transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>Eco Sawdust Blocks Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Blocks Quote
+                          </button>
+                        </div>
                       ) : (
                         <button
                           onClick={() => {
