@@ -192,21 +192,25 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
                 />
               </div>
 
-              <div className="pt-2 flex items-center justify-between">
-                <div className="text-[11px] text-gray-500 space-y-0.5">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="text-[11px] text-gray-500 space-y-0.5 w-full sm:w-auto">
                   <p className="flex items-center">
                     <PhoneCall className="w-3 h-3 mr-1 text-[#0099e5]" />
-                    Direct: +974 5119 1223
+                    Direct: +974 5119 1223 / +974 4039 4581
                   </p>
-                  <p className="flex items-center">
-                    <MapPin className="w-3 h-3 mr-1 text-[#0099e5]" />
-                    Birkat Al-Awamer, Al Wukair
-                  </p>
+                  <a
+                    href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20inquire%20about%20pallets"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-bold text-[11px]"
+                  >
+                    Chat on WhatsApp (+974 5119 1223) →
+                  </a>
                 </div>
 
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-full bg-[#003366] hover:bg-[#002244] text-white text-xs font-bold shadow-md transition-all flex items-center space-x-1.5"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white text-xs font-bold shadow-md transition-all flex items-center justify-center space-x-1.5 whitespace-nowrap"
                 >
                   <span>Submit Inquiry</span>
                   <Send className="w-3.5 h-3.5" />

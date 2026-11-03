@@ -254,13 +254,33 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4 text-xs">
+                    {/* Direct WhatsApp Callout Button */}
+                    <a
+                      href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20inquire%20about%20industrial%20pallets%20and%20crating"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-center space-x-2 w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs shadow-md transition-all"
+                    >
+                      <span>Quick Chat on WhatsApp (+974 5119 1223)</span>
+                    </a>
+
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 rounded-full bg-[#0099e5]/20 flex items-center justify-center shrink-0">
                         <Phone className="w-4 h-4 text-[#0099e5]" />
                       </div>
                       <div>
-                        <span className="text-gray-400 block text-[10px]">Direct Mobile / WhatsApp:</span>
+                        <span className="text-gray-400 block text-[10px]">Direct Mobile (Eng. Maher):</span>
                         <a href="tel:+97451191223" className="font-bold text-white hover:text-[#0099e5] text-sm">+974 5119 1223</a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-[#0099e5]/20 flex items-center justify-center shrink-0">
+                        <Phone className="w-4 h-4 text-[#0099e5]" />
+                      </div>
+                      <div>
+                        <span className="text-gray-400 block text-[10px]">General Sales & Inquiries:</span>
+                        <a href="tel:+97466864923" className="font-bold text-white hover:text-[#0099e5] text-sm">+974 6686 4923</a>
                       </div>
                     </div>
 
@@ -279,8 +299,11 @@ export default function ContactPage() {
                         <Mail className="w-4 h-4 text-[#0099e5]" />
                       </div>
                       <div>
-                        <span className="text-gray-400 block text-[10px]">Direct Email:</span>
-                        <a href="mailto:maher@awmpack.com" className="font-bold text-white hover:text-[#0099e5]">maher@awmpack.com</a>
+                        <span className="text-gray-400 block text-[10px]">Direct & Factory Emails:</span>
+                        <div className="flex flex-col space-y-0.5">
+                          <a href="mailto:maher@awmpack.com" className="font-bold text-white hover:text-[#0099e5]">maher@awmpack.com</a>
+                          <a href="mailto:info@awmpack.com" className="font-medium text-blue-200 hover:text-white">info@awmpack.com</a>
+                        </div>
                       </div>
                     </div>
 
@@ -305,6 +328,14 @@ export default function ContactPage() {
                           Birkat Al-Awamer, Al Wukair,<br />
                           State of Qatar (P.O. Box 12451)
                         </p>
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=Birkat+Al-Awamer+Zone+91+Street+3012+Qatar"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center text-[#0099e5] hover:underline font-bold mt-1 text-[11px]"
+                        >
+                          <span>Open in Google Maps →</span>
+                        </a>
                       </div>
                     </div>
                   </div>

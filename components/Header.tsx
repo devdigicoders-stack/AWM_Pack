@@ -102,6 +102,14 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Phone className="w-3.5 h-3.5 mr-1 text-[#0099e5] flex-shrink-0" />
               +974 4039 4581 / +974 5119 1223
             </span>
+            <a
+              href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20inquire%20about%20pallets"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden 2xl:flex items-center text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
+            >
+              WhatsApp: +974 5119 1223
+            </a>
             <span className="hidden xl:flex items-center text-blue-200 font-medium">
               <Mail className="w-3.5 h-3.5 mr-1 text-[#0099e5] flex-shrink-0" />
               maher@awmpack.com
