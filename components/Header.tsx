@@ -362,116 +362,30 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                   {/* Left Column: PACKAGING SOLUTIONS */}
                   <div className="col-span-9 space-y-6">
                     <h3 className="text-xs font-black uppercase tracking-wider text-[#003366]">
-                      AWMPACK INDUSTRIAL PRODUCTS
+                      AWMPACK OFFICIAL PRODUCT PORTFOLIO
                     </h3>
 
                     <div className="grid grid-cols-4 gap-6">
-                      {/* Pallets */}
+                      {/* Pallets Column 1 */}
                       <div className="space-y-3">
-                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Pallets</h4>
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Pallets Line (A)</h4>
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/solutions#wooden-pallets"
-                              onClick={() => handleNavClick("/solutions#wooden-pallets")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions#awmpc-pallets"
+                              onClick={() => handleNavClick("/solutions#awmpc-pallets")}
+                              className="text-[#0066cc] hover:underline block font-semibold"
                             >
-                              Standard Wooden Pallets
+                              AWMPC Pallets
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/solutions#custom-pallets"
-                              onClick={() => handleNavClick("/solutions#custom-pallets")}
+                              href="/solutions#industrial-pallets"
+                              onClick={() => handleNavClick("/solutions#industrial-pallets")}
                               className="text-[#0066cc] hover:underline block"
                             >
-                              Custom / Special Pallets
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#metal-pallets"
-                              onClick={() => handleNavClick("/solutions#metal-pallets")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Heavy Metal Pallets
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#one-way-pallets"
-                              onClick={() => handleNavClick("/solutions#one-way-pallets")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              One-Way & Half Pallets
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Boxes & Crates */}
-                      <div className="space-y-3">
-                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Boxes & Crates</h4>
-                        <ul className="space-y-2 text-sm">
-                          <li>
-                            <Link
-                              href="/solutions#wooden-boxes"
-                              onClick={() => handleNavClick("/solutions#wooden-boxes")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Heavy Wooden Boxes
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#custom-crates"
-                              onClick={() => handleNavClick("/solutions#custom-crates")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Custom Export Crates
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#pallet-collars"
-                              onClick={() => handleNavClick("/solutions#pallet-collars")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Hinged Pallet Collars
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#metal-cages"
-                              onClick={() => handleNavClick("/solutions#metal-cages")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Metal Cages & Stillages
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Materials & Blocks */}
-                      <div className="space-y-3">
-                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Materials & Recycled</h4>
-                        <ul className="space-y-2 text-sm">
-                          <li>
-                            <Link
-                              href="/solutions#sawdust-blocks"
-                              onClick={() => handleNavClick("/solutions#sawdust-blocks")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              Compressed Sawdust Blocks
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#heat-treated-wood"
-                              onClick={() => handleNavClick("/solutions#heat-treated-wood")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              ISPM 15 Treated Timber
+                              Industrial Pallets
                             </Link>
                           </li>
                           <li>
@@ -480,59 +394,109 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                               onClick={() => handleNavClick("/solutions#used-pallets")}
                               className="text-[#0066cc] hover:underline block"
                             >
-                              Used & Reconditioned
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/sustainability#waste-to-product"
-                              onClick={() => handleNavClick("/sustainability#waste-to-product")}
-                              className="text-[#0066cc] hover:underline block font-semibold text-emerald-700"
-                            >
-                              Waste to Usable Products
+                              Used Pallets
                             </Link>
                           </li>
                         </ul>
                       </div>
 
-                      {/* Special Services */}
+                      {/* Pallets Column 2 */}
                       <div className="space-y-3">
-                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Consulting & Care</h4>
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Pallets Line (B)</h4>
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/engineering#heat-treatment"
-                              onClick={() => handleNavClick("/engineering#heat-treatment")}
+                              href="/solutions#half-pallets"
+                              onClick={() => handleNavClick("/solutions#half-pallets")}
                               className="text-[#0066cc] hover:underline block"
+                            >
+                              Half Pallets (DIN 15146)
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/solutions#special-pallets"
+                              onClick={() => handleNavClick("/solutions#special-pallets")}
+                              className="text-[#0066cc] hover:underline block"
+                            >
+                              Special Pallets
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/solutions#one-way-pallets"
+                              onClick={() => handleNavClick("/solutions#one-way-pallets")}
+                              className="text-[#0066cc] hover:underline block"
+                            >
+                              One-Way-Pallets (OWP)
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* Boxes & Collars */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Boxes &amp; Collars</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li>
+                            <Link
+                              href="/solutions#wooden-boxes-crates"
+                              onClick={() => handleNavClick("/solutions#wooden-boxes-crates")}
+                              className="text-[#0066cc] hover:underline block"
+                            >
+                              Wooden Boxes &amp; Crates
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/solutions#pallet-collars"
+                              onClick={() => handleNavClick("/solutions#pallet-collars")}
+                              className="text-[#0066cc] hover:underline block"
+                            >
+                              Pallet Collars
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/solutions#compressed-sawdust-wood-blocks"
+                              onClick={() => handleNavClick("/solutions#compressed-sawdust-wood-blocks")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-emerald-700"
+                            >
+                              Compressed Sawdust Blocks
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* Treatments & Services */}
+                      <div className="space-y-3">
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase">Treatments &amp; Consulting</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li>
+                            <Link
+                              href="/solutions#heat-treatment"
+                              onClick={() => handleNavClick("/solutions#heat-treatment")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-amber-600"
                             >
                               Heat Treatment (ISPM 15)
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/solutions#pallet-repair"
-                              onClick={() => handleNavClick("/solutions#pallet-repair")}
+                              href="/solutions#services"
+                              onClick={() => handleNavClick("/solutions#services")}
                               className="text-[#0066cc] hover:underline block"
                             >
-                              Pallet Repair & Sorting
+                              Pallet Repair &amp; Pooling
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/solutions#pallet-pooling"
-                              onClick={() => handleNavClick("/solutions#pallet-pooling")}
+                              href="/solutions#services"
+                              onClick={() => handleNavClick("/solutions#services")}
                               className="text-[#0066cc] hover:underline block"
                             >
-                              Closed-Loop Pallet Pooling
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/solutions#consulting"
-                              onClick={() => handleNavClick("/solutions#consulting")}
-                              className="text-[#0066cc] hover:underline block"
-                            >
-                              &quot;No-Cure No-Pay&quot; Logistics
+                              No-Cure No-Pay Consulting
                             </Link>
                           </li>
                         </ul>

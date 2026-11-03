@@ -1,46 +1,203 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SearchModal from "../../components/SearchModal";
 import ContactModal from "../../components/ContactModal";
 import {
   Package,
-  Truck,
   Layers,
-  ArrowRight,
   ShieldCheck,
-  CheckCircle2,
-  Leaf,
   Boxes,
+  Truck,
   RotateCcw,
-  Zap,
-  BarChart3,
-  Award,
-  Download,
-  Activity,
-  Cpu,
-  ChevronRight,
-  Search,
-  Phone,
+  CheckCircle2,
+  FileCheck,
+  TrendingDown,
+  ArrowRight,
   Flame,
+  Leaf,
+  Award,
+  Factory,
+  Sparkles,
   Recycle,
+  Tag,
+  HelpCircle,
 } from "lucide-react";
 
 export default function SolutionsPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [contactTopic, setContactTopic] = useState("Standard Wooden Pallets");
+  const [contactTopic, setContactTopic] = useState("Product Specifications");
+  const [activeTab, setActiveTab] = useState("all");
+
+  const products = [
+    {
+      id: "awmpc-pallets",
+      category: "pallets",
+      name: "AWMPC Pallets",
+      badge: "Proprietary Line • Euro Alternative",
+      description:
+        "Branded with the official 'AWMPC' marking, these high-strength wooden pallets are engineered as a cost-effective, high-load alternative to standard Euro pallets while complying with all industrial warehouse standards.",
+      specs: [
+        "Dimensions: 1200 x 800 mm & 1200 x 1000 mm",
+        "Load rating: Static 4,000 kg / Dynamic 1,500 kg",
+        "Cost-effective alternative to standard Euro pallets",
+        "Certified IPPC ISPM-15 heat-treated for export",
+      ],
+      icon: Package,
+    },
+    {
+      id: "industrial-pallets",
+      category: "pallets",
+      name: "Industrial Pallets",
+      badge: "Heavy-Duty Warehousing",
+      description:
+        "Standard industrial-grade pallets (1200 x 1000 x 145 mm) engineered for factories, heavy manufacturing, automated racking, and petrochemical handling across Qatar.",
+      specs: [
+        "Standard size: 1200 x 1000 x 145 mm (custom sizes available)",
+        "Entry: 4-way forklift entry (or 2-way with heavy stringers)",
+        "Materials: Pine, spruce, poplar, beech, and hardwoods",
+        "Certified structural ring-shank nails & chamfered edges",
+      ],
+      icon: Factory,
+    },
+    {
+      id: "used-pallets",
+      category: "pallets",
+      name: "Used Pallets",
+      badge: "Cost-Effective & Sustainable",
+      description:
+        "Thoroughly inspected, sorted, and reconditioned pre-owned pallets designed to cycle 5 to 6 times. Offers significant cost savings for local warehouse storage while maintaining full ISPM 15 compliance.",
+      specs: [
+        "Graded into distinct quality tiers (Grade A & B)",
+        "Cycles 5–6 times under proper warehouse handling",
+        "Substantial cost savings vs. new timber pallets",
+        "Inspected and certified for load safety & stability",
+      ],
+      icon: RotateCcw,
+    },
+    {
+      id: "half-pallets",
+      category: "pallets",
+      name: "Half Pallets",
+      badge: "Retail & POP Displays • DIN 15146",
+      description:
+        "Compact 600 x 800 x 144 mm footprint (including Düsseldorf Pallets DD adhering to DIN 15146). Perfect for retail restock, in-store Point of Purchase (POP) displays, and narrow door navigation without re-palletizing.",
+      specs: [
+        "Dimensions: 600 x 800 x 144 mm (Düsseldorf DD standard)",
+        "Ideal for supermarket retail & in-store display stands",
+        "Narrow door & compact corridor clearance",
+        "IPPC ISPM-15 compliant and kiln-dried",
+      ],
+      icon: Boxes,
+    },
+    {
+      id: "special-pallets",
+      category: "pallets",
+      name: "Special Pallets",
+      badge: "Custom Engineering",
+      description:
+        "Tailor-made pallets built strictly to client payload dimensions, CAD drawings, and weight distribution. Engineered for chemical drums, heavy machinery, pipeline spools, and oversized project cargo.",
+      specs: [
+        "Custom dimensions, deckboard thickness & runner notches",
+        "Engineered for Ras Laffan & Mesaieed heavy petrochemical cargo",
+        "Reinforced bottom deckboards for four-drum CP-7 configurations",
+        "Collaborative CAD 3D modeling and load simulation",
+      ],
+      icon: Layers,
+    },
+    {
+      id: "one-way-pallets",
+      category: "pallets",
+      name: "One-Way-Pallets (OWP)",
+      badge: "Lightweight Export Solutions",
+      description:
+        "Cost-optimized, single-trip wooden pallets engineered for outbound international air and sea freight where pallets are not returned. Low tare weight saves significant freight expenditure.",
+      specs: [
+        "Ultra-low tare weight to reduce air & ocean freight fees",
+        "Eliminates pallet retrieval and reverse logistics costs",
+        "Fully stamped with IPPC ISPM-15 heat treatment seal",
+        "Available in standard 1200x800mm, 1200x1000mm & custom",
+      ],
+      icon: Truck,
+    },
+    {
+      id: "pallet-collars",
+      category: "crates",
+      name: "Pallet Collars",
+      badge: "Modular Foldable Storage",
+      description:
+        "Transform standard pallets into stackable, secure storage boxes. Constructed with solid softwood and galvanized steel corner hinges that fold completely flat during return logistics to save 75% warehouse space.",
+      specs: [
+        "Sizes: 1200x800mm, 800x600mm, 1200x1000mm & custom",
+        "Heavy-duty galvanized steel corner hinges with interlocking pins",
+        "Stackable up to 5 tiers for flexible bulk cargo depth",
+        "Folds flat when empty for efficient reverse logistics",
+      ],
+      icon: Boxes,
+    },
+    {
+      id: "wooden-boxes-crates",
+      category: "crates",
+      name: "Wooden Boxes & Crates",
+      badge: "Seaworthy Maritime Packaging",
+      description:
+        "Solid timber heavy-duty boxes and export crates engineered to protect sensitive machinery, electrical switchgear, and fragile cargo during maritime transit through Hamad Port.",
+      specs: [
+        "Solid timber framing with plywood or solid board sheathing",
+        "Seaworthy moisture protection with VCI barrier foil & desiccants",
+        "Internal blocking, custom saddles, and cushioning bracing",
+        "Crane lifting lug points and heavy-duty skid runners",
+      ],
+      icon: ShieldCheck,
+    },
+    {
+      id: "compressed-sawdust-wood-blocks",
+      category: "materials",
+      name: "Compressed Sawdust Wood Blocks",
+      badge: "Waste to Usable Product",
+      description:
+        "Manufactured in-house from 100% recycled industrial wood waste and sawdust under extreme heat and hydraulic pressure. Delivers twice the nail-gripping strength of standard solid wood and is naturally ISPM-15 exempt.",
+      specs: [
+        "Provides 2x nail withdrawal/gripping strength vs. solid wood",
+        "Naturally ISPM-15 exempt (engineered composite wood product)",
+        "Uniform density: zero knots, cracks, or warping splits",
+        "Water-resistant, pest-proof, and 100% eco-friendly & recyclable",
+      ],
+      icon: Recycle,
+    },
+    {
+      id: "heat-treatment",
+      category: "services",
+      name: "Heat Treatment (ISPM 15)",
+      badge: "Certified Thermal Kilns • FAO IPPC",
+      description:
+        "Certified thermal heat-treatment kilns operating in Birkat Al-Awamer. Heats timber cores to a minimum of 56°C for 30 minutes, applying official IPPC 'HT' stamps and issuing Phytosanitary export certificates.",
+      specs: [
+        "Core heating: 56°C for at least 30 minutes in certified kilns",
+        "Official IPPC seal stamped on two opposite pallet faces",
+        "Eliminates customs quarantine delays worldwide (EU, USA, China, GCC)",
+        "Complete Phytosanitary compliance documentation provided",
+      ],
+      icon: Flame,
+    },
+  ];
+
+  const filteredProducts =
+    activeTab === "all"
+      ? products
+      : products.filter((p) => p.category === activeTab);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#002b49] selection:bg-blue-100 selection:text-[#003366]">
       <Header
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => {
-          setContactTopic("General Pallet & Crating Solutions");
+          setContactTopic("General Product & Solutions Inquiries");
           setContactOpen(true);
         }}
       />
@@ -102,431 +259,242 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Quick Nav Anchor Bar */}
+        {/* =========================================================================
+            QUICK FILTER TABS & PRODUCT CATEGORY NAVIGATION
+            ========================================================================= */}
         <div className="sticky top-[73px] z-30 bg-[#edf2f7] border-b border-gray-200 py-3 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between overflow-x-auto text-xs font-bold whitespace-nowrap gap-4">
-            <span className="text-gray-400 uppercase tracking-wider hidden sm:inline">Jump to:</span>
-            <div className="flex items-center space-x-2 sm:space-x-4">
-              <a href="#pallets" className="text-[#002b49] hover:text-[#0099e5] px-2.5 py-1 rounded-md hover:bg-white/80">Pallets</a>
-              <a href="#crates" className="text-[#002b49] hover:text-[#0099e5] px-2.5 py-1 rounded-md hover:bg-white/80">Boxes &amp; Crates</a>
-              <a href="#materials" className="text-[#002b49] hover:text-[#0099e5] px-2.5 py-1 rounded-md hover:bg-white/80">Sawdust Blocks &amp; Materials</a>
-              <a href="#treatments" className="text-[#002b49] hover:text-[#0099e5] px-2.5 py-1 rounded-md hover:bg-white/80">ISPM 15 &amp; Services</a>
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-400 uppercase tracking-wider hidden sm:inline mr-2">Category:</span>
+              {[
+                { id: "all", label: "All Products & Services (10)" },
+                { id: "pallets", label: "Pallets (6)" },
+                { id: "crates", label: "Boxes & Collars (2)" },
+                { id: "materials", label: "Recycled Wood Blocks (1)" },
+                { id: "services", label: "ISPM 15 & Services (1)" },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-3.5 py-1.5 rounded-full transition-all ${
+                    activeTab === tab.id
+                      ? "bg-[#002b49] text-white shadow-xs"
+                      : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
+
             <button
               onClick={() => {
-                setContactTopic("Custom Pallets Quote");
+                setContactTopic("Full Catalog Quotation");
                 setContactOpen(true);
               }}
               className="text-[#0099e5] hover:underline font-bold"
             >
-              Get Factory Quote →
+              Request Price List →
             </button>
           </div>
         </div>
 
         {/* =========================================================================
-            SECTION 1: PALLET MANUFACTURING
+            THE COMPLETE 10 PRODUCTS & SERVICES PORTFOLIO (From awmpack.com)
             ========================================================================= */}
-        <section className="py-20 bg-white border-b border-gray-100" id="pallets">
+        <section className="py-20 bg-white border-b border-gray-100" id="catalog">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
-                Core Production
+                Complete Product Range
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight mt-1">
-                Industrial Pallet Manufacturing
+                Industrial Packaging &amp; Pallet Catalog
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Manufactured in our Birkat Al-Awamer automated production plant adhering to strict international load-bearing standards and dimensions.
+                Every product is manufactured in Birkat Al-Awamer, Qatar to strict international standards (ISO 9001, ISO 14001, IPPC ISPM-15, and FSC).
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* 1. Standard Wooden Pallets */}
-              <div id="wooden-pallets" className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold">
-                    <Package className="w-6 h-6 text-[#0099e5]" />
-                  </div>
-                  <h3 className="text-xl font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors">
-                    Standard Wooden Pallets
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Heavy-duty 4-way and 2-way entry pallets built to standard Euro (1200x800mm) and GMA industrial specifications (1200x1000mm).
-                  </p>
-                  <ul className="text-xs text-gray-700 space-y-2 pt-2 border-t border-gray-200">
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Static load rating up to 4,000 kg</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Precision automated nailing</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Certified ISPM 15 heat-treated</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-6">
-                  <button
-                    onClick={() => {
-                      setContactTopic("Standard Wooden Pallets Quote");
-                      setContactOpen(true);
-                    }}
-                    className="w-full text-center py-2 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#003366] hover:text-white hover:border-[#003366] transition-all"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProducts.map((prod) => {
+                const IconComponent = prod.icon;
+                return (
+                  <div
+                    key={prod.id}
+                    id={prod.id}
+                    className="bg-[#f8fafc] border border-gray-200/90 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#0099e5]/60 transition-all group"
                   >
-                    Inquire About Standard Pallets
-                  </button>
-                </div>
-              </div>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
+                          <IconComponent className="w-6 h-6 text-[#0099e5]" />
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-[#003366] border border-blue-200/60">
+                          {prod.badge}
+                        </span>
+                      </div>
 
-              {/* 2. Custom Engineered Pallets */}
-              <div id="custom-pallets" className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold">
-                    <Layers className="w-6 h-6 text-[#0099e5]" />
-                  </div>
-                  <h3 className="text-xl font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors">
-                    Custom / Special Pallets
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Bespoke pallets engineered to exact client payload geometry for chemical drums, heavy machinery, piping spools, and oversized cargo.
-                  </p>
-                  <ul className="text-xs text-gray-700 space-y-2 pt-2 border-t border-gray-200">
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Custom dimensions &amp; notch positions</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Reinforced bottom chamfered deckboards</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Engineered for Ras Laffan / Mesaieed</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-6">
-                  <button
-                    onClick={() => {
-                      setContactTopic("Custom Pallet Engineering");
-                      setContactOpen(true);
-                    }}
-                    className="w-full text-center py-2 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#003366] hover:text-white hover:border-[#003366] transition-all"
-                  >
-                    Inquire Custom Engineering
-                  </button>
-                </div>
-              </div>
+                      <h3 className="text-xl font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors">
+                        {prod.name}
+                      </h3>
 
-              {/* 3. Heavy Metal Pallets */}
-              <div id="metal-pallets" className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold">
-                    <ShieldCheck className="w-6 h-6 text-[#0099e5]" />
-                  </div>
-                  <h3 className="text-xl font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors">
-                    Heavy Metal Pallets
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Galvanized and painted steel pallets engineered for extreme load conditions, chemical resistance, fire prevention, and outdoor yard storage.
-                  </p>
-                  <ul className="text-xs text-gray-700 space-y-2 pt-2 border-t border-gray-200">
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Extreme dynamic capacity (5,000+ kg)</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Corrosion-resistant galvanized steel</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Flame-proof &amp; hygienic wash-down</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-6">
-                  <button
-                    onClick={() => {
-                      setContactTopic("Metal Pallets Inquiry");
-                      setContactOpen(true);
-                    }}
-                    className="w-full text-center py-2 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#003366] hover:text-white hover:border-[#003366] transition-all"
-                  >
-                    Inquire Metal Pallets
-                  </button>
-                </div>
-              </div>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        {prod.description}
+                      </p>
 
-              {/* 4. One-Way & Half Pallets */}
-              <div id="one-way-pallets" className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold">
-                    <Boxes className="w-6 h-6 text-[#0099e5]" />
+                      <div className="pt-3 border-t border-gray-200/80 space-y-2">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                          Technical Specifications:
+                        </span>
+                        <ul className="space-y-1.5 text-xs text-gray-700">
+                          {prod.specs.map((spec, sIdx) => (
+                            <li key={sIdx} className="flex items-start space-x-2">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                              <span className="leading-tight">{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-6 mt-4 border-t border-gray-200/60 flex items-center justify-between">
+                      <button
+                        onClick={() => {
+                          setContactTopic(`Inquiry for ${prod.name}`);
+                          setContactOpen(true);
+                        }}
+                        className="w-full py-2.5 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#002b49] hover:text-white hover:border-[#002b49] transition-all text-center flex items-center justify-center space-x-1.5 shadow-2xs"
+                      >
+                        <span>Request Quote &amp; Specs</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors">
-                    One-Way &amp; Half Pallets
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Lightweight cost-optimized export pallets and 600x800mm display half-pallets designed for retail distribution and non-returnable air/sea shipments.
-                  </p>
-                  <ul className="text-xs text-gray-700 space-y-2 pt-2 border-t border-gray-200">
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Cost-effective export solution</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>ISPM 15 treated with export stamp</span>
-                    </li>
-                    <li className="flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Low tare weight reduces freight fees</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-6">
-                  <button
-                    onClick={() => {
-                      setContactTopic("One-Way Export Pallets");
-                      setContactOpen(true);
-                    }}
-                    className="w-full text-center py-2 px-4 rounded-full bg-white border border-gray-300 text-xs font-bold text-[#002b49] hover:bg-[#003366] hover:text-white hover:border-[#003366] transition-all"
-                  >
-                    Inquire One-Way Pallets
-                  </button>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* =========================================================================
-            SECTION 2: BOXES, CRATES & COLLARS
+            SERVICES & CONSULTING: PALLET REPAIR, POOLING & NO-CURE NO-PAY
             ========================================================================= */}
-        <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="crates">
+        <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="services">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
-                Protective Packaging
+                Lifecycle Supply Chain Services
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight mt-1">
-                Wooden Boxes, Export Crates &amp; Pallet Collars
+                Pallet Pooling, Repair &amp; Material Handling Consulting
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Heavy timber and plywood enclosures designed for sensitive machinery, offshore equipment, and trans-continental marine shipping.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Heavy Wooden Boxes */}
-              <div id="wooden-boxes" className="bg-white border border-gray-200/80 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 text-[#003366]">
-                  Heavy Machinery
-                </span>
-                <h3 className="text-lg font-black text-[#002b49] mt-3">
-                  Heavy Wooden Boxes
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
-                  Constructed from high-grade solid timber with reinforced internal blocking and bracing to prevent shifting during rough sea and road handling.
-                </p>
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <span className="text-[11px] font-bold text-[#0099e5]">Full ISPM 15 Compliance</span>
-                </div>
-              </div>
-
-              {/* Custom Export Crates */}
-              <div id="custom-crates" className="bg-white border border-gray-200/80 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                  Seaworthy Export
-                </span>
-                <h3 className="text-lg font-black text-[#002b49] mt-3">
-                  Custom Export Crates
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
-                  Open-slat or fully sheathed plywood crates equipped with corrosion-inhibiting VCI barrier foil and active desiccants for maritime transit via Hamad Port.
-                </p>
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <span className="text-[11px] font-bold text-[#0099e5]">Lifting Lug &amp; Skid Ready</span>
-                </div>
-              </div>
-
-              {/* Pallet Collars */}
-              <div id="pallet-collars" className="bg-white border border-gray-200/80 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">
-                  Modular Bulk Storage
-                </span>
-                <h3 className="text-lg font-black text-[#002b49] mt-3">
-                  Hinged Pallet Collars
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
-                  Foldable wooden collar frames with galvanized steel corner hinges. Stackable up to 5 tiers to instantly convert any standard pallet into a rigid bulk bin.
-                </p>
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <span className="text-[11px] font-bold text-[#0099e5]">Folds Flat When Empty</span>
-                </div>
-              </div>
-
-              {/* Metal Cages & Stillages */}
-              <div id="metal-cages" className="bg-white border border-gray-200/80 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-800">
-                  High Security Transit
-                </span>
-                <h3 className="text-lg font-black text-[#002b49] mt-3">
-                  Metal Cages &amp; Stillages
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
-                  Welded wire mesh and structural steel storage stillages with half-drop gates for rapid access on busy warehouse and factory floors.
-                </p>
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <span className="text-[11px] font-bold text-[#0099e5]">Stackable 4-High</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================================
-            SECTION 3: COMPRESSED SAWDUST BLOCKS & RECYCLING
-            ========================================================================= */}
-        <section className="py-20 bg-white border-b border-gray-100" id="materials">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                  Waste to Usable Product
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
-                  Compressed Sawdust Wood Blocks
-                </h2>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  AWMPACK operates Qatar&apos;s pioneering wood recycling technology. By collecting clean industrial wood scrap, sawdust, and shavings, we compress them into dense, water-resistant pallet corner blocks under extreme heat and pressure.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-[#f8fafc] border border-gray-200">
-                    <h4 className="text-sm font-bold text-[#002b49]">Uniform Dimensional Stability</h4>
-                    <p className="text-xs text-gray-600 mt-1">Zero knots, cracks, or warping. Consistent density provides superior nail retention and load support.</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-[#f8fafc] border border-gray-200">
-                    <h4 className="text-sm font-bold text-[#002b49]">Naturally Pest &amp; Fungi Free</h4>
-                    <p className="text-xs text-gray-600 mt-1">High-temperature extrusion processes naturally sterilize the material, exempting it from insect quarantine.</p>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <Link
-                    href="/sustainability#waste-to-product"
-                    className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md transition-all"
-                  >
-                    Explore our Circular Recycling Program
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Side: Compressed Blocks Showcase */}
-              <div className="lg:col-span-5 bg-[#00223a] text-white p-8 rounded-3xl space-y-4">
-                <Recycle className="w-10 h-10 text-emerald-400" />
-                <h3 className="text-2xl font-black text-white">Sustainable Qatari Innovation</h3>
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Instead of burning wood scraps or filling municipal landfills, AWMPACK recycles thousands of tons of wood each year, converting waste into structural components for the national economy.
-                </p>
-                <div className="pt-4 border-t border-blue-900/60 text-xs space-y-2 text-blue-200">
-                  <p>✔ 100% Recycled Timber Biomass</p>
-                  <p>✔ Water-Resistant Resins</p>
-                  <p>✔ Supporting Qatar National Vision 2030</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================================
-            SECTION 4: ISPM 15 HEAT TREATMENT & PALLET REPAIR
-            ========================================================================= */}
-        <section className="py-20 bg-[#edf2f7]" id="treatments">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
-                Certified Treatments &amp; Services
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight mt-1">
-                ISPM 15 Thermal Treatment, Pallet Repair &amp; Pooling
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Everything required to keep your transport packaging compliant with international trade laws and operating at peak cost efficiency.
+                Beyond manufacturing, AWMPACK supports client supply chains with comprehensive return loops, sorting, and cost optimization.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* ISPM 15 Heat Treatment */}
-              <div id="ispm-card" className="bg-white p-8 rounded-3xl border border-gray-200 shadow-xs space-y-4">
-                <div className="p-3 bg-blue-50 text-[#0099e5] rounded-xl w-fit">
-                  <Flame className="w-6 h-6 text-[#0099e5]" />
+              {/* Service 1: Pallet Repairing & Maintenance */}
+              <div className="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center">
+                    <RotateCcw className="w-6 h-6 text-emerald-600" />
+                  </div>
+                  <h3 className="text-lg font-black text-[#002b49]">Pallet Repair &amp; Sorting</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    We collect damaged pallets directly from your warehouse, replace broken deckboards or stringers with certified components, and re-certify them to full load-bearing capacity.
+                  </p>
+                  <ul className="text-xs text-gray-700 space-y-1.5 pt-2 border-t border-gray-100">
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Extends pallet lifecycle by 5–6 rotations</span>
+                    </li>
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Reduces lumber disposal costs to zero</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black text-[#002b49]">
-                  ISPM 15 Heat Treatment
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Thermal chambers heat core wood to 56°C for a minimum of 30 continuous minutes. Stamped with Qatar IPPC mark for seamless international port clearance.
-                </p>
-                <Link
-                  href="/engineering#ispm15"
-                  className="inline-flex items-center text-xs font-bold text-[#0099e5] hover:text-[#0077b6] pt-2"
-                >
-                  <span>Learn about HT standards</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </Link>
+                <div className="pt-6">
+                  <button
+                    onClick={() => {
+                      setContactTopic("Pallet Repair Service Inquiry");
+                      setContactOpen(true);
+                    }}
+                    className="w-full py-2 px-4 rounded-full bg-[#f8fafc] hover:bg-emerald-600 hover:text-white border border-gray-300 text-xs font-bold text-[#002b49] transition-all"
+                  >
+                    Inquire Pallet Repair
+                  </button>
+                </div>
               </div>
 
-              {/* Pallet Repair & Sorting */}
-              <div id="pallet-repair" className="bg-white p-8 rounded-3xl border border-gray-200 shadow-xs space-y-4">
-                <div className="p-3 bg-blue-50 text-[#0099e5] rounded-xl w-fit">
-                  <RotateCcw className="w-6 h-6 text-[#0099e5]" />
+              {/* Service 2: Closed-Loop Pallet Pooling */}
+              <div className="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
+                    <Truck className="w-6 h-6 text-[#0099e5]" />
+                  </div>
+                  <h3 className="text-lg font-black text-[#002b49]">Closed-Loop Pallet Pooling</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    A managed circulation loop across Qatar Free Zones, Hamad Port, and retail distribution centers, eliminating the need for single-use pallet purchases.
+                  </p>
+                  <ul className="text-xs text-gray-700 space-y-1.5 pt-2 border-t border-gray-100">
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Zero capital expenditure for pallet assets</span>
+                    </li>
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Guaranteed pallet availability on demand</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black text-[#002b49]">
-                  Pallet Repair &amp; Sorting
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  We inspect your damaged pallet inventory, replace broken deckboards or stringers, and test structural integrity, saving up to 50% vs buying brand new.
-                </p>
-                <button
-                  onClick={() => {
-                    setContactTopic("Pallet Repair & Sorting Service");
-                    setContactOpen(true);
-                  }}
-                  className="inline-flex items-center text-xs font-bold text-[#0099e5] hover:text-[#0077b6] pt-2 text-left"
-                >
-                  <span>Book pallet sorting audit</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </button>
+                <div className="pt-6">
+                  <button
+                    onClick={() => {
+                      setContactTopic("Pallet Pooling Setup");
+                      setContactOpen(true);
+                    }}
+                    className="w-full py-2 px-4 rounded-full bg-[#f8fafc] hover:bg-[#0099e5] hover:text-white border border-gray-300 text-xs font-bold text-[#002b49] transition-all"
+                  >
+                    Inquire Pallet Pooling
+                  </button>
+                </div>
               </div>
 
-              {/* Closed-Loop Pallet Pooling */}
-              <div id="pallet-pooling" className="bg-white p-8 rounded-3xl border border-gray-200 shadow-xs space-y-4">
-                <div className="p-3 bg-blue-50 text-[#0099e5] rounded-xl w-fit">
-                  <Truck className="w-6 h-6 text-[#0099e5]" />
+              {/* Service 3: "No-Cure No-Pay" Consulting */}
+              <div className="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center">
+                    <TrendingDown className="w-6 h-6 text-amber-600" />
+                  </div>
+                  <h3 className="text-lg font-black text-[#002b49]">No-Cure No-Pay Consulting</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Our packaging engineers inspect your warehouse, freight loading patterns, and breakage data. If we cannot prove documented cost or carbon savings, you pay nothing.
+                  </p>
+                  <ul className="text-xs text-gray-700 space-y-1.5 pt-2 border-t border-gray-100">
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Identifies packaging waste &amp; freight void space</span>
+                    </li>
+                    <li className="flex items-center space-x-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Zero financial risk for your company</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black text-[#002b49]">
-                  Closed-Loop Pallet Pooling
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  End-to-end asset management across Qatari warehouses. We deliver conditioned pallets just-in-time, collect used pallets, and maintain your logistics flow.
-                </p>
-                <button
-                  onClick={() => {
-                    setContactTopic("Pallet Pooling Setup");
-                    setContactOpen(true);
-                  }}
-                  className="inline-flex items-center text-xs font-bold text-[#0099e5] hover:text-[#0077b6] pt-2 text-left"
-                >
-                  <span>Setup pooling contract</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </button>
+                <div className="pt-6">
+                  <button
+                    onClick={() => {
+                      setContactTopic("No-Cure No-Pay Packaging Audit");
+                      setContactOpen(true);
+                    }}
+                    className="w-full py-2 px-4 rounded-full bg-[#f8fafc] hover:bg-amber-600 hover:text-white border border-gray-300 text-xs font-bold text-[#002b49] transition-all"
+                  >
+                    Request Free Audit
+                  </button>
+                </div>
               </div>
             </div>
           </div>
