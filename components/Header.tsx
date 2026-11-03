@@ -174,7 +174,26 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               </Link>
             </div>
 
-            {/* 2. INDUSTRIES */}
+            {/* 2. CONSULTING */}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleMouseEnter("consulting")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/consulting"
+                onClick={() => handleNavClick("/consulting")}
+                className={`px-3 xl:px-4 py-1.5 text-[13px] xl:text-sm font-semibold transition-all rounded-full whitespace-nowrap ${
+                  activeDropdown === "consulting"
+                    ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
+                    : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
+                }`}
+              >
+                Consulting
+              </Link>
+            </div>
+
+            {/* 3. INDUSTRIES */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter("industries")}
@@ -541,7 +560,168 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </div>
         )}
 
-        {/* 2. INDUSTRIES MEGA MENU */}
+        {/* 2. CONSULTING MEGA MENU */}
+        {activeDropdown === "consulting" && (
+          <div
+            className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl before:content-[''] before:absolute before:-top-5 before:left-0 before:right-0 before:h-6"
+            onMouseEnter={() => handleMouseEnter("consulting")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="bg-white rounded-none p-8 border border-gray-200/80 shadow-sm">
+                <div className="grid grid-cols-12 gap-8">
+                  {/* Left Column: Analysis No-Cure No-Pay */}
+                  <div className="col-span-5 space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-emerald-500/20 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-500/30">
+                        Guaranteed 4% Savings
+                      </span>
+                      <h3 className="text-xs font-black uppercase tracking-wider text-[#003366]">
+                        Analysis – No-Cure-No-Pay
+                      </h3>
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      Discover your true materials handling costs. We present you with a guaranteed plan for how to improve your TCO – and best of all, you get guaranteed 4% savings or pay nothing!
+                    </p>
+                    <ul className="space-y-2 text-xs text-gray-700">
+                      <li>
+                        <Link
+                          href="/consulting/no-cure-no-pay"
+                          onClick={() => handleNavClick("/consulting/no-cure-no-pay")}
+                          className="text-[#0099e5] hover:underline block font-bold"
+                        >
+                          → Handling Materials Design Analysis
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/no-cure-no-pay"
+                          onClick={() => handleNavClick("/consulting/no-cure-no-pay")}
+                          className="text-[#0066cc] hover:underline block font-medium"
+                        >
+                          → Transparency Analysis (True Spend Audit)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/no-cure-no-pay"
+                          onClick={() => handleNavClick("/consulting/no-cure-no-pay")}
+                          className="text-[#0066cc] hover:underline block font-medium"
+                        >
+                          → Sustainability &amp; CO2 Reduction Analysis
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/no-cure-no-pay"
+                          onClick={() => handleNavClick("/consulting/no-cure-no-pay")}
+                          className="text-[#0066cc] hover:underline block font-medium"
+                        >
+                          → Tender Consultant Support (20+ Years)
+                        </Link>
+                      </li>
+                    </ul>
+                    <div className="pt-2">
+                      <Link
+                        href="/consulting/no-cure-no-pay"
+                        onClick={() => handleNavClick("/consulting/no-cure-no-pay")}
+                        className="inline-flex items-center text-xs font-bold text-[#0099e5] hover:text-[#002b49]"
+                      >
+                        Explore No-Cure-No-Pay Details &rarr;
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Middle Column: Handling Materials Consulting */}
+                  <div className="col-span-4 border-l border-gray-200 pl-8 space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-blue-50 text-[#0099e5] text-[10px] font-bold px-2 py-0.5 rounded border border-blue-200">
+                        2 Engagement Models
+                      </span>
+                      <h3 className="text-xs font-black uppercase tracking-wider text-[#003366]">
+                        Materials Consulting
+                      </h3>
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      Select AWMPC as your manufacturing partner at no further costs, or contract our independent advisory team on an &ldquo;arms-length&rdquo; basis.
+                    </p>
+                    <ul className="space-y-2 text-xs text-gray-700">
+                      <li>
+                        <Link
+                          href="/consulting/material-handling"
+                          onClick={() => handleNavClick("/consulting/material-handling")}
+                          className="text-[#0099e5] hover:underline block font-bold"
+                        >
+                          → Model 1: Partner with AWMPC
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/material-handling"
+                          onClick={() => handleNavClick("/consulting/material-handling")}
+                          className="text-[#0066cc] hover:underline block font-bold text-emerald-700"
+                        >
+                          → Model 2: Arms-Length Expert Consulting
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/material-handling"
+                          onClick={() => handleNavClick("/consulting/material-handling")}
+                          className="text-[#0066cc] hover:underline block font-medium"
+                        >
+                          → Sustainable Logistics &amp; Re-design
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/consulting/material-handling"
+                          onClick={() => handleNavClick("/consulting/material-handling")}
+                          className="text-[#0066cc] hover:underline block font-medium"
+                        >
+                          → Supply Chain Optimization &amp; Generation 5
+                        </Link>
+                      </li>
+                    </ul>
+                    <div className="pt-2">
+                      <Link
+                        href="/consulting/material-handling"
+                        onClick={() => handleNavClick("/consulting/material-handling")}
+                        className="inline-flex items-center text-xs font-bold text-[#0099e5] hover:text-[#002b49]"
+                      >
+                        Explore Advisory Models &rarr;
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Right Column: CEO Quote & Fast CTA */}
+                  <div className="col-span-3 border-l border-gray-200 pl-8 space-y-4">
+                    <h3 className="text-xs font-black uppercase tracking-wider text-[#003366]">
+                      EXECUTIVE ADVISORY
+                    </h3>
+                    <div className="p-3 bg-blue-50/60 rounded-xl border border-blue-100 text-[11px] text-gray-700 italic leading-relaxed">
+                      &ldquo;The main reason why clients are reluctant is fear that analyses won&apos;t yield tangible results. Therefore, we provide a No-Cure-No-Pay proposition.&rdquo;
+                      <span className="block mt-1 font-bold text-[#002b49] not-italic">
+                        — Antonio Rostirolla, CEO
+                      </span>
+                    </div>
+                    <div className="pt-1">
+                      <Link
+                        href="/consulting/no-cure-no-pay#audit-form"
+                        onClick={() => handleNavClick("/consulting/no-cure-no-pay#audit-form")}
+                        className="w-full py-2.5 px-4 rounded-full bg-[#003366] hover:bg-[#002244] text-white text-xs font-bold transition-all text-center block shadow-sm"
+                      >
+                        Book No-Cure-No-Pay Audit
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3. INDUSTRIES MEGA MENU */}
         {activeDropdown === "industries" && (
           <div
             className="absolute top-full left-0 right-0 w-full bg-[#edf2f7] border-t border-b border-gray-200 py-8 px-4 sm:px-8 z-50 shadow-2xl before:content-[''] before:absolute before:-top-5 before:left-0 before:right-0 before:h-6"
@@ -1034,6 +1214,37 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     className="text-[#002b49] hover:text-[#0099e5] py-1"
                   >
                     ISPM 15 Treatment
+                  </Link>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-100 pt-3">
+                <p className="font-black text-xs uppercase tracking-wider text-[#0099e5] mb-2 flex items-center justify-between">
+                  <span>CONSULTING &amp; COST AUDIT</span>
+                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">4% Savings</span>
+                </p>
+                <div className="grid grid-cols-1 gap-1.5 text-sm">
+                  <Link
+                    href="/consulting/no-cure-no-pay"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-bold flex items-center justify-between"
+                  >
+                    <span>→ Analysis No-Cure No-Pay</span>
+                    <span className="text-xs text-emerald-600 font-semibold">Guaranteed ROI</span>
+                  </Link>
+                  <Link
+                    href="/consulting/material-handling"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-semibold"
+                  >
+                    → Handling Materials Consulting (2 Models)
+                  </Link>
+                  <Link
+                    href="/consulting"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs text-[#0099e5] hover:underline font-bold pt-0.5"
+                  >
+                    View Consulting Hub &rarr;
                   </Link>
                 </div>
               </div>

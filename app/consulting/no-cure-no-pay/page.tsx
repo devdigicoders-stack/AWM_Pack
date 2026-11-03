@@ -1,0 +1,666 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ShieldCheck,
+  TrendingUp,
+  Percent,
+  CheckCircle2,
+  Clock,
+  Award,
+  Phone,
+  Mail,
+  MapPin,
+  FileCheck,
+  Search,
+  Leaf,
+  Layers,
+  ArrowRight,
+  Quote,
+  Building2,
+  Calculator,
+  ExternalLink,
+} from "lucide-react";
+
+export default function NoCureNoPayPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    annualSpend: "QAR 500,000 - 1,000,000",
+    service: "No-Cure-No-Pay Cost Audit",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello AWMPC Qatar, I would like to request a No-Cure-No-Pay Materials Handling Analysis for my company.\nName: ${formData.name || "N/A"}\nCompany: ${formData.company || "N/A"}\nAnnual Spend: ${formData.annualSpend}`
+  );
+
+  return (
+    <div className="bg-white min-h-screen text-gray-800">
+      {/* Top Breadcrumb Header Bar */}
+      <div className="bg-[#002b49] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-blue-900">
+        <div className="max-w-7xl mx-auto">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-blue-200 mb-4">
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/consulting" className="hover:text-white transition-colors">
+              Consulting
+            </Link>
+            <span>/</span>
+            <span className="text-[#0099e5] font-semibold">Analysis No-Cure No-Pay</span>
+          </nav>
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <span className="inline-block bg-[#0099e5]/20 text-[#0099e5] border border-[#0099e5]/40 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-3">
+                Proprietary Supply Chain Audit • AWMPC Qatar
+              </span>
+              <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                Analysis – No-Cure-No-Pay
+              </h1>
+              <p className="mt-3 text-lg sm:text-xl text-blue-100 max-w-3xl leading-relaxed">
+                Discover Your True Materials Handling Costs — Guaranteed 4% Savings or You Pay Nothing.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href={`https://wa.me/97451191223?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all"
+              >
+                <span>WhatsApp Audit Request</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+              <a
+                href="#audit-form"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all"
+              >
+                Book Free Assessment
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Value Proposition Banner */}
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center space-x-2 text-[#003366] font-bold text-xs uppercase tracking-widest bg-blue-100/70 px-3 py-1 rounded-full">
+                <TrendingUp className="w-3.5 h-3.5 text-[#0099e5]" />
+                <span>Materials Handling Optimization</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#002b49] leading-tight">
+                Do you really know how much money you spend on Materials Handling — and how much of this you spend on Handling Materials?
+              </h2>
+
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                Not only will we help you find out — we will also present you with a guaranteed plan for how to improve your <strong>Total Costs of Ownership (TCO)</strong> of your Handling Materials.
+              </p>
+
+              {/* Big Guaranteed 4% Banner */}
+              <div className="bg-gradient-to-r from-[#002b49] via-[#003366] to-[#0099e5] p-6 sm:p-8 rounded-2xl text-white shadow-xl">
+                <div className="flex items-center space-x-4 mb-3">
+                  <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
+                    <Percent className="w-8 h-8 text-emerald-400 stroke-[2.5]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-300">
+                      Risk-Free Commercial Guarantee
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-black text-white">
+                      GUARANTEED 4% SAVINGS
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-blue-100 text-sm sm:text-base leading-relaxed font-medium">
+                  AND BEST OF ALL – we will make sure you will get a <strong>4% SAVINGS</strong> from our work – <strong>No-Cure-No-Pay!!</strong> If our strategic analysis does not yield actionable savings of at least 4%, you owe us nothing.
+                </p>
+              </div>
+
+              {/* 2 Key Proposition Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-5 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-[#0099e5] transition-colors">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="w-9 h-9 rounded-lg bg-blue-50 text-[#0099e5] flex items-center justify-center font-bold">
+                      <FileCheck className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-bold text-[#002b49] text-base">Tender Consultant Support</h4>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    If you are currently using a Tender Consultant to assist you with your purchasing, this service is fully included in our proposition to you.
+                  </p>
+                </div>
+
+                <div className="p-5 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-[#0099e5] transition-colors">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-bold text-[#002b49] text-base">20+ Years of Experience</h4>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Our consulting practice has more than 20 years of experience delivering guaranteed ROI for our clients within packaging and handling materials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side: CEO Quote & High-Impact Visual */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Executive Quote Card */}
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-blue-200/80 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full pointer-events-none" />
+                <Quote className="w-10 h-10 text-[#0099e5]/30 mb-4" />
+                
+                <blockquote className="text-gray-800 text-sm sm:text-base leading-relaxed italic mb-6">
+                  &ldquo;The main reason why clients are reluctant to carry out these analyses is the fear that they won&apos;t yield any tangible results and that the money and time spent on this will be wasted. Therefore, we provide a <strong>No-Cure-No-Pay</strong> proposition.&rdquo;
+                </blockquote>
+
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="text-xs text-gray-600 leading-relaxed italic mb-3">
+                    &ldquo;AWMPC is working professionally and has extensive knowledge within the wood packaging area. Our cooperation with AWMPC has resulted in an optimization of Qatar&apos;s wood packaging solutions.&rdquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-11 h-11 rounded-full bg-[#002b49] text-[#0099e5] flex items-center justify-center font-black text-sm">
+                      AR
+                    </div>
+                    <div>
+                      <h5 className="font-black text-[#002b49] text-sm tracking-wide">
+                        ANTONIO ROSTIROLLA
+                      </h5>
+                      <p className="text-[11px] font-bold text-gray-500 uppercase">
+                        CEO of Al Waad Manufacturing Packaging Company - Qatar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Start Saving Today Callout */}
+              <div className="p-6 rounded-2xl bg-[#002b49] text-white">
+                <h4 className="text-lg font-bold text-white mb-2 flex items-center">
+                  <Award className="w-5 h-5 text-amber-400 mr-2" />
+                  Start Saving Today!
+                </h4>
+                <p className="text-xs text-blue-200 leading-relaxed mb-4">
+                  What holds you back? Start saving on your packaging &amp; handling by letting us optimize your supply chain!
+                </p>
+                <div className="flex items-center space-x-2 text-xs text-emerald-300 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span>Zero upfront financial commitment required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Are Offering - 3 Comprehensive Analyses */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
+              Three-Pillar Evaluation Framework
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#002b49]">
+              What We Are Offering
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-gray-600">
+              Our audit inspects the full lifecycle of your pallets, crates, and logistics infrastructure across design, pricing transparency, and carbon emissions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Pillar 1: Handling Materials Design Analysis */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0099e5] flex items-center justify-center mb-6 group-hover:bg-[#002b49] group-hover:text-white transition-colors">
+                  <Layers className="w-7 h-7" />
+                </div>
+                <span className="text-xs font-bold text-[#0099e5] uppercase tracking-wider block mb-1">
+                  Pillar 01
+                </span>
+                <h3 className="text-xl font-black text-[#002b49] mb-4">
+                  Handling Materials Design Analysis
+                </h3>
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">
+                  The right form, fit and function of your Handling Materials.
+                </p>
+                <ul className="space-y-3.5 text-xs text-gray-600 leading-relaxed">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Equipment Compatibility:</strong> Will the pallets work seamlessly with your existing forklifts, pallet jacks, and automated conveyors? (Different jacks and racking require specific stringer/notch profiles).
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Load Capacity Precision:</strong> Can your pallets handle the exact load expected? Both too-weak pallets (causing catastrophic failure) and too-strong over-engineered pallets have an unnecessary negative financial impact.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Special Transport Conditions:</strong> Ensuring specialized requirements for fragile electronics, cold-chain food hygiene, or heavy offshore oil &amp; gas gear are engineered optimally.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <span className="text-[11px] font-bold text-[#0099e5] flex items-center">
+                  Engineered CAD Optimization &rarr;
+                </span>
+              </div>
+            </div>
+
+            {/* Pillar 2: Transparency Analysis */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-[#002b49] group-hover:text-white transition-colors">
+                  <Search className="w-7 h-7" />
+                </div>
+                <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-1">
+                  Pillar 02
+                </span>
+                <h3 className="text-xl font-black text-[#002b49] mb-4">
+                  Transparency Analysis
+                </h3>
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">
+                  Do you pay the right price for the right Handling Materials?
+                </p>
+                <ul className="space-y-3.5 text-xs text-gray-600 leading-relaxed">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Complete Cost Transparency:</strong> An exhaustive forensic analysis of what you are really paying for each handling material, pallet repair fee, and logistics service currently utilized.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Versatile Specification Matching:</strong> Despite being relatively simple in appearance, wooden pallets are versatile and vary widely in board thicknesses, timber species, fastener density, and lifecycle cycles.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Eliminating Procurement Inefficiencies:</strong> Selecting the exact pallet grade, pooling option, or custom design ensures you stop paying premium Euro-pallet rates for simple one-way shipping tasks.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <span className="text-[11px] font-bold text-emerald-600 flex items-center">
+                  Full Cost Breakdown &rarr;
+                </span>
+              </div>
+            </div>
+
+            {/* Pillar 3: Sustainability Analysis */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6 group-hover:bg-[#002b49] group-hover:text-white transition-colors">
+                  <Leaf className="w-7 h-7" />
+                </div>
+                <span className="text-xs font-bold text-teal-600 uppercase tracking-wider block mb-1">
+                  Pillar 03
+                </span>
+                <h3 className="text-xl font-black text-[#002b49] mb-4">
+                  Sustainability Analysis
+                </h3>
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">
+                  Identify largest potential to reduce your CO2 impact.
+                </p>
+                <ul className="space-y-3.5 text-xs text-gray-600 leading-relaxed">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Responsible Sourcing Verification:</strong> How sustainable are you in your usage of handling materials? Do you know where your timber originates, and are materials certified under FSC / PEFC standards?
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Circular Economy &amp; Wood Recycling:</strong> Identifying potentials for closed-loop pallet pooling, damaged pallet repair, and using compressed sawdust blocks produced locally in Qatar.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 mr-2 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>National Vision 2030 Alignment:</strong> By asking the right environmental questions, we align your industrial operations directly with Qatar&apos;s ICV and decarbonization targets.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <span className="text-[11px] font-bold text-teal-600 flex items-center">
+                  Carbon Reduction Roadmap &rarr;
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement Comparison: How No-Cure-No-Pay Works */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-[#002b49] text-white rounded-3xl p-8 sm:p-12 shadow-2xl">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold text-[#0099e5] uppercase tracking-wider">
+                Transparent Execution Roadmap
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">
+                How Our No-Cure-No-Pay Engagement Works
+              </h3>
+              <p className="text-sm text-blue-100 mt-2">
+                A simple 4-step path to finding and locking in 4%+ cost savings without any financial exposure.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span className="text-2xl font-black text-[#0099e5] block mb-2">01</span>
+                <h4 className="font-bold text-white text-sm mb-1">Data &amp; Spend Intake</h4>
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  We review your current annual pallet invoices, dimensions, specifications, and transport routes under strict NDA.
+                </p>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span className="text-2xl font-black text-[#0099e5] block mb-2">02</span>
+                <h4 className="font-bold text-white text-sm mb-1">Facility &amp; Rack Audit</h4>
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  Our senior packaging engineers inspect your warehouse handling equipment, racking bays, and loading docks.
+                </p>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span className="text-2xl font-black text-[#0099e5] block mb-2">03</span>
+                <h4 className="font-bold text-white text-sm mb-1">Guaranteed Plan Delivery</h4>
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  We present a comprehensive TCO optimization roadmap highlighting guaranteed savings of at least 4%.
+                </p>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span className="text-2xl font-black text-[#0099e5] block mb-2">04</span>
+                <h4 className="font-bold text-white text-sm mb-1">No-Cure-No-Pay Proof</h4>
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  You only pay our agreed fee if and when the documented savings are realized in your actual supply chain.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote / Audit Request Form Section */}
+      <section id="audit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* Left Form */}
+            <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-lg">
+              <span className="text-xs font-black uppercase tracking-wider text-[#0099e5] block mb-2">
+                Get A Quote &amp; Free Assessment
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-[#002b49] mb-3">
+                Request Your No-Cure-No-Pay Cost Audit
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 mb-8 leading-relaxed">
+                Looking for customized packaging solutions? Get in touch with us today for a personalized quote. Our team is ready to provide competitive pricing and expert guidance tailored to your project needs.
+              </p>
+
+              {submitted ? (
+                <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-center space-y-3">
+                  <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
+                  <h4 className="text-lg font-bold text-emerald-900">
+                    Audit Request Submitted Successfully!
+                  </h4>
+                  <p className="text-xs text-emerald-800 leading-relaxed">
+                    Thank you. Our Factory Manager Eng. Maher Marjy and senior consulting team will review your requirements and reach out within 24 hours.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href={`https://wa.me/97451191223?text=${whatsappMessage}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-5 py-2.5 rounded-full transition-all"
+                    >
+                      Instant WhatsApp Confirmation (+974 5119 1223)
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Your Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g., Mohammed Al-Kuwari"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5]"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g., Qatar Industrial Logistics LLC"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="name@company.qa"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5]"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Phone / WhatsApp *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+974 XXXX XXXX"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Estimated Annual Pallet Spend
+                      </label>
+                      <select
+                        value={formData.annualSpend}
+                        onChange={(e) => setFormData({ ...formData, annualSpend: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5] bg-white"
+                      >
+                        <option value="Under QAR 250,000">Under QAR 250,000</option>
+                        <option value="QAR 250,000 - 500,000">QAR 250,000 - 500,000</option>
+                        <option value="QAR 500,000 - 1,000,000">QAR 500,000 - 1,000,000</option>
+                        <option value="QAR 1,000,000 - 5,000,000">QAR 1,000,000 - 5,000,000</option>
+                        <option value="Over QAR 5,000,000">Over QAR 5,000,000</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                        Select A Service
+                      </label>
+                      <select
+                        value={formData.service}
+                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5] bg-white"
+                      >
+                        <option value="No-Cure-No-Pay Cost Audit">No-Cure-No-Pay Cost Audit</option>
+                        <option value="Handling Materials Design Analysis">Handling Materials Design Analysis</option>
+                        <option value="Transparency & Pricing Audit">Transparency &amp; Pricing Audit</option>
+                        <option value="Sustainability & Carbon Audit">Sustainability &amp; Carbon Audit</option>
+                        <option value="Pallet Pooling & Repair Feasibility">Pallet Pooling &amp; Repair Feasibility</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                      Current Packaging Challenges / Pallet Types
+                    </label>
+                    <textarea
+                      rows={3}
+                      placeholder="Describe your current pallet sizes (1200x1000, 1200x800), load weights, failure rates, or export destinations..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5]"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+                  >
+                    Submit No-Cure No-Pay Audit Request
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* Right Contact Info from Scraping */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-[#002b49] text-white p-8 rounded-3xl space-y-6 shadow-xl border border-blue-900">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#0099e5] block">
+                  Direct Factory &amp; Consulting Team
+                </span>
+
+                <div>
+                  <h4 className="text-xl font-bold text-white">
+                    Al Waad Manufacturing Packaging Company (AWMPC)
+                  </h4>
+                  <p className="text-xs text-blue-200 mt-1">
+                    State of Qatar • Commercial Registration &amp; ICV Certified
+                  </p>
+                </div>
+
+                <div className="space-y-4 text-xs text-blue-100 border-t border-blue-800/80 pt-6">
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="w-4 h-4 text-[#0099e5] shrink-0 mt-0.5" />
+                    <span>
+                      Street No. 3012, Birket Al-Awamer, Zone No. 91, Al Wukair, PO.BOX: 12451, State of Qatar
+                    </span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
+                    <a href="tel:+97440394581" className="hover:text-white font-semibold">
+                      (+974) 4039 4581 (Main Office)
+                    </a>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
+                    <a href="tel:+97466864923" className="hover:text-white font-semibold">
+                      (+974) 6686 4923 (Sales Desk)
+                    </a>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <a href="tel:+97451191223" className="hover:text-white font-semibold text-emerald-300">
+                      (+974) 5119 1223 (Eng. Maher Marjy - Factory Manager)
+                    </a>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-4 h-4 text-[#0099e5] shrink-0" />
+                    <a href="mailto:info@awmpack.com" className="hover:text-white">
+                      info@awmpack.com / maher@awmpack.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-blue-800/80">
+                  <a
+                    href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20discuss%20No-Cure%20No-Pay%20Consulting"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs shadow-md transition-all"
+                  >
+                    <span>Instant WhatsApp Chat (+974 5119 1223)</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Related Link to Second Consulting Service */}
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold text-[#002b49] text-sm">
+                    Handling Materials Consulting
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Explore our two engagement models: Partner with AWMPC or Arms-Length Consulting.
+                  </p>
+                </div>
+                <Link
+                  href="/consulting/material-handling"
+                  className="px-4 py-2 rounded-lg bg-blue-50 text-[#0099e5] hover:bg-[#0099e5] hover:text-white text-xs font-bold transition-all shrink-0 ml-4"
+                >
+                  View Service &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -271,8 +271,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#consulting" className="hover:text-[#0099e5] transition-colors">
-                  No-Cure No-Pay Consulting
+                <Link href="/consulting/no-cure-no-pay" className="hover:text-[#0099e5] transition-colors flex items-center justify-between">
+                  <span>No-Cure-No-Pay Analysis</span>
+                  <span className="text-[9px] bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded font-bold">4% Save</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/consulting/material-handling" className="hover:text-[#0099e5] transition-colors">
+                  Handling Materials Consulting
                 </Link>
               </li>
               <li>
