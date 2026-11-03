@@ -378,6 +378,44 @@ export default function SolutionsPage() {
                             Request Factory Quote
                           </button>
                         </div>
+                      ) : prod.id === "industrial-pallets" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/industrial-pallets"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>1200&times;1000 Specs &amp; Drawings</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Factory Quote
+                          </button>
+                        </div>
+                      ) : prod.id === "half-pallets" ? (
+                        <div className="space-y-2">
+                          <Link
+                            href="/solutions/half-pallets"
+                            className="w-full py-2.5 px-4 rounded-full bg-[#002b49] text-white text-xs font-bold hover:bg-[#0099e5] transition-all text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                          >
+                            <span>Retail POP &amp; DIN 15146 Specs</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setContactTopic(`Inquiry for ${prod.name}`);
+                              setContactOpen(true);
+                            }}
+                            className="w-full py-2 px-3 rounded-full bg-white border border-gray-300 text-[11px] font-bold text-gray-700 hover:bg-gray-100 transition-all text-center"
+                          >
+                            Request Factory Quote
+                          </button>
+                        </div>
                       ) : prod.id === "used-pallets" ? (
                         <div className="space-y-2">
                           <Link

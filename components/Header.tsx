@@ -381,11 +381,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                           </li>
                           <li>
                             <Link
-                              href="/solutions#industrial-pallets"
-                              onClick={() => handleNavClick("/solutions#industrial-pallets")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/industrial-pallets"
+                              onClick={() => handleNavClick("/solutions/industrial-pallets")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
-                              Industrial Pallets
+                              Industrial Pallets (1200x1000)
                             </Link>
                           </li>
                           <li>
@@ -406,9 +406,9 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                         <ul className="space-y-2 text-sm">
                           <li>
                             <Link
-                              href="/solutions#half-pallets"
-                              onClick={() => handleNavClick("/solutions#half-pallets")}
-                              className="text-[#0066cc] hover:underline block"
+                              href="/solutions/half-pallets"
+                              onClick={() => handleNavClick("/solutions/half-pallets")}
+                              className="text-[#0066cc] hover:underline block font-semibold text-[#0099e5]"
                             >
                               Half Pallets (DIN 15146)
                             </Link>
@@ -990,9 +990,9 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     ★ AWMPC Pallets
                   </Link>
                   <Link
-                    href="/solutions#industrial-pallets"
+                    href="/solutions/industrial-pallets"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-semibold"
                   >
                     Industrial Pallets
                   </Link>
