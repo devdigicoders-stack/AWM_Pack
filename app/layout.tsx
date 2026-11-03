@@ -2,9 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nefab | Sustainable Packaging & Logistics Solutions",
+  title: "AWMPACK | Al Waad Manufacturing Packaging Company - Qatar",
   description:
-    "We save resources in supply chains, for a better tomorrow. Global provider of engineered transport packaging and logistics services.",
+    "Leading manufacturer of industrial wooden pallets, custom crates, boxes, ISPM 15 heat treatment, and sustainable wood recycling in Qatar. Birkat Al-Awamer, Al Wukair.",
+  keywords: [
+    "AWMPACK",
+    "Al Waad Manufacturing Packaging Company",
+    "Wooden Pallets Qatar",
+    "ISPM 15 Heat Treatment Qatar",
+    "Industrial Crates Doha",
+    "Wood Recycling Qatar",
+    "Pallet Collars Qatar",
+    "Pallet Repair Pooling Qatar",
+  ],
 };
 
 export default function RootLayout({

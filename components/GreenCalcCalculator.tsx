@@ -90,13 +90,13 @@ export default function GreenCalcCalculator({ onOpenContactWithTopic }: GreenCal
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full">
             <Calculator className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Certified LCA Modeling</span>
+            <span>AWMPACK Certified LCA Modeling</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            GreenCalc™ Savings Simulator
+            EcoCalc™ Packaging & Pallet Savings Simulator
           </h2>
           <p className="text-sm sm:text-base text-gray-300">
-            Nefab’s certified Life Cycle Analysis software calculates the exact carbon footprint (CO₂eq) and financial cost reductions across your specific transport flows.
+            AWMPACK&apos;s Life Cycle Analysis model calculates estimated carbon footprint (CO₂eq) and financial cost reductions across your specific transport flows using circular wood blocks, optimized timber engineering, and pooling.
           </p>
         </div>
 
@@ -169,10 +169,10 @@ export default function GreenCalcCalculator({ onOpenContactWithTopic }: GreenCal
                   </select>
                 </div>
 
-                {/* Nefab Proposed Optimization */}
+                {/* AWMPACK Proposed Optimization */}
                 <div>
                   <label htmlFor={solutionId} className="block text-xs font-semibold text-gray-300 mb-2">
-                    Proposed Nefab Solution
+                    Proposed AWMPACK Solution
                   </label>
                   <select
                     id={solutionId}
@@ -180,9 +180,9 @@ export default function GreenCalcCalculator({ onOpenContactWithTopic }: GreenCal
                     onChange={(e) => setSolutionType(e.target.value)}
                     className="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-emerald-400 font-semibold focus:outline-none focus:border-emerald-500"
                   >
-                    <option value="fiberflute_expak">FiberFlute™ Cushioning + ExPak Plywood</option>
-                    <option value="returnable_loop">Returnable Smart Loop (Zero-Waste Pooling)</option>
-                    <option value="lightweight_fiber">Ultra-Lightweight Corrugated Multi-Material</option>
+                    <option value="fiberflute_expak">Waste-to-Product (Compressed Sawdust Blocks + Timber)</option>
+                    <option value="returnable_loop">Returnable Pallet Loop (Zero-Waste Hamad Port Pooling)</option>
+                    <option value="lightweight_fiber">Custom Engineered Lightweight Timber Pallets</option>
                   </select>
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function GreenCalcCalculator({ onOpenContactWithTopic }: GreenCal
               <div className="flex items-center space-x-3 text-xs text-gray-400">
                 <Award className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>
-                  Calculations based on verified Ecoinvent database LCA factors and Nefab global testing benchmarks.
+                  Calculations based on verified ISO 14040/44 LCA principles and AWMPACK Birkat Al-Awamer manufacturing benchmarks.
                 </span>
               </div>
             </div>

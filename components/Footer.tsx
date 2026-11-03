@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Globe,
   Mail,
@@ -10,8 +11,11 @@ import {
   Award,
   CheckCircle2,
   Leaf,
-  Building,
-  ExternalLink,
+  Building2,
+  Phone,
+  MapPin,
+  Flame,
+  Recycle,
 } from "lucide-react";
 
 export default function Footer() {
@@ -27,20 +31,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-950 text-gray-300 border-t border-gray-800">
+    <footer className="bg-[#001829] text-gray-300 border-t border-blue-950">
       {/* Newsletter & Highlight Banner */}
-      <div className="bg-[#0c2340] border-b border-[#1b3a60] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#002b49] border-b border-blue-900/60 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-xl">
-            <div className="inline-flex items-center space-x-2 text-[#eb6608] text-xs font-semibold tracking-wider uppercase mb-2">
+            <div className="inline-flex items-center space-x-2 text-[#0099e5] text-xs font-semibold tracking-wider uppercase mb-2">
               <Leaf className="w-3.5 h-3.5" />
-              <span>Nefab Supply Chain Intelligence</span>
+              <span>AWMPACK Industrial Packaging &amp; Wood Recycling</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Stay informed on circular packaging & PPWR regulations
+              Waste to Usable Product: Sustainable Pallets &amp; Crates
             </h3>
             <p className="mt-2 text-sm text-gray-300">
-              Get our quarterly insights on reducing carbon footprints, Life Cycle Analyses (LCA), and engineered logistics innovations.
+              Get our technical updates on ISPM 15 export heat treatment compliance, custom industrial packaging engineering, and circular wood recycling across Qatar and the GCC.
             </p>
           </div>
 
@@ -48,7 +52,7 @@ export default function Footer() {
             {subscribed ? (
               <div className="flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/50 text-emerald-300 px-5 py-3 rounded-full text-sm font-medium">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                <span>Thank you for subscribing to Nefab Insights!</span>
+                <span>Thank you for subscribing to AWMPACK updates!</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md">
@@ -58,19 +62,19 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your corporate email..."
-                  className="px-4 py-3 bg-[#07172b] border border-[#1b3a60] text-white rounded-full text-sm focus:outline-none focus:border-[#eb6608] focus:ring-1 focus:ring-[#eb6608] w-full"
+                  className="px-4 py-3 bg-[#001f35] border border-blue-800 text-white rounded-full text-sm focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5] w-full"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#eb6608] hover:bg-[#d45600] text-white font-bold text-sm rounded-full whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-md"
+                  className="px-6 py-3 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm rounded-full whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-md"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             )}
-            <p className="text-[11px] text-gray-500 mt-2">
-              By subscribing, you agree to our privacy policy. Unsubscribe at any time.
+            <p className="text-[11px] text-gray-400 mt-2">
+              Al Waad Manufacturing Packaging Company • Birkat Al-Awamer, Qatar
             </p>
           </div>
         </div>
@@ -78,277 +82,232 @@ export default function Footer() {
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
-          {/* Brand Col */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 space-y-4">
-            <Link href="/" className="inline-flex items-center space-x-2">
-              <span className="text-3xl font-black tracking-tight text-white">NEFAB</span>
-              <span className="w-2.5 h-2.5 rounded-full bg-[#eb6608]"></span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand & Direct Card Contact Column */}
+          <div className="lg:col-span-2 space-y-4">
+            <Link href="/" className="inline-block bg-white p-2 rounded-xl">
+              <div className="relative h-10 w-44">
+                <Image
+                  src="/logo.jpeg"
+                  alt="AWMPACK Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              We save resources in supply chains, for a better tomorrow. Global leader in engineered packaging and logistics services since 1949.
+
+            <p className="text-xs text-gray-300 leading-relaxed font-medium">
+              <strong>Al Waad Manufacturing Packaging Company (AWMPC)</strong> is Qatar&apos;s leading provider of industrial-grade wooden pallets, custom boxes, export crates, and wood recycling solutions.
             </p>
-            <div className="pt-2 text-xs text-gray-400 space-y-1">
-              <p className="font-semibold text-white">Global Headquarters</p>
-              <p>Slottsgatan 2, SE-553 22</p>
-              <p>Jönköping, Sweden</p>
+
+            {/* Direct Client Contact Box from Business Card */}
+            <div className="p-4 rounded-2xl bg-[#00223a] border border-blue-900/80 space-y-2 text-xs">
+              <div className="flex items-center justify-between border-b border-blue-800/60 pb-2">
+                <div>
+                  <p className="font-bold text-white text-sm">Eng. Maher Marjy</p>
+                  <p className="text-[#0099e5] font-semibold text-[11px]">Factory Manager</p>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Direct Factory Contact
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-300 pt-1">
+                <p className="flex items-center">
+                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
+                  <a href="tel:+97451191223" className="hover:text-white font-medium">+974 5119 1223 (Mobile)</a>
+                </p>
+                <p className="flex items-center">
+                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
+                  <a href="tel:+97440394581" className="hover:text-white font-medium">+974 4039 4581 (Office)</a>
+                </p>
+                <p className="flex items-center">
+                  <Mail className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
+                  <a href="mailto:maher@awmpack.com" className="hover:text-white">maher@awmpack.com</a>
+                </p>
+                <p className="flex items-center">
+                  <Globe className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
+                  <a href="https://www.awmpack.com" target="_blank" rel="noreferrer" className="hover:text-white">www.awmpack.com</a>
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-blue-800/60 text-gray-400 text-[11px] flex items-start space-x-1.5">
+                <MapPin className="w-3.5 h-3.5 text-[#0099e5] shrink-0 mt-0.5" />
+                <span>
+                  Building No. 89, Street No. 3012, Zone No. 91, Birkat Al-Awamer, Al Wukair, State of Qatar (P.O. Box 12451)
+                </span>
+              </div>
             </div>
-            <div className="pt-2 flex items-center space-x-3 text-gray-400">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg bg-gray-900 hover:bg-emerald-950 hover:text-emerald-400 transition-colors"
-                title="LinkedIn"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8V10.9M7.86 6.3a1.63 1.63 0 1 0 1.63 1.63 1.63 1.63 0 0 0-1.63-1.63Z" />
-                </svg>
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg bg-gray-900 hover:bg-emerald-950 hover:text-emerald-400 transition-colors"
-                title="YouTube"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.26 5 12 5 12 5s-6.26 0-7.82.42A2.5 2.5 0 0 0 2.42 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .42 4.81 2.5 2.5 0 0 0 1.76 1.77C5.74 19 12 19 12 19s6.26 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.42-4.81ZM10 15V9l5.2 3-5.2 3Z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg bg-gray-900 hover:bg-emerald-950 hover:text-emerald-400 transition-colors"
-                title="X (Twitter)"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-            </div>
           </div>
 
-          {/* Col 1: Solutions */}
+          {/* Col 1: Products */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">
-              Solutions
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
+              Products &amp; Crates
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/solutions#packaging" className="hover:text-[#eb6608] transition-colors">
-                  Packaging Solutions
+                <Link href="/solutions#wooden-pallets" className="hover:text-[#0099e5] transition-colors">
+                  Standard Wooden Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#fiber" className="hover:text-[#eb6608] transition-colors">
-                  FiberFlute™ Cushioning
+                <Link href="/solutions#custom-pallets" className="hover:text-[#0099e5] transition-colors">
+                  Custom / Special Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#outer" className="hover:text-[#eb6608] transition-colors">
-                  ExPak Plywood Crates
+                <Link href="/solutions#metal-pallets" className="hover:text-[#0099e5] transition-colors">
+                  Heavy Steel Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#contract-logistics" className="hover:text-[#eb6608] transition-colors">
-                  Contract Packing Services
+                <Link href="/solutions#wooden-boxes" className="hover:text-[#0099e5] transition-colors">
+                  Heavy Wooden Boxes
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#pooling-services" className="hover:text-[#eb6608] transition-colors">
-                  Returnable Pooling Systems
+                <Link href="/solutions#custom-crates" className="hover:text-[#0099e5] transition-colors">
+                  Export Crates &amp; Skids
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#digital" className="hover:text-[#eb6608] transition-colors">
-                  Digital IoT Track & Trace
+                <Link href="/solutions#pallet-collars" className="hover:text-[#0099e5] transition-colors">
+                  Hinged Pallet Collars
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#by-material" className="hover:text-[#eb6608] transition-colors">
-                  Multi-Material Engineering
+                <Link href="/solutions#sawdust-blocks" className="hover:text-[#0099e5] transition-colors text-emerald-400 font-semibold">
+                  Compressed Sawdust Blocks
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 2: Industries */}
+          {/* Col 2: Services & Quality */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">
-              Industries
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
+              Services &amp; Compliance
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/industries#datacom" className="hover:text-[#eb6608] transition-colors">
-                  Datacom & Cloud
+                <Link href="/engineering#ispm15" className="hover:text-[#0099e5] transition-colors flex items-center">
+                  <span>ISPM 15 Heat Treatment</span>
+                  <span className="ml-1 text-[9px] bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded">HT</span>
                 </Link>
               </li>
               <li>
-                <Link href="/industries#telecom" className="hover:text-[#eb6608] transition-colors">
-                  Telecom & Networks
+                <Link href="/solutions#pallet-repair" className="hover:text-[#0099e5] transition-colors">
+                  Pallet Repair &amp; Sorting
                 </Link>
               </li>
               <li>
-                <Link href="/industries#energy" className="hover:text-[#eb6608] transition-colors">
-                  Energy & Power Grid
+                <Link href="/solutions#pallet-pooling" className="hover:text-[#0099e5] transition-colors">
+                  Closed-Loop Pallet Pooling
                 </Link>
               </li>
               <li>
-                <Link href="/industries#battery" className="hover:text-[#eb6608] transition-colors">
-                  LiB & E-Mobility (Batteries)
+                <Link href="/sustainability#waste-to-product" className="hover:text-[#0099e5] transition-colors">
+                  &quot;Waste to Usable Product&quot;
                 </Link>
               </li>
               <li>
-                <Link href="/industries#medtech" className="hover:text-[#eb6608] transition-colors">
-                  Healthcare & MedTech
+                <Link href="/solutions#consulting" className="hover:text-[#0099e5] transition-colors">
+                  No-Cure No-Pay Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/industries#vehicles" className="hover:text-[#eb6608] transition-colors">
-                  Mining & Construction
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries#semicon" className="hover:text-[#eb6608] transition-colors">
-                  Semiconductors
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries#aerospace" className="hover:text-[#eb6608] transition-colors">
-                  Aerospace & Defense
+                <Link href="/engineering#load-testing" className="hover:text-[#0099e5] transition-colors">
+                  Heavy Load Testing
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Sustainability & Engineering */}
+          {/* Col 3: Company & Qatar */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">
-              Sustainability & Labs
-            </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/sustainability#purpose" className="hover:text-[#eb6608] transition-colors">
-                  Saving Resources Purpose
-                </Link>
-              </li>
-              <li>
-                <Link href="/sustainability#greencalc" className="hover:text-[#eb6608] transition-colors flex items-center">
-                  <span>GreenCalc™ LCA Tool</span>
-                  <span className="ml-1 text-[9px] bg-orange-500/20 text-[#eb6608] px-1 py-0.2 rounded">LCA</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/sustainability#circular" className="hover:text-[#eb6608] transition-colors">
-                  Circular Economy Models
-                </Link>
-              </li>
-              <li>
-                <Link href="/sustainability#ppwr" className="hover:text-[#eb6608] transition-colors">
-                  EU PPWR Regulatory Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/engineering#our-approach" className="hover:text-[#eb6608] transition-colors">
-                  The Total Cost Approach
-                </Link>
-              </li>
-              <li>
-                <Link href="/engineering#labs" className="hover:text-[#eb6608] transition-colors">
-                  ISTA Certified Test Labs
-                </Link>
-              </li>
-              <li>
-                <Link href="/engineering" className="hover:text-[#eb6608] transition-colors">
-                  200+ Packaging Engineers
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: About & Global */}
-          <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
               Company
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/about" className="hover:text-[#eb6608] transition-colors">
-                  About Nefab Group
+                <Link href="/about" className="hover:text-[#0099e5] transition-colors">
+                  About Al Waad (AWMPC)
                 </Link>
               </li>
               <li>
-                <Link href="/about#strategy" className="hover:text-[#eb6608] transition-colors">
-                  Corporate Strategy
+                <Link href="/about#made-in-qatar" className="hover:text-[#0099e5] transition-colors text-emerald-400 font-semibold">
+                  Made in Qatar 🇶🇦
                 </Link>
               </li>
               <li>
-                <Link href="/about#ownership" className="hover:text-[#eb6608] transition-colors">
-                  Owners: FAM AB & Nordgren/Pihl
+                <Link href="/about#icv" className="hover:text-[#0099e5] transition-colors">
+                  In-Country Value (ICV)
                 </Link>
               </li>
               <li>
-                <Link href="/about#locations" className="hover:text-[#eb6608] transition-colors">
-                  39 Countries & 145 Sites
+                <Link href="/about#facility" className="hover:text-[#0099e5] transition-colors">
+                  Birkat Al-Awamer Plant
                 </Link>
               </li>
               <li>
-                <Link href="/about#careers" className="hover:text-[#eb6608] transition-colors">
-                  Careers & Job Openings
+                <Link href="/insights" className="hover:text-[#0099e5] transition-colors">
+                  News &amp; Factory Updates
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-[#eb6608] transition-colors">
-                  Press Releases & News
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#eb6608] transition-colors font-medium text-[#eb6608]">
-                  Global Contact Directory
+                <Link href="/contact" className="hover:text-[#0099e5] transition-colors font-bold text-[#0099e5]">
+                  Contact &amp; Factory Location
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Accreditations Badges */}
-        <div className="mt-14 pt-8 border-t border-gray-800 flex flex-wrap items-center justify-between gap-6 text-xs text-gray-400">
-          <div className="flex flex-wrap items-center gap-6">
-            <span className="font-semibold text-gray-300">Certified Standards:</span>
-            <div className="flex items-center space-x-2 bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-md">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>ISO 9001 Quality</span>
+        {/* Accreditations Badges (Exact from Client Business Card) */}
+        <div className="mt-14 pt-8 border-t border-blue-900/60 flex flex-wrap items-center justify-between gap-6 text-xs text-gray-400">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="font-semibold text-white">Certified Accreditations:</span>
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-blue-200">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#0099e5]" />
+              <span>ISO 9001:2015</span>
             </div>
-            <div className="flex items-center space-x-2 bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-md">
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
               <Leaf className="w-3.5 h-3.5 text-emerald-400" />
-              <span>ISO 14001 Environmental</span>
+              <span>ISO 14001:2015</span>
             </div>
-            <div className="flex items-center space-x-2 bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-md">
-              <Award className="w-3.5 h-3.5 text-emerald-400" />
-              <span>ISTA Certified Labs</span>
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-teal-200">
+              <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+              <span>ISO 45001:2018</span>
             </div>
-            <div className="flex items-center space-x-2 bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-md">
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-amber-200">
+              <Award className="w-3.5 h-3.5 text-amber-400" />
+              <span>ICV Certified (Qatar)</span>
+            </div>
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              <span>FSC® Certified Sourcing</span>
+              <span>ISPM 15 Heat Treated</span>
+            </div>
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
+              <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+              <span>FSC® Certified</span>
             </div>
           </div>
 
-          <div className="text-gray-400 text-xs">
-            Global Net-Zero Commitment by 2030
+          <div className="text-gray-300 font-semibold text-xs flex items-center space-x-2">
+            <span>State of Qatar Industrial Excellence</span>
+            <span>🇶🇦</span>
           </div>
         </div>
 
         {/* Bottom Legal Copyright */}
-        <div className="mt-8 pt-6 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© 2026 Nefab Group. All rights reserved.</p>
+        <div className="mt-8 pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+          <p>© 2026 Al Waad Manufacturing Packaging Company (AWMPC / AWMPACK). All rights reserved.</p>
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <Link href="/about" className="hover:text-gray-400">Privacy Policy</Link>
-            <Link href="/about" className="hover:text-gray-400">Cookie Settings</Link>
-            <Link href="/about" className="hover:text-gray-400">Whistleblowing Channel</Link>
-            <Link href="/about" className="hover:text-gray-400">Code of Conduct</Link>
-            <Link href="/about" className="hover:text-gray-400">Terms of Use</Link>
+            <Link href="/about" className="hover:text-gray-400">Quality Policy</Link>
+            <Link href="/about" className="hover:text-gray-400">HSE Safety Charter</Link>
+            <Link href="/sustainability" className="hover:text-gray-400">Environmental Policy</Link>
+            <Link href="/contact" className="hover:text-gray-400">Factory Inquiries</Link>
           </div>
         </div>
       </div>

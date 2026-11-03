@@ -25,27 +25,27 @@ import {
 export default function InsightsPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [contactTopic, setContactTopic] = useState("Whitepapers");
+  const [contactTopic, setContactTopic] = useState("AWMPACK Insights");
   const [activeCategory, setActiveCategory] = useState("all");
 
   const articles = [
     {
       id: 1,
       category: "articles",
-      tag: "EU PPWR 2026",
-      title: "The Comprehensive Guide to PPWR Compliance for Global Transport Packaging",
-      excerpt: "An in-depth breakdown of the European Packaging and Packaging Waste Regulation: 40% maximum void space limits, recyclability criteria, and mandatory reuse quotas for industrial shippers.",
-      readTime: "8 min read",
+      tag: "Export Compliance",
+      title: "ISPM 15 Heat Treatment Compliance Guide for GCC & Global Maritime Exports",
+      excerpt: "Understanding the FAO IPPC ISPM 15 standard: core heating requirements of 56°C for 30 minutes, official HT stamping protocols, and how to eliminate customs quarantine risks at destination ports worldwide.",
+      readTime: "7 min read",
       date: "October 2026",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 2,
       category: "cases",
       tag: "Customer Case",
-      title: "How a Global Telecom OEM Cut 4,200 Tons of CO₂ with ExPak and Returnable Loops",
-      excerpt: "Replacing single-use nailed wooden crates with flat-packing Scandinavian plywood ExPak boxes across 18 European 5G base station manufacturing sites.",
-      readTime: "6 min read",
+      title: "Standardizing 50,000 Heavy Chemical Drum Pallets for Ras Laffan Petrochemical Complex",
+      excerpt: "How AWMPACK engineered custom CP-7 chemical block pallets with zero transit failures and full ISPM 15 compliance under severe Arabian Gulf weather conditions.",
+      readTime: "5 min read",
       date: "September 2026",
       image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop",
     },
@@ -53,28 +53,28 @@ export default function InsightsPage() {
       id: 3,
       category: "news",
       tag: "Press Release",
-      title: "Nefab Expands LiB Battery Packaging Hub in North America with ISTA Dangerous Goods Lab",
-      excerpt: "New 120,000 sq ft engineering and testing facility in Dallas, Texas provides certified UN Class 9 thermal runaway testing and returnable container assembly.",
+      title: "AWMPACK Expands Birkat Al-Awamer Plant with Automated Pallet Assembly Line",
+      excerpt: "Al Waad Manufacturing Packaging Company scales production to 2,000 pallets per day with state-of-the-art hydraulic block compression and automated pneumatic nailing.",
       readTime: "4 min read",
       date: "August 2026",
-      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 4,
       category: "articles",
-      tag: "Material Science",
-      title: "FiberFlute™ vs. Expanded Polystyrene (EPS): Dynamic Shock Curve Comparison",
-      excerpt: "Technical life cycle analysis and drop shock data validating how 100% paper-based FiberFlute™ matches petrochemical foam protection with zero microplastics.",
-      readTime: "7 min read",
+      tag: "Circular Economy",
+      title: "Waste to Usable Product: Converting Wood Residue into High-Density Pallet Blocks",
+      excerpt: "A deep dive into AWMPACK's circular manufacturing: transforming tons of discarded timber and sawdust into moisture-resistant, heavy-load compressed wooden blocks.",
+      readTime: "6 min read",
       date: "July 2026",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 5,
       category: "cases",
       tag: "Customer Case",
-      title: "Hyper-Scale Cloud Provider Eliminates Server Transit Damage with Multi-Axis Vibration Skids",
-      excerpt: "Engineering spring-isolated wooden transport bases for 1,800 kg AI GPU server racks, reducing in-transit shock accelerations below 15 Gs.",
+      title: "Hamad Port 3PL Cuts Packaging Procurement Costs by 24% with Pallet Pooling",
+      excerpt: "Transitioning single-use wooden pallets into a closed-loop pooling model across Doha Free Zones, reducing warehouse congestion and lumber consumption.",
       readTime: "5 min read",
       date: "June 2026",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
@@ -83,11 +83,11 @@ export default function InsightsPage() {
       id: 6,
       category: "news",
       tag: "Corporate",
-      title: "Nefab Awarded EcoVadis Gold Medal for Sustainable Corporate Governance",
-      excerpt: "Ranking in the top 5% of all globally assessed industrial supply chain companies for carbon management, ethical labor standards, and sustainable procurement.",
+      title: "AWMPACK Re-Certified with In-Country Value (ICV) and Triple ISO Accreditations in Qatar",
+      excerpt: "Demonstrating excellence in quality, environmental responsibility, and occupational safety with ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certifications.",
       readTime: "3 min read",
       date: "May 2026",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
     },
   ];
 
@@ -97,11 +97,11 @@ export default function InsightsPage() {
       : articles.filter((a) => a.category === activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0c2340] selection:bg-orange-100 selection:text-[#eb6608]">
+    <div className="min-h-screen flex flex-col bg-white text-[#002b49] selection:bg-blue-100 selection:text-[#002b49]">
       <Header
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => {
-          setContactTopic("Insights Consultation");
+          setContactTopic("AWMPACK Insights & Case Studies");
           setContactOpen(true);
         }}
       />
@@ -110,11 +110,11 @@ export default function InsightsPage() {
         {/* =========================================================================
             INSIGHTS HERO
             ========================================================================= */}
-        <section className="relative bg-[#0c2340] text-white py-20 lg:py-28 overflow-hidden">
+        <section className="relative bg-[#00223a] text-white py-20 lg:py-28 overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <Image
               src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
-              alt="Packaging engineer reviewing data"
+              alt="Industrial packaging production facility"
               fill
               priority
               className="object-cover object-center"
@@ -122,14 +122,14 @@ export default function InsightsPage() {
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-5">
-              <span className="inline-block bg-[#13294b] border border-blue-400/30 text-blue-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                Knowledge Hub & Press
+              <span className="inline-block bg-[#002b49] border border-blue-400/30 text-blue-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                AWMPACK Knowledge Hub & Press
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                News & Insights
+                News & Industrial Insights
               </h1>
               <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
-                Stay updated with the latest packaging engineering innovations, European PPWR regulatory compliance guides, customer carbon-reduction case studies, and corporate press releases.
+                Stay updated with the latest in wooden pallet engineering, ISPM 15 heat treatment standards, circular wood recycling, and customer case studies across Qatar&apos;s leading industrial sectors.
               </p>
             </div>
           </div>
@@ -143,14 +143,14 @@ export default function InsightsPage() {
                 { id: "all", label: "All Insights" },
                 { id: "news", label: "News & Press Releases" },
                 { id: "cases", label: "Customer Cases" },
-                { id: "articles", label: "Articles & Whitepapers" },
+                { id: "articles", label: "Technical Guides" },
               ].map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-4 py-2 rounded-full transition-all ${
                     activeCategory === cat.id
-                      ? "bg-[#0c2340] text-white shadow-sm"
+                      ? "bg-[#002b49] text-white shadow-sm"
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
                   }`}
                 >
@@ -161,7 +161,7 @@ export default function InsightsPage() {
 
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:text-[#eb6608] hover:border-[#eb6608]"
+              className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:text-[#0099e5] hover:border-[#0099e5]"
             >
               <Search className="w-3.5 h-3.5" />
               <span>Search articles...</span>
@@ -186,7 +186,7 @@ export default function InsightsPage() {
                         fill
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-3 left-3 bg-[#0c2340]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
+                      <div className="absolute top-3 left-3 bg-[#002b49]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
                         {item.tag}
                       </div>
                     </div>
@@ -197,7 +197,7 @@ export default function InsightsPage() {
                         <span>•</span>
                         <span>{item.readTime}</span>
                       </div>
-                      <h2 className="text-lg font-bold text-[#0c2340] group-hover:text-[#eb6608] transition-colors leading-snug">
+                      <h2 className="text-lg font-bold text-[#002b49] group-hover:text-[#0099e5] transition-colors leading-snug">
                         {item.title}
                       </h2>
                       <p className="text-xs text-gray-600 leading-relaxed">
@@ -212,14 +212,21 @@ export default function InsightsPage() {
                         setContactTopic(`Inquiry about ${item.title}`);
                         setContactOpen(true);
                       }}
-                      className="inline-flex items-center text-xs font-bold text-[#eb6608] group-hover:translate-x-1 transition-transform"
+                      className="inline-flex items-center text-xs font-bold text-[#0099e5] group-hover:translate-x-1 transition-transform"
                     >
                       <span>Read Full Story</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </button>
-                    <span title="Download PDF">
-                      <Download className="w-4 h-4 text-gray-400 hover:text-[#0c2340] cursor-pointer" />
-                    </span>
+                    <button
+                      onClick={() => {
+                        setContactTopic(`Download spec: ${item.title}`);
+                        setContactOpen(true);
+                      }}
+                      title="Download PDF"
+                      className="p-1 text-gray-400 hover:text-[#002b49]"
+                    >
+                      <Download className="w-4 h-4" />
+                    </button>
                   </div>
                 </article>
               ))}
