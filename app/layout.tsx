@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     "Pallet Collars Qatar",
     "Pallet Repair Pooling Qatar",
   ],
+  icons: {
+    icon: [
+      { url: "/logo.jpeg", type: "image/jpeg" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: ["/logo.jpeg"],
+  },
 };
 
 export default function RootLayout({

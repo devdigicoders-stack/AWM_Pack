@@ -153,9 +153,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`w-full transition-all duration-200 bg-white border-b border-gray-100 relative ${
-          isScrolled ? "shadow-sm py-2" : "py-2.5 sm:py-3"
-        }`}
+        className={`w-full transition-all duration-200 bg-white border-b border-gray-100 relative ${isScrolled ? "shadow-sm py-2" : "py-2.5 sm:py-3"
+          }`}
         onMouseLeave={handleMouseLeave}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 xl:gap-3">
@@ -165,7 +164,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onClick={closeDropdown}
             className="flex items-center space-x-3 group py-1 shrink-0"
           >
-            <div className="relative w-[150px] sm:w-[165px] xl:w-[180px] aspect-[1499/529] transition-all">
+            <div className="relative w-[110px] sm:w-[130px] xl:w-[145px] aspect-[1499/529] transition-all">
               <Image
                 src="/logo.jpeg"
                 alt="AWMPACK - Al Waad Manufacturing Packaging Company"
@@ -177,7 +176,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </Link>
 
           {/* Center Navigation Links with Hover Bridge */}
-          <div className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0">
+          <div className="hidden xl:flex items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0">
             {/* 1. SOLUTIONS */}
             <div
               className="relative py-2"
@@ -187,11 +186,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/solutions"
                 onClick={() => handleNavClick("/solutions")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "solutions"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "solutions"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 Solutions
               </Link>
@@ -206,11 +204,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/consulting"
                 onClick={() => handleNavClick("/consulting")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "consulting"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "consulting"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 Consulting
               </Link>
@@ -225,11 +222,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/industries"
                 onClick={() => handleNavClick("/industries")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "industries"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "industries"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 Industries
               </Link>
@@ -244,11 +240,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/sustainability"
                 onClick={() => handleNavClick("/sustainability")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "sustainability"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "sustainability"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 Sustainability
               </Link>
@@ -263,11 +258,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/engineering"
                 onClick={() => handleNavClick("/engineering")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "engineering"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "engineering"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 Engineering
               </Link>
@@ -282,11 +276,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/insights"
                 onClick={() => handleNavClick("/insights")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "insights"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "insights"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 News &amp; Insights
               </Link>
@@ -301,11 +294,10 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/about"
                 onClick={() => handleNavClick("/about")}
-                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
-                  activeDropdown === "about"
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${activeDropdown === "about"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
-                }`}
+                  }`}
               >
                 About Us
               </Link>
@@ -363,9 +355,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                       setSelectedLanguage("English");
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${
-                      selectedLanguage === "English" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
-                    }`}
+                    className={`w-full text-left px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${selectedLanguage === "English" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
+                      }`}
                   >
                     <span>English (Qatar & Global)</span>
                     {selectedLanguage === "English" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
@@ -375,9 +366,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                       setSelectedLanguage("العربية");
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-right px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${
-                      selectedLanguage === "العربية" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
-                    }`}
+                    className={`w-full text-right px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${selectedLanguage === "العربية" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
+                      }`}
                   >
                     <span>العربية (دولة قطر)</span>
                     {selectedLanguage === "العربية" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
@@ -389,14 +379,14 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#002b49] lg:hidden"
+              className="p-1.5 text-[#002b49] xl:hidden"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-                {/* =========================================================================
+        {/* =========================================================================
             MODERN ELEVATED MEGA MENU PANELS (Crisp White, Rich Icons & Cards)
             ========================================================================= */}
 

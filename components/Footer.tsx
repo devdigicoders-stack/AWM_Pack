@@ -93,7 +93,7 @@ export default function Footer() {
               href="/"
               className="inline-block bg-white px-3 py-1.5 rounded-xl shadow-xs hover:shadow-md transition-all shrink-0"
             >
-              <div className="relative w-[150px] sm:w-[165px] xl:w-[180px] aspect-[1499/529] transition-all">
+              <div className="relative w-[125px] sm:w-[140px] xl:w-[155px] aspect-[1499/529] transition-all">
                 <Image
                   src="/logo.jpeg"
                   alt="AWMPACK - Al Waad Manufacturing Packaging Company"
