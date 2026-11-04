@@ -64,11 +64,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Proactive browser zoom & narrow viewport detection
+  // Proactive browser zoom & mobile viewport detection
   useEffect(() => {
-    let initialDpr = 1;
+    let baselineDpr = 1;
     if (typeof window !== "undefined") {
-      initialDpr = window.devicePixelRatio || 1;
+      baselineDpr = window.devicePixelRatio || 1;
     }
 
     const checkZoomAndViewport = () => {
@@ -79,16 +79,19 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
       const currentDpr = window.devicePixelRatio || 1;
       const visualScale = window.visualViewport?.scale ?? 1;
 
-      // In Chrome/Edge, zooming Ctrl + Plus causes outerW / innerW to exceed 1.0 (e.g. 1.10, 1.25, 1.50)
-      const zoomRatio = outerW > 0 && innerW > 0 ? outerW / innerW : 1;
-      // In Firefox or high-DPI displays, DPR increases compared to initial load
-      const dprRatio = initialDpr > 0 ? currentDpr / initialDpr : 1;
+      // In desktop Chrome/Edge, zooming Ctrl + Plus causes outerW / innerW to jump to 1.15+ (at 110%) or 1.30+ (at 125%)
+      // At 100% zoom, outerW/innerW is only 1.01 - 1.05 due to window borders and scrollbar.
+      const outerInnerZoom = outerW > 0 && innerW > 0 ? outerW / innerW : 1;
 
-      // Active zoom check: triggers when user zooms above 100% (threshold 1.05 accounts for scrollbars)
-      const isZoomed = zoomRatio > 1.05 || dprRatio > 1.05 || visualScale > 1.05;
+      // In Firefox, DPR increases relative to baseline
+      const dprZoom = baselineDpr > 0 ? currentDpr / baselineDpr : 1;
 
-      // Viewport width check: when screen is narrower than comfortable desktop threshold (1320px)
-      const isNarrow = innerW < 1320;
+      // Zoom check: ONLY triggers when zoom is strictly ABOVE 100% (e.g. 110%, 125%, 150%)
+      const isZoomed = dprZoom >= 1.08 || outerInnerZoom >= 1.10 || visualScale >= 1.08;
+
+      // Viewport width check: ONLY for mobile / tablet screens (< 1024px)
+      // Any standard desktop/laptop at 100% (1024px - 1920px) will NOT trigger isNarrow!
+      const isNarrow = innerW < 1024;
 
       setIsZoomedOrMobile(isZoomed || isNarrow);
     };
@@ -234,7 +237,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </Link>
 
           {/* Center Navigation Links with Hover Bridge */}
-          <div className={`${isZoomedOrMobile ? "hidden" : "hidden xl:flex"} items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0`}>
+          <div className={`${isZoomedOrMobile ? "hidden" : "hidden lg:flex"} items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0`}>
             {/* 1. SOLUTIONS */}
             <div
               className="relative py-2"
@@ -375,11 +378,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
           {/* Right Action Icons & Button */}
           <div className="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
-            {/* Dark Blue "Contact" Link Button */}
+            {/* Dark Blue "Contact" Link Button (hidden on tiny mobile screens to prevent header crowding) */}
             <Link
               href="/contact"
               onClick={closeDropdown}
-              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-[13px] px-3.5 xl:px-4.5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap inline-flex items-center justify-center"
+              className="hidden sm:inline-flex bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-[13px] px-3.5 xl:px-4.5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap items-center justify-center"
             >
               Contact
             </Link>
@@ -441,11 +444,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               className={`p-1.5 text-[#002b49] hover:bg-gray-100 rounded-lg transition-colors ${
-                isZoomedOrMobile ? "flex items-center" : "xl:hidden"
+                isZoomedOrMobile ? "flex items-center" : "lg:hidden"
               }`}
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-[#002b49]" /> : <Menu className="w-6 h-6 text-[#002b49]" />}
             </button>
           </div>
         </div>
@@ -1798,183 +1801,326 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className={`${isZoomedOrMobile ? "block" : "xl:hidden"} bg-white border-t border-gray-200 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl`}>
+          <div className={`${isZoomedOrMobile ? "block" : "lg:hidden"} bg-slate-50/98 backdrop-blur-md border-t border-gray-200 px-4 sm:px-6 py-5 space-y-5 max-h-[85vh] overflow-y-auto shadow-2xl`}>
+            
+            {/* 1. Quick CTA Banner (WhatsApp & Direct Call) */}
+            <div className="bg-white p-3.5 rounded-2xl border border-blue-100 shadow-xs space-y-2.5">
+              <div className="flex items-center justify-between text-[11px] font-semibold px-1">
+                <span className="flex items-center text-[#002b49]">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />
+                  Birkat Al-Awamer Plant (Zone 91)
+                </span>
+                <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  ISPM 15 &amp; ICV 🇶🇦
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20inquire%20about%20pallets%20and%20crating"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-xs transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>WhatsApp Chat</span>
+                </a>
+                <a
+                  href="tel:+97451191223"
+                  className="flex items-center justify-center space-x-1.5 bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-xs transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#0099e5]" />
+                  <span>Call Direct</span>
+                </a>
+              </div>
+            </div>
+
+            {/* 2. Main Navigation Links (Clean Category Cards) */}
             <div className="space-y-4">
-              <div>
-                <p className="font-black text-xs uppercase tracking-wider text-gray-400 mb-2">
-                  AWMPACK PRODUCTS & SERVICES
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-sm">
+              
+              {/* SECTION: Products & Crates */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 p-3.5 shadow-xs">
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
+                  <div className="flex items-center space-x-2 text-[#002b49] font-black text-xs uppercase tracking-wider">
+                    <Boxes className="w-4 h-4 text-[#0099e5]" />
+                    <span>Industrial Products &amp; Crates</span>
+                  </div>
+                  <Link
+                    href="/solutions"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[11px] font-bold text-[#0099e5] hover:underline"
+                  >
+                    View All &rarr;
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
                   <Link
                     href="/solutions/awmpc-pallets"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#0099e5] font-bold py-1"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-semibold group transition-colors"
                   >
-                    ★ AWMPC Pallets
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0099e5]" />
+                      <span className="text-[#002b49] font-bold">★ AWMPC Pallets</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                   <Link
                     href="/solutions/industrial-pallets"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-semibold"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-medium group transition-colors"
                   >
-                    Industrial Pallets
-                  </Link>
-                  <Link
-                    href="/solutions/used-pallets"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
-                  >
-                    Used Pallets
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                      <span>Heavy Industrial Pallets</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                   <Link
                     href="/solutions/wooden-boxes-crates"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-medium group transition-colors"
                   >
-                    Custom Crates
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                      <span>Custom Boxes &amp; Heavy Crates</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
+                  </Link>
+                  <Link
+                    href="/solutions/used-pallets"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-medium group transition-colors"
+                  >
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                      <span>Used &amp; Reconditioned Pallets</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                   <Link
                     href="/solutions/compressed-sawdust-wood-blocks"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-medium group transition-colors"
                   >
-                    Sawdust Blocks
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span>Compressed Sawdust Blocks</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                   <Link
                     href="/engineering#ispm15"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50/70 text-gray-800 font-medium group transition-colors"
                   >
-                    ISPM 15 Treatment
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                      <span>ISPM 15 Heat-Treatment Kiln</span>
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                 </div>
               </div>
 
-              <div className="border-t border-gray-100 pt-3">
-                <p className="font-black text-xs uppercase tracking-wider text-[#0099e5] mb-2 flex items-center justify-between">
-                  <span>CONSULTING &amp; COST AUDIT</span>
-                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">4% Savings</span>
-                </p>
-                <div className="grid grid-cols-1 gap-1.5 text-sm">
+              {/* SECTION: Consulting & Cost Audit */}
+              <div className="bg-white rounded-2xl border border-emerald-100 p-3.5 shadow-xs">
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
+                  <div className="flex items-center space-x-2 text-[#002b49] font-black text-xs uppercase tracking-wider">
+                    <Sliders className="w-4 h-4 text-emerald-600" />
+                    <span>Consulting &amp; Cost Reduction</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">
+                    4% Guaranteed Savings
+                  </span>
+                </div>
+                <div className="space-y-1.5 text-xs">
                   <Link
                     href="/consulting/no-cure-no-pay"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-bold flex items-center justify-between"
+                    className="flex items-start justify-between p-2 rounded-xl bg-emerald-50/50 hover:bg-emerald-50 text-gray-800 group transition-colors"
                   >
-                    <span>→ Analysis No-Cure No-Pay</span>
-                    <span className="text-xs text-emerald-600 font-semibold">Guaranteed ROI</span>
+                    <div>
+                      <p className="font-bold text-[#002b49] group-hover:text-emerald-700">Analysis No-Cure No-Pay</p>
+                      <p className="text-[11px] text-gray-500">Pay nothing if we do not save you at least 4% on pallets</p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                   </Link>
                   <Link
                     href="/consulting/material-handling"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1 font-semibold"
+                    className="flex items-center justify-between p-2 rounded-xl hover:bg-gray-50 text-gray-800 font-semibold group transition-colors"
                   >
-                    → Handling Materials Consulting (2 Models)
+                    <span>Materials Handling Advisory (2 Models)</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#0099e5]" />
                   </Link>
                   <Link
                     href="/consulting"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs text-[#0099e5] hover:underline font-bold pt-0.5"
+                    className="block text-center text-xs font-bold text-[#0099e5] hover:underline pt-1"
                   >
-                    View Consulting Hub &rarr;
+                    Explore Consulting Hub &rarr;
                   </Link>
                 </div>
               </div>
 
-              <div className="border-t border-gray-100 pt-3">
-                <p className="font-black text-xs uppercase tracking-wider text-gray-400 mb-2">
-                  KEY SECTORS
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-sm">
+              {/* SECTION: Strategic Industries */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 p-3.5 shadow-xs">
+                <div className="flex items-center space-x-2 text-[#002b49] font-black text-xs uppercase tracking-wider pb-2 mb-2 border-b border-gray-100">
+                  <Factory className="w-4 h-4 text-[#0099e5]" />
+                  <span>Qatar Strategic Industries</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
                   <Link
                     href="/industries#oil-gas"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
                   >
-                    Oil & Gas
+                    <span>🛢️</span>
+                    <span>Oil &amp; Gas / Energy</span>
                   </Link>
                   <Link
                     href="/industries#construction"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
                   >
-                    Construction
+                    <span>🏗️</span>
+                    <span>Construction</span>
                   </Link>
                   <Link
                     href="/industries#manufacturing"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
                   >
-                    Manufacturing
+                    <span>⚙️</span>
+                    <span>Manufacturing</span>
                   </Link>
                   <Link
                     href="/industries#logistics"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#002b49] hover:text-[#0099e5] py-1"
+                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
                   >
-                    Hamad Port Freight
+                    <span>🚢</span>
+                    <span>Hamad Port Freight</span>
                   </Link>
                 </div>
               </div>
 
-              <div className="border-t border-gray-100 pt-3">
-                <p className="font-black text-xs uppercase tracking-wider text-gray-400 mb-2">
-                  QUICK LINKS
+              {/* SECTION: Quick Company Links */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 p-3.5 shadow-xs">
+                <p className="font-black text-xs uppercase tracking-wider text-gray-400 mb-2 pb-1 border-b border-gray-100">
+                  Company &amp; Compliance
                 </p>
-                <div className="space-y-2 text-sm font-semibold">
-                  <Link
-                    href="/solutions"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#002b49] hover:text-[#0099e5]"
-                  >
-                    All Products
-                  </Link>
+                <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
                   <Link
                     href="/sustainability"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#002b49] hover:text-[#0099e5]"
+                    className="p-2 rounded-xl hover:bg-emerald-50 text-emerald-800 flex items-center space-x-1.5"
                   >
-                    Waste to Usable Products
+                    <Leaf className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Waste to Usable</span>
                   </Link>
                   <Link
                     href="/engineering"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#002b49] hover:text-[#0099e5]"
+                    className="p-2 rounded-xl hover:bg-blue-50 text-[#002b49] flex items-center space-x-1.5"
                   >
-                    ISPM 15 & Engineering
+                    <Award className="w-3.5 h-3.5 text-[#0099e5]" />
+                    <span>ISPM 15 Engineering</span>
                   </Link>
                   <Link
                     href="/about"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#002b49] hover:text-[#0099e5]"
+                    className="p-2 rounded-xl hover:bg-blue-50 text-[#002b49] flex items-center space-x-1.5"
                   >
-                    About AWMPACK
+                    <Building2 className="w-3.5 h-3.5 text-gray-500" />
+                    <span>About AWMPACK</span>
                   </Link>
                   <Link
                     href="/gallery"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#002b49] hover:text-[#0099e5]"
+                    className="p-2 rounded-xl hover:bg-blue-50 text-[#002b49] flex items-center space-x-1.5"
                   >
-                    Factory Gallery
+                    <Boxes className="w-3.5 h-3.5 text-gray-500" />
+                    <span>Factory Gallery</span>
+                  </Link>
+                  <Link
+                    href="/insights"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-xl hover:bg-blue-50 text-[#002b49] flex items-center space-x-1.5"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-gray-500" />
+                    <span>News &amp; Updates</span>
                   </Link>
                   <Link
                     href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-[#0099e5] font-bold"
+                    className="p-2 rounded-xl bg-blue-50 text-[#0099e5] font-bold flex items-center space-x-1.5"
                   >
-                    Contact Factory (Doha, Qatar)
+                    <MapPin className="w-3.5 h-3.5 text-[#0099e5]" />
+                    <span>Contact Factory</span>
                   </Link>
                 </div>
               </div>
 
-              {/* Mobile Direct Call Card */}
-              <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs space-y-1">
-                <p className="font-bold text-[#003366]">Eng. Maher Marjy</p>
-                <p className="text-gray-600">Factory Manager, AWMPACK</p>
-                <p className="text-[#0099e5] font-bold">+974 5119 1223</p>
-                <p className="text-gray-700 font-semibold">+974 4039 4581</p>
-                <p className="text-gray-500">Birkat Al-Awamer, Al Wukair</p>
+              {/* 3. Direct Factory Visiting Card */}
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-[#002b49] to-[#001829] text-white border border-blue-900 shadow-md space-y-2.5">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="font-extrabold text-sm text-white">Eng. Maher Marjy</p>
+                    <p className="text-[11px] text-blue-200 font-medium">Factory Manager • AWMPACK Qatar</p>
+                  </div>
+                  <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-bold">
+                    HQ Hotline
+                  </span>
+                </div>
+
+                <div className="space-y-1.5 text-xs pt-1">
+                  <a
+                    href="tel:+97451191223"
+                    className="flex items-center text-emerald-400 hover:text-emerald-300 font-bold"
+                  >
+                    <Phone className="w-3.5 h-3.5 mr-2 text-emerald-400" />
+                    <span>+974 5119 1223 (Mobile)</span>
+                  </a>
+                  <a
+                    href="tel:+97440394581"
+                    className="flex items-center text-blue-200 hover:text-white font-medium"
+                  >
+                    <Phone className="w-3.5 h-3.5 mr-2 text-[#0099e5]" />
+                    <span>+974 4039 4581 (Office)</span>
+                  </a>
+                  <a
+                    href="mailto:maher@awmpack.com"
+                    className="flex items-center text-blue-200 hover:text-white font-medium"
+                  >
+                    <Mail className="w-3.5 h-3.5 mr-2 text-[#0099e5]" />
+                    <span>maher@awmpack.com</span>
+                  </a>
+                  <p className="flex items-start text-[11px] text-gray-300 pt-1">
+                    <MapPin className="w-3.5 h-3.5 mr-2 text-[#0099e5] shrink-0 mt-0.5" />
+                    <span>Bldg 89, St 3012, Zone 91, Birkat Al-Awamer, Qatar</span>
+                  </p>
+                </div>
+
+                <div className="pt-2 flex gap-2">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Birkat+Al-Awamer+Zone+91+Street+3012+Qatar"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 text-center py-2 px-3 bg-[#001f35] hover:bg-[#0099e5] text-blue-200 hover:text-white rounded-xl text-[11px] font-bold border border-blue-800 transition-colors"
+                  >
+                    Google Maps &rarr;
+                  </a>
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex-1 text-center py-2 px-3 bg-[#0099e5] hover:bg-blue-500 text-white rounded-xl text-[11px] font-bold shadow-xs transition-colors"
+                  >
+                    Contact Page &rarr;
+                  </Link>
+                </div>
               </div>
+
             </div>
           </div>
         )}
