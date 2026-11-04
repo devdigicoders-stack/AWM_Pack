@@ -423,76 +423,244 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
       {/* =========================================================================
           SECTION 6: "With you wherever you operate across Qatar & GCC"
           ========================================================================= */}
-      <section className="py-20 bg-[#e6f4fb] border-b border-blue-100">
+      <section className="py-20 bg-gradient-to-b from-[#e6f4fb] via-white to-[#edf7fc] border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Qatar Industrial Map Graphic */}
-          <div className="relative w-full h-[260px] sm:h-[380px] bg-white/90 rounded-3xl p-6 sm:p-10 mb-8 border border-blue-200 shadow-inner overflow-hidden flex items-center justify-center">
-            {/* Stylized Qatar Peninsula SVG Representation */}
-            <div className="relative w-full h-full max-w-2xl flex items-center justify-center">
-              <svg viewBox="0 0 500 600" className="w-full h-full fill-[#003366]/20 stroke-[#003366]/40 stroke-2">
-                {/* Qatar Peninsula outline */}
-                <path d="M260,80 Q290,140 280,220 T290,320 T270,420 T220,500 L170,510 Q190,440 210,360 T200,240 T220,130 Z" />
-              </svg>
-
-              {/* Location Pins across Qatar */}
-              <div className="absolute top-[68%] left-[54%] flex items-center space-x-1.5" title="Birkat Al-Awamer Factory HQ">
-                <div className="w-4 h-4 rounded-full bg-[#0099e5] ring-4 ring-white animate-pulse"></div>
-                <span className="text-[11px] font-black text-[#002b49] bg-white/90 px-2 py-0.5 rounded shadow-xs">
-                  Birkat Al-Awamer (Factory HQ)
-                </span>
-              </div>
-
-              <div className="absolute top-[28%] left-[56%] flex items-center space-x-1.5" title="Ras Laffan Industrial City">
-                <div className="w-3 h-3 rounded-full bg-[#003366] ring-2 ring-white"></div>
-                <span className="text-[10px] font-bold text-gray-700 bg-white/80 px-1.5 py-0.5 rounded">
-                  Ras Laffan
-                </span>
-              </div>
-
-              <div className="absolute top-[78%] left-[58%] flex items-center space-x-1.5" title="Mesaieed Industrial City">
-                <div className="w-3 h-3 rounded-full bg-[#003366] ring-2 ring-white"></div>
-                <span className="text-[10px] font-bold text-gray-700 bg-white/80 px-1.5 py-0.5 rounded">
-                  Mesaieed
-                </span>
-              </div>
-
-              <div className="absolute top-[58%] left-[52%] flex items-center space-x-1.5" title="Doha Industrial Area">
-                <div className="w-3 h-3 rounded-full bg-[#003366] ring-2 ring-white"></div>
-                <span className="text-[10px] font-bold text-gray-700 bg-white/80 px-1.5 py-0.5 rounded">
-                  Doha Industrial Area
-                </span>
-              </div>
-
-              <div className="absolute top-[72%] left-[62%] flex items-center space-x-1.5" title="Hamad Port">
-                <div className="w-3 h-3 rounded-full bg-[#003366] ring-2 ring-white"></div>
-                <span className="text-[10px] font-bold text-gray-700 bg-white/80 px-1.5 py-0.5 rounded">
-                  Hamad Port
-                </span>
-              </div>
+          {/* Section Header */}
+          <div className="max-w-3xl mb-12 space-y-3">
+            <div className="inline-flex items-center space-x-2 bg-[#002b49] text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xs">
+              <Truck className="w-3.5 h-3.5 text-[#0099e5]" />
+              <span>Nationwide Industrial Delivery Network • State of Qatar 🇶🇦</span>
             </div>
-
-            <div className="absolute bottom-4 left-6 bg-[#002b49] text-white text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center space-x-1">
-              <span>National Delivery Across Qatar</span>
-              <span>🇶🇦</span>
-            </div>
-          </div>
-
-          {/* Heading and Button */}
-          <div className="max-w-2xl space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002b49] tracking-tight">
               With you wherever you operate in Qatar
             </h2>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-              Our central manufacturing and heat-treatment plant in Birkat Al-Awamer ensures rapid just-in-time pallet replenishment and customized packing teams dispatched directly to your project site.
+              From our central manufacturing and certified ISPM 15 thermal kiln plant in <strong>Birkat Al-Awamer (Zone 91)</strong>, AWMPACK delivers rapid 24–48h pallet replenishment, buffer storage management, and customized on-site packaging crews across all Qatar industrial hubs.
             </p>
-            <div className="pt-2">
-              <Link
-                href="/contact"
-                className="inline-block bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all"
-              >
-                View Factory Location &amp; Directions
-              </Link>
+          </div>
+
+          {/* Interactive Qatar Logistics & Hub Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+            {/* Visual Qatar Peninsula Map with True Geographic Landmarks */}
+            <div className="lg:col-span-7 bg-[#001829] text-white rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-blue-900/60 shadow-xl flex flex-col justify-between">
+              {/* Background Radar / Tech grid */}
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0099e5_1px,transparent_1px)] [background-size:16px_16px]" />
+
+              <div className="relative z-10 flex items-center justify-between pb-4 border-b border-blue-900/60">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-xs font-bold text-blue-200 uppercase tracking-wider">
+                    Live Dispatch Map • Central Plant Birkat Al-Awamer
+                  </span>
+                </div>
+                <span className="text-[11px] text-[#0099e5] font-semibold bg-blue-950/80 px-2.5 py-1 rounded-full border border-blue-800">
+                  Daily Express Routes
+                </span>
+              </div>
+
+              {/* Geographic Representation of Qatar Peninsula */}
+              <div className="relative z-10 w-full h-[320px] sm:h-[380px] my-4 flex items-center justify-center">
+                <svg viewBox="0 0 500 600" className="w-full h-full filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+                  <rect width="500" height="600" fill="transparent" />
+
+                  {/* Qatar Peninsula Contour */}
+                  <path
+                    d="M 250,50 
+                       C 275,60 295,85 300,110 
+                       C 310,150 305,190 305,220 
+                       C 312,260 320,290 312,325 
+                       C 305,360 300,380 295,410 
+                       C 285,445 275,475 255,495 
+                       C 230,510 195,515 170,505 
+                       C 160,470 155,420 162,380 
+                       C 168,340 160,300 168,260 
+                       C 172,220 180,165 195,120 
+                       C 210,80 225,55 250,50 Z"
+                    fill="#002b49"
+                    stroke="#0099e5"
+                    strokeWidth="2.5"
+                    strokeDasharray="4 2"
+                    className="opacity-90"
+                  />
+
+                  {/* Transit Route Lines from Birkat Al-Awamer */}
+                  <line x1="290" y1="340" x2="295" y2="115" stroke="#0099e5" strokeWidth="2" strokeDasharray="6 4" opacity="0.6" />
+                  <line x1="290" y1="340" x2="270" y2="280" stroke="#0099e5" strokeWidth="2" strokeDasharray="6 4" opacity="0.6" />
+                  <line x1="290" y1="340" x2="305" y2="370" stroke="#10b981" strokeWidth="2.5" strokeDasharray="6 4" opacity="0.8" />
+                  <line x1="290" y1="340" x2="290" y2="410" stroke="#0099e5" strokeWidth="2" strokeDasharray="6 4" opacity="0.6" />
+                </svg>
+
+                {/* Hub Pin 1: Birkat Al-Awamer (Central Plant HQ) */}
+                <div className="absolute top-[56%] left-[56%] z-20 flex items-center space-x-2">
+                  <div className="relative">
+                    <span className="w-5 h-5 rounded-full bg-[#0099e5] ring-4 ring-white animate-pulse block shadow-lg" />
+                    <span className="absolute -top-1 -left-1 w-7 h-7 rounded-full border border-blue-400 animate-ping" />
+                  </div>
+                  <div className="bg-[#002b49]/95 text-white border border-[#0099e5] px-3 py-1.5 rounded-xl shadow-lg backdrop-blur-md">
+                    <p className="text-xs font-black text-white flex items-center">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 inline-block" />
+                      Birkat Al-Awamer
+                    </p>
+                    <p className="text-[10px] text-blue-200 font-semibold">Central Manufacturing Plant &amp; HQ</p>
+                  </div>
+                </div>
+
+                {/* Hub Pin 2: Ras Laffan */}
+                <div className="absolute top-[18%] left-[58%] z-10 flex items-center space-x-1.5">
+                  <span className="w-3.5 h-3.5 rounded-full bg-blue-300 ring-2 ring-white block" />
+                  <div className="bg-[#001829]/90 text-white border border-blue-800 px-2.5 py-1 rounded-lg text-[11px] font-bold shadow-md">
+                    Ras Laffan (55 min)
+                  </div>
+                </div>
+
+                {/* Hub Pin 3: Doha Industrial Area */}
+                <div className="absolute top-[46%] left-[52%] z-10 flex items-center space-x-1.5">
+                  <span className="w-3.5 h-3.5 rounded-full bg-blue-300 ring-2 ring-white block" />
+                  <div className="bg-[#001829]/90 text-white border border-blue-800 px-2.5 py-1 rounded-lg text-[11px] font-bold shadow-md">
+                    Doha Industrial (15 min)
+                  </div>
+                </div>
+
+                {/* Hub Pin 4: Hamad Port */}
+                <div className="absolute top-[62%] left-[62%] z-10 flex items-center space-x-1.5">
+                  <span className="w-4 h-4 rounded-full bg-emerald-400 ring-2 ring-white block shadow-sm" />
+                  <div className="bg-emerald-950/90 text-emerald-200 border border-emerald-600 px-2.5 py-1 rounded-lg text-[11px] font-bold shadow-md">
+                    Hamad Port (18 min)
+                  </div>
+                </div>
+
+                {/* Hub Pin 5: Mesaieed */}
+                <div className="absolute top-[68%] left-[57%] z-10 flex items-center space-x-1.5">
+                  <span className="w-3.5 h-3.5 rounded-full bg-blue-300 ring-2 ring-white block" />
+                  <div className="bg-[#001829]/90 text-white border border-blue-800 px-2.5 py-1 rounded-lg text-[11px] font-bold shadow-md">
+                    Mesaieed (22 min)
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Quick Bar */}
+              <div className="relative z-10 pt-3 border-t border-blue-900/60 flex flex-wrap items-center justify-between text-xs text-blue-200 gap-2">
+                <span>Direct highway access via G-Ring, Orbital Highway &amp; Mesaieed Road</span>
+                <span className="text-emerald-400 font-bold">24–48h Guaranteed Dispatch 🇶🇦</span>
+              </div>
             </div>
+
+            {/* Right Column: Strategic Hub Destination Cards */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-3.5">
+              <div className="p-4 rounded-2xl bg-white border border-blue-100 shadow-xs hover:border-[#0099e5] hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-black uppercase text-[#002b49] flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#0099e5] mr-2 inline-block" />
+                    Hamad Port (Container Seaport)
+                  </span>
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    18 Mins
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  ISPM 15 certified seaworthy timber platforms, export crates, and container dunnage for immediate export loading with zero customs fumigation quarantine.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-blue-100 shadow-xs hover:border-[#0099e5] hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-black uppercase text-[#002b49] flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#002b49] mr-2 inline-block" />
+                    Mesaieed Industrial City
+                  </span>
+                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
+                    22 Mins
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Heavy-duty timber and steel reinforced platforms tailored for petrochemical plants, steel mills, and aluminum export bundles.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-blue-100 shadow-xs hover:border-[#0099e5] hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-black uppercase text-[#002b49] flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#002b49] mr-2 inline-block" />
+                    Doha Industrial Area
+                  </span>
+                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
+                    15 Mins
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Daily just-in-time replenishment of standard wooden pallets (1200x1000 &amp; 1200x800mm), hinged pallet collars, and warehouse buffer inventory.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-blue-100 shadow-xs hover:border-[#0099e5] hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-black uppercase text-[#002b49] flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#002b49] mr-2 inline-block" />
+                    Ras Laffan Industrial City
+                  </span>
+                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
+                    55 Mins
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Certified chemical drum pallets, heavy offshore timber skids, and vapor-barrier preservation crating for critical energy infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 Fleet & Manufacturing Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-3xl border border-blue-100 shadow-sm mb-8">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0099e5] flex items-center justify-center shrink-0">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm font-black text-[#002b49]">15,000 m²</p>
+                <p className="text-[11px] text-gray-500 font-medium">Birkat Al-Awamer Plant</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <Truck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm font-black text-[#002b49]">24–48 Hours</p>
+                <p className="text-[11px] text-gray-500 font-medium">Rapid Highway Dispatch</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                <Flame className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm font-black text-[#002b49]">ISPM 15 Certified</p>
+                <p className="text-[11px] text-gray-500 font-medium">Thermal Kilns On-Site</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#002b49] flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm font-black text-[#002b49]">On-Site Crews</p>
+                <p className="text-[11px] text-gray-500 font-medium">Mobile Packing &amp; Rigging</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Link Button */}
+          <div className="text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center space-x-2 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all"
+            >
+              <span>View Factory Location &amp; Schedule Delivery</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
