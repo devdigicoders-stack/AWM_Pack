@@ -52,6 +52,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [isZoomedOrMobile, setIsZoomedOrMobile] = useState(false);
   const pathname = usePathname();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -61,6 +62,63 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Proactive browser zoom & narrow viewport detection
+  useEffect(() => {
+    let initialDpr = 1;
+    if (typeof window !== "undefined") {
+      initialDpr = window.devicePixelRatio || 1;
+    }
+
+    const checkZoomAndViewport = () => {
+      if (typeof window === "undefined") return;
+
+      const innerW = window.innerWidth;
+      const outerW = window.outerWidth || innerW;
+      const currentDpr = window.devicePixelRatio || 1;
+      const visualScale = window.visualViewport?.scale ?? 1;
+
+      // In Chrome/Edge, zooming Ctrl + Plus causes outerW / innerW to exceed 1.0 (e.g. 1.10, 1.25, 1.50)
+      const zoomRatio = outerW > 0 && innerW > 0 ? outerW / innerW : 1;
+      // In Firefox or high-DPI displays, DPR increases compared to initial load
+      const dprRatio = initialDpr > 0 ? currentDpr / initialDpr : 1;
+
+      // Active zoom check: triggers when user zooms above 100% (threshold 1.05 accounts for scrollbars)
+      const isZoomed = zoomRatio > 1.05 || dprRatio > 1.05 || visualScale > 1.05;
+
+      // Viewport width check: when screen is narrower than comfortable desktop threshold (1320px)
+      const isNarrow = innerW < 1320;
+
+      setIsZoomedOrMobile(isZoomed || isNarrow);
+    };
+
+    checkZoomAndViewport();
+
+    window.addEventListener("resize", checkZoomAndViewport);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", checkZoomAndViewport);
+    }
+
+    let mq: MediaQueryList | null = null;
+    let mqHandler: (() => void) | null = null;
+    try {
+      mq = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+      mqHandler = () => checkZoomAndViewport();
+      mq.addEventListener("change", mqHandler);
+    } catch {
+      // fallback
+    }
+
+    return () => {
+      window.removeEventListener("resize", checkZoomAndViewport);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", checkZoomAndViewport);
+      }
+      if (mq && mqHandler) {
+        mq.removeEventListener("change", mqHandler);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -115,8 +173,8 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-white transition-all duration-200">
       {/* Top Notification / Fast Contact Strip */}
-      <div className="bg-[#002b49] text-white text-xs py-1.5 px-4 sm:px-6 lg:px-8 hidden md:block border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div className="bg-[#002b49] text-white text-xs py-1.5 px-4 sm:px-6 lg:px-8 xl:px-12 hidden md:block border-b border-blue-900/40">
+        <div className="w-full flex items-center justify-between gap-4">
           <div className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap overflow-hidden">
             <span className="flex items-center text-blue-200 font-medium">
               <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] flex-shrink-0" />
@@ -157,7 +215,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           }`}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 xl:gap-3">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-3 xl:gap-6">
           {/* Logo - AWMPACK (Al Waad Manufacturing Packaging Company) */}
           <Link
             href="/"
@@ -176,7 +234,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </Link>
 
           {/* Center Navigation Links with Hover Bridge */}
-          <div className="hidden xl:flex items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0">
+          <div className={`${isZoomedOrMobile ? "hidden" : "hidden xl:flex"} items-center space-x-0.5 xl:space-x-1 py-1 flex-shrink-0`}>
             {/* 1. SOLUTIONS */}
             <div
               className="relative py-2"
@@ -378,8 +436,14 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
             {/* Mobile Hamburger Menu Toggle */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#002b49] xl:hidden"
+              onClick={() => {
+                closeDropdown();
+                setMobileMenuOpen(!mobileMenuOpen);
+              }}
+              className={`p-1.5 text-[#002b49] hover:bg-gray-100 rounded-lg transition-colors ${
+                isZoomedOrMobile ? "flex items-center" : "xl:hidden"
+              }`}
+              aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -393,11 +457,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 1. SOLUTIONS MEGA MENU */}
         {activeDropdown === "solutions" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("solutions")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -695,11 +759,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 2. CONSULTING MEGA MENU */}
         {activeDropdown === "consulting" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("consulting")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -962,11 +1026,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 3. INDUSTRIES MEGA MENU */}
         {activeDropdown === "industries" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("industries")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1105,11 +1169,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 4. SUSTAINABILITY MEGA MENU */}
         {activeDropdown === "sustainability" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("sustainability")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1244,11 +1308,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 5. ISPM 15 & ENGINEERING MEGA MENU */}
         {activeDropdown === "engineering" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("engineering")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1383,11 +1447,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 6. NEWS & INSIGHTS MEGA MENU */}
         {activeDropdown === "insights" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("insights")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1495,11 +1559,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         {/* 7. ABOUT US MEGA MENU */}
         {activeDropdown === "about" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("about")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1730,9 +1794,11 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               </div>
             </div>
           </div>
-        )}       {/* Mobile Navigation Drawer */}
+        )}
+
+        {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-gray-200 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
+          <div className={`${isZoomedOrMobile ? "block" : "xl:hidden"} bg-white border-t border-gray-200 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl`}>
             <div className="space-y-4">
               <div>
                 <p className="font-black text-xs uppercase tracking-wider text-gray-400 mb-2">
