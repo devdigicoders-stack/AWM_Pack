@@ -28,6 +28,7 @@ import {
   Check,
   Eye,
 } from "lucide-react";
+import { FadeInStagger, FadeInStaggerItem, HoverCard } from "../../components/motion/MotionComponents";
 
 export default function GalleryPage() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -317,12 +318,13 @@ export default function GalleryPage() {
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-[#f8fafc] border border-gray-200/90 rounded-3xl overflow-hidden hover:shadow-xl hover:border-[#0099e5]/60 transition-all flex flex-col justify-between group"
-                >
+                <FadeInStaggerItem key={item.id}>
+                  <HoverCard lift={8} className="h-full">
+                    <div
+                      className="bg-[#f8fafc] border border-gray-200/90 rounded-3xl overflow-hidden hover:shadow-xl hover:border-[#0099e5]/60 transition-all flex flex-col justify-between group h-full"
+                    >
                   {/* Image container */}
                   <div
                     className="relative w-full h-[260px] sm:h-[300px] bg-white cursor-pointer overflow-hidden"
@@ -401,8 +403,10 @@ export default function GalleryPage() {
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </HoverCard>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStagger>
           </div>
         </section>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, Send, PhoneCall, ShieldCheck, Globe, MapPin } from "lucide-react";
 
 interface ContactModalProps {
@@ -42,8 +43,6 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -55,8 +54,21 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-950/75 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-950/75 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.94, y: 16 }}
+            transition={{ type: "spring", damping: 25, stiffness: 320 }}
+            className="bg-white w-full max-w-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+          >
         {/* Header */}
         <div className="bg-gradient-to-r from-[#00223a] to-[#003366] p-6 text-white relative">
           <button
@@ -219,7 +231,9 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
             </form>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
   );
 }

@@ -26,6 +26,14 @@ import {
   Scale,
   Sparkles,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  FadeIn,
+  FadeInStagger,
+  FadeInStaggerItem,
+  HoverCard,
+  AnimatedCounter,
+} from "./motion/MotionComponents";
 
 interface NefabOfficialHomeProps {
   onOpenContactWithTopic: (topic: string) => void;
@@ -139,9 +147,9 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* 1. Wooden & Steel Pallets */}
-              <div className="space-y-2 group">
+              <FadeInStaggerItem className="space-y-2 group">
                 <Link
                   href="/solutions#wooden-pallets"
                   className="text-base sm:text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors flex items-center"
@@ -159,10 +167,10 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                   <span>View pallet specs</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </Link>
-              </div>
+              </FadeInStaggerItem>
 
               {/* 2. Custom Crates & Boxes */}
-              <div className="space-y-2 group">
+              <FadeInStaggerItem className="space-y-2 group">
                 <Link
                   href="/solutions#custom-crates"
                   className="text-base sm:text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors flex items-center"
@@ -180,10 +188,10 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                   <span>View crating solutions</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </Link>
-              </div>
+              </FadeInStaggerItem>
 
               {/* 3. ISPM 15 Heat Treatment */}
-              <div className="space-y-2 group">
+              <FadeInStaggerItem className="space-y-2 group">
                 <Link
                   href="/engineering#ispm15"
                   className="text-base sm:text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors flex items-center"
@@ -201,10 +209,10 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                   <span>Learn about ISPM 15</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </Link>
-              </div>
+              </FadeInStaggerItem>
 
               {/* 4. Waste to Usable Product */}
-              <div className="space-y-2 group">
+              <FadeInStaggerItem className="space-y-2 group">
                 <Link
                   href="/sustainability#waste-to-product"
                   className="text-base sm:text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors flex items-center"
@@ -222,8 +230,8 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                   <span>Explore recycling program</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </Link>
-              </div>
-            </div>
+              </FadeInStaggerItem>
+            </FadeInStagger>
           </div>
         </div>
       </section>
@@ -251,45 +259,48 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           </div>
 
           {/* Industry Showcase Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((ind) => (
-              <div
-                key={ind.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between"
-              >
-                <div className="relative w-full h-48 overflow-hidden">
-                  <Image
-                    src={ind.image}
-                    alt={ind.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 bg-[#002b49]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
-                    {ind.tag}
-                  </div>
-                </div>
+              <FadeInStaggerItem key={ind.id}>
+                <HoverCard lift={8} className="h-full">
+                  <div className="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between h-full">
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={ind.image}
+                        alt={ind.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#002b49]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        {ind.tag}
+                      </div>
+                    </div>
 
-                <div className="p-6 space-y-3">
-                  <h3 className="text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors leading-snug">
-                    {ind.title}
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    {ind.desc}
-                  </p>
-                  <div className="pt-2">
-                    <Link
-                      href={`/industries#${ind.id}`}
-                      className="inline-flex items-center text-xs font-bold text-[#0099e5] group-hover:translate-x-1 transition-transform"
-                    >
-                      <span>Explore solutions</span>
-                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                    </Link>
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-extrabold text-[#002b49] group-hover:text-[#0099e5] transition-colors leading-snug">
+                          {ind.title}
+                        </h3>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          {ind.desc}
+                        </p>
+                      </div>
+                      <div className="pt-2">
+                        <Link
+                          href={`/industries#${ind.id}`}
+                          className="inline-flex items-center text-xs font-bold text-[#0099e5] group-hover:translate-x-1 transition-transform"
+                        >
+                          <span>Explore solutions</span>
+                          <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </HoverCard>
+              </FadeInStaggerItem>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 
@@ -307,7 +318,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/80 to-[#002b49]/60"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl space-y-6 text-white">
+          <FadeIn direction="left" className="max-w-xl space-y-6 text-white">
             <span className="text-xs font-bold uppercase tracking-widest text-[#0099e5] bg-[#0099e5]/20 px-3 py-1 rounded-full border border-[#0099e5]/40">
               No-Cure No-Pay Consulting
             </span>
@@ -325,7 +336,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 Book a factory review with Eng. Maher Marjy
               </button>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -335,22 +346,24 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
       <section className="py-20 bg-white border-b border-gray-100" id="ispm-banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Image: Container Ship at Hamad Port */}
-          <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
-            <Image
-              src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600&auto=format&fit=crop"
-              alt="Hamad Port export container shipping"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1200px"
-              className="object-cover object-center"
-            />
-            <div className="absolute top-4 left-4 bg-[#002b49]/90 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md backdrop-blur-sm flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>ISPM 15 Export Certified • State of Qatar</span>
+          <FadeIn direction="up">
+            <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
+              <Image
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600&auto=format&fit=crop"
+                alt="Hamad Port export container shipping"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+              <div className="absolute top-4 left-4 bg-[#002b49]/90 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md backdrop-blur-sm flex items-center space-x-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>ISPM 15 Export Certified • State of Qatar</span>
+              </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Text and Button Below */}
-          <div className="max-w-3xl space-y-4">
+          <FadeIn direction="up" delay={0.1} className="max-w-3xl space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
               Are you prepared for international export quarantine?
             </h2>
@@ -365,7 +378,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 Read ISPM 15 Export Guide
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -383,7 +396,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/90 via-[#00223a]/75 to-[#002b49]/40"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-2xl mx-auto space-y-6 text-white">
+          <FadeIn direction="up" className="max-w-2xl mx-auto space-y-6 text-white">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
               Made in Qatar 🇶🇦
             </span>
@@ -401,7 +414,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 Connect with our Factory Team
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -500,38 +513,38 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           </div>
 
           {/* 4 Big White Numbers */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto py-6">
-            <div className="space-y-1">
+          <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto py-6">
+            <FadeInStaggerItem className="space-y-1">
               <p className="text-4xl sm:text-6xl font-black text-white tracking-tight">
-                15,000
+                <AnimatedCounter target={15000} />
               </p>
               <div className="w-8 h-1 bg-[#0099e5] mx-auto my-2 rounded-full"></div>
               <p className="text-xs uppercase tracking-wider text-gray-300 font-bold">
                 m² Facility Area
               </p>
-            </div>
+            </FadeInStaggerItem>
 
-            <div className="space-y-1">
+            <FadeInStaggerItem className="space-y-1">
               <p className="text-4xl sm:text-6xl font-black text-white tracking-tight">
-                500K+
+                <AnimatedCounter target={500} suffix="K+" />
               </p>
               <div className="w-8 h-1 bg-[#0099e5] mx-auto my-2 rounded-full"></div>
               <p className="text-xs uppercase tracking-wider text-gray-300 font-bold">
                 Pallets Capacity
               </p>
-            </div>
+            </FadeInStaggerItem>
 
-            <div className="space-y-1">
+            <FadeInStaggerItem className="space-y-1">
               <p className="text-4xl sm:text-6xl font-black text-white tracking-tight">
-                100%
+                <AnimatedCounter target={100} suffix="%" />
               </p>
               <div className="w-8 h-1 bg-[#0099e5] mx-auto my-2 rounded-full"></div>
               <p className="text-xs uppercase tracking-wider text-gray-300 font-bold">
                 ISPM 15 &amp; FSC® Compliant
               </p>
-            </div>
+            </FadeInStaggerItem>
 
-            <div className="space-y-1">
+            <FadeInStaggerItem className="space-y-1">
               <p className="text-4xl sm:text-6xl font-black text-white tracking-tight">
                 ICV
               </p>
@@ -539,8 +552,8 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
               <p className="text-xs uppercase tracking-wider text-gray-300 font-bold">
                 Certified Qatar Value
               </p>
-            </div>
-          </div>
+            </FadeInStaggerItem>
+          </FadeInStagger>
 
           <div>
             <Link
@@ -598,38 +611,40 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
       <section className="py-20 bg-[#e8f6f0] border-b border-emerald-100" id="sustainability-banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Image: Eco Foliage with Wood Recycling */}
-          <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
-            <Image
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600&auto=format&fit=crop"
-              alt="Wood waste recycling into compressed sawdust blocks"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1200px"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-emerald-950/40 flex items-center justify-center p-6">
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-white text-center">
-                <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
-                  <Recycle className="w-6 h-6 text-emerald-300 mb-1" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">Waste to Product</span>
-                </div>
-                <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
-                  <Flame className="w-6 h-6 text-amber-300 mb-1" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">ISPM 15 Treated</span>
-                </div>
-                <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
-                  <Leaf className="w-6 h-6 text-emerald-300 mb-1" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">100% Recycled Blocks</span>
-                </div>
-                <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
-                  <Trees className="w-6 h-6 text-teal-300 mb-1" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">FSC® Timber</span>
+          <FadeIn direction="up">
+            <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
+              <Image
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600&auto=format&fit=crop"
+                alt="Wood waste recycling into compressed sawdust blocks"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-emerald-950/40 flex items-center justify-center p-6">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-white text-center">
+                  <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
+                    <Recycle className="w-6 h-6 text-emerald-300 mb-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">Waste to Product</span>
+                  </div>
+                  <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
+                    <Flame className="w-6 h-6 text-amber-300 mb-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">ISPM 15 Treated</span>
+                  </div>
+                  <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
+                    <Leaf className="w-6 h-6 text-emerald-300 mb-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">100% Recycled Blocks</span>
+                  </div>
+                  <div className="p-3 sm:p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 flex flex-col items-center">
+                    <Trees className="w-6 h-6 text-teal-300 mb-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">FSC® Timber</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Heading and Button */}
-          <div className="max-w-3xl space-y-4">
+          <FadeIn direction="up" delay={0.1} className="max-w-3xl space-y-4">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-200/60 px-3 py-1 rounded-full">
               Circular Economy in Qatar
             </span>
@@ -647,7 +662,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 Read Wood Recycling Report
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -656,7 +671,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           ========================================================================= */}
       <section className="py-20 bg-white" id="solutions-banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-8">
+          <FadeIn direction="up" className="max-w-3xl space-y-4 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
               Full Industrial Portfolio
             </span>
@@ -674,23 +689,25 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 See all AWMPACK solutions
               </Link>
             </div>
-          </div>
+          </FadeIn>
 
           {/* High-tech Warehouse Storage Facility */}
-          <div className="relative w-full h-[300px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-            <Image
-              src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop"
-              alt="AWMPACK automated pallet production facility"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1200px"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
-              <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
-                AWMPACK Birkat Al-Awamer Plant • ISPM 15 Certified Thermal Kilns • Automated Assembly
-              </span>
+          <FadeIn direction="up" delay={0.15}>
+            <div className="relative w-full h-[300px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <Image
+                src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop"
+                alt="AWMPACK automated pallet production facility"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
+                  AWMPACK Birkat Al-Awamer Plant • ISPM 15 Certified Thermal Kilns • Automated Assembly
+                </span>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>

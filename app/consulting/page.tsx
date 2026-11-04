@@ -30,6 +30,7 @@ import {
   BarChart3,
   Sparkles,
 } from "lucide-react";
+import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from "../../components/motion/MotionComponents";
 
 export default function ConsultingHubPage() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -117,8 +118,8 @@ export default function ConsultingHubPage() {
             ========================================================================= */}
         <section className="bg-white border-b border-gray-100 py-6 sm:py-8 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
+            <FadeInStagger className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <FadeInStaggerItem className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
                 <span className="text-2xl sm:text-3xl font-black text-[#0099e5] block group-hover:scale-105 transition-transform">
                   01
                 </span>
@@ -128,9 +129,9 @@ export default function ConsultingHubPage() {
                 <p className="text-xs text-gray-500 mt-1">
                   No-Cure-No-Pay assurance: you only pay if we deliver documented savings.
                 </p>
-              </div>
+              </FadeInStaggerItem>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
+              <FadeInStaggerItem className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
                 <span className="text-2xl sm:text-3xl font-black text-[#0099e5] block group-hover:scale-105 transition-transform">
                   02
                 </span>
@@ -140,9 +141,9 @@ export default function ConsultingHubPage() {
                 <p className="text-xs text-gray-500 mt-1">
                   Proven track record delivering measurable ROI for industrial clients across Qatar.
                 </p>
-              </div>
+              </FadeInStaggerItem>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
+              <FadeInStaggerItem className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
                 <span className="text-2xl sm:text-3xl font-black text-[#0099e5] block group-hover:scale-105 transition-transform">
                   03
                 </span>
@@ -152,9 +153,9 @@ export default function ConsultingHubPage() {
                 <p className="text-xs text-gray-500 mt-1">
                   Partner directly with AWMPC or engage vendor-neutral expert advisory.
                 </p>
-              </div>
+              </FadeInStaggerItem>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
+              <FadeInStaggerItem className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
                 <span className="text-2xl sm:text-3xl font-black text-[#0099e5] block group-hover:scale-105 transition-transform">
                   04
                 </span>
@@ -164,8 +165,8 @@ export default function ConsultingHubPage() {
                 <p className="text-xs text-gray-500 mt-1">
                   Digital pallet serialization, automated warehouse scanning &amp; AGV compatibility.
                 </p>
-              </div>
-            </div>
+              </FadeInStaggerItem>
+            </FadeInStagger>
           </div>
         </section>
 
@@ -188,114 +189,122 @@ export default function ConsultingHubPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Program 1: Analysis – No-Cure-No-Pay */}
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#0099e5]">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-[#002b49] text-[#0099e5] flex items-center justify-center group-hover:bg-[#0099e5] group-hover:text-white transition-colors">
-                      <Percent className="w-7 h-7" />
+              <FadeIn direction="up">
+                <HoverCard lift={8} className="h-full">
+                  <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#0099e5] h-full">
+                    <div>
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-14 h-14 rounded-2xl bg-[#002b49] text-[#0099e5] flex items-center justify-center group-hover:bg-[#0099e5] group-hover:text-white transition-colors">
+                          <Percent className="w-7 h-7" />
+                        </div>
+                        <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          Guaranteed 4% Savings
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl font-black text-[#002b49] mb-1.5 group-hover:text-[#0099e5] transition-colors">
+                        Analysis – No-Cure-No-Pay
+                      </h3>
+
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+                        Discover Your True Materials Handling Costs
+                      </p>
+
+                      <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                        Do you really know how much money you spend on Materials Handling – and how much of this you spend on Handling Materials? Not only will we help you find out – we will also present you with a guaranteed plan for how to improve your Total Costs of Ownership (TCO) with guaranteed 4% savings – <strong>No-Cure-No-Pay!!</strong>
+                      </p>
+
+                      <div className="space-y-3 pt-4 border-t border-gray-100 text-xs text-gray-600">
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
+                          <span>Handling Materials Design Analysis (Fit &amp; Function)</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
+                          <span>Transparency Analysis (True Spend &amp; Invoice Breakdown)</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
+                          <span>Sustainability Analysis (CO2 Footprint &amp; Wood Recycling)</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
+                          <span>Tender Consultant Support &amp; 20+ Years Experience</span>
+                        </div>
+                      </div>
                     </div>
-                    <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                      Guaranteed 4% Savings
-                    </span>
+
+                    <div className="mt-8 pt-6 border-t border-gray-100">
+                      <Link
+                        href="/consulting/no-cure-no-pay"
+                        className="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs shadow-md transition-all group-hover:shadow-lg"
+                      >
+                        <span>Explore No-Cure-No-Pay Audit</span>
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-2xl font-black text-[#002b49] mb-1.5 group-hover:text-[#0099e5] transition-colors">
-                    Analysis – No-Cure-No-Pay
-                  </h3>
-
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                    Discover Your True Materials Handling Costs
-                  </p>
-
-                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                    Do you really know how much money you spend on Materials Handling – and how much of this you spend on Handling Materials? Not only will we help you find out – we will also present you with a guaranteed plan for how to improve your Total Costs of Ownership (TCO) with guaranteed 4% savings – <strong>No-Cure-No-Pay!!</strong>
-                  </p>
-
-                  <div className="space-y-3 pt-4 border-t border-gray-100 text-xs text-gray-600">
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
-                      <span>Handling Materials Design Analysis (Fit &amp; Function)</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
-                      <span>Transparency Analysis (True Spend &amp; Invoice Breakdown)</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
-                      <span>Sustainability Analysis (CO2 Footprint &amp; Wood Recycling)</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-[#0099e5] mr-2 shrink-0" />
-                      <span>Tender Consultant Support &amp; 20+ Years Experience</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <Link
-                    href="/consulting/no-cure-no-pay"
-                    className="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs shadow-md transition-all group-hover:shadow-lg"
-                  >
-                    <span>Explore No-Cure-No-Pay Audit</span>
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </div>
+                </HoverCard>
+              </FadeIn>
 
               {/* Program 2: Handling Materials Consulting */}
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-emerald-500">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:bg-emerald-700 group-hover:text-white transition-colors">
-                      <Handshake className="w-7 h-7" />
+              <FadeIn direction="up" delay={0.15}>
+                <HoverCard lift={8} className="h-full">
+                  <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-emerald-500 h-full">
+                    <div>
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:bg-emerald-700 group-hover:text-white transition-colors">
+                          <Handshake className="w-7 h-7" />
+                        </div>
+                        <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-[#0099e5] border border-blue-200">
+                          2 Flexible Engagement Models
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl font-black text-[#002b49] mb-1.5 group-hover:text-emerald-700 transition-colors">
+                        Handling Materials Consulting
+                      </h3>
+
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+                        Partner with AWMPC OR Arms-Length Expert Consulting
+                      </p>
+
+                      <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                        Select AWMPC as your end-to-end handling partner with analysis at no further costs, or engage our independent advisory on an &ldquo;arms length&rdquo; contract leaving you free to implement recommendations with any vendor of your choosing.
+                      </p>
+
+                      <div className="space-y-3 pt-4 border-t border-gray-100 text-xs text-gray-600">
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
+                          <span>Sustainable Logistics &amp; Material Handling Re-design</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
+                          <span>Value Chain Improvement &amp; Closed-Loop Pooling</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
+                          <span>Digital Transformation &amp; Generation 5 Pallet Tracking</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
+                          <span>Warehouse Automation Compatibility &amp; AGV Specs</span>
+                        </div>
+                      </div>
                     </div>
-                    <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-[#0099e5] border border-blue-200">
-                      2 Flexible Engagement Models
-                    </span>
+
+                    <div className="mt-8 pt-6 border-t border-gray-100">
+                      <Link
+                        href="/consulting/material-handling"
+                        className="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all group-hover:shadow-lg"
+                      >
+                        <span>Explore Materials Consulting</span>
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-2xl font-black text-[#002b49] mb-1.5 group-hover:text-emerald-700 transition-colors">
-                    Handling Materials Consulting
-                  </h3>
-
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                    Partner with AWMPC OR Arms-Length Expert Consulting
-                  </p>
-
-                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                    Select AWMPC as your end-to-end handling partner with analysis at no further costs, or engage our independent advisory on an &ldquo;arms length&rdquo; contract leaving you free to implement recommendations with any vendor of your choosing.
-                  </p>
-
-                  <div className="space-y-3 pt-4 border-t border-gray-100 text-xs text-gray-600">
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
-                      <span>Sustainable Logistics &amp; Material Handling Re-design</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
-                      <span>Value Chain Improvement &amp; Closed-Loop Pooling</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
-                      <span>Digital Transformation &amp; Generation 5 Pallet Tracking</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 shrink-0" />
-                      <span>Warehouse Automation Compatibility &amp; AGV Specs</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <Link
-                    href="/consulting/material-handling"
-                    className="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all group-hover:shadow-lg"
-                  >
-                    <span>Explore Materials Consulting</span>
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </div>
+                </HoverCard>
+              </FadeIn>
             </div>
           </div>
         </section>

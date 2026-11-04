@@ -17,6 +17,7 @@ import {
   Flame,
   Recycle,
 } from "lucide-react";
+import { FadeIn } from "./motion/MotionComponents";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -34,55 +35,58 @@ export default function Footer() {
     <footer className="bg-[#001829] text-gray-300 border-t border-blue-950">
       {/* Newsletter & Highlight Banner */}
       <div className="bg-[#002b49] border-b border-blue-900/60 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center space-x-2 text-[#0099e5] text-xs font-semibold tracking-wider uppercase mb-2">
-              <Leaf className="w-3.5 h-3.5" />
-              <span>AWMPACK Industrial Packaging &amp; Wood Recycling</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Waste to Usable Product: Sustainable Pallets &amp; Crates
-            </h3>
-            <p className="mt-2 text-sm text-gray-300">
-              Get our technical updates on ISPM 15 export heat treatment compliance, custom industrial packaging engineering, and circular wood recycling across Qatar and the GCC.
-            </p>
-          </div>
-
-          <div className="w-full lg:w-auto">
-            {subscribed ? (
-              <div className="flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/50 text-emerald-300 px-5 py-3 rounded-full text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                <span>Thank you for subscribing to AWMPACK updates!</span>
+        <FadeIn direction="up">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center space-x-2 text-[#0099e5] text-xs font-semibold tracking-wider uppercase mb-2">
+                <Leaf className="w-3.5 h-3.5" />
+                <span>AWMPACK Industrial Packaging &amp; Wood Recycling</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your corporate email..."
-                  className="px-4 py-3 bg-[#001f35] border border-blue-800 text-white rounded-full text-sm focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5] w-full"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm rounded-full whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-md"
-                >
-                  <span>Subscribe</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
-            )}
-            <p className="text-[11px] text-gray-400 mt-2">
-              Al Waad Manufacturing Packaging Company • Birkat Al-Awamer, Qatar
-            </p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Waste to Usable Product: Sustainable Pallets &amp; Crates
+              </h3>
+              <p className="mt-2 text-sm text-gray-300">
+                Get our technical updates on ISPM 15 export heat treatment compliance, custom industrial packaging engineering, and circular wood recycling across Qatar and the GCC.
+              </p>
+            </div>
+
+            <div className="w-full lg:w-auto">
+              {subscribed ? (
+                <div className="flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/50 text-emerald-300 px-5 py-3 rounded-full text-sm font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  <span>Thank you for subscribing to AWMPACK updates!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your corporate email..."
+                    className="px-4 py-3 bg-[#001f35] border border-blue-800 text-white rounded-full text-sm focus:outline-none focus:border-[#0099e5] focus:ring-1 focus:ring-[#0099e5] w-full"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm rounded-full whitespace-nowrap transition-colors flex items-center justify-center space-x-2 shadow-md"
+                  >
+                    <span>Subscribe</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
+              <p className="text-[11px] text-gray-400 mt-2">
+                Al Waad Manufacturing Packaging Company • Birkat Al-Awamer, Qatar
+              </p>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <FadeIn direction="up" delay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Direct Card Contact Column */}
           <div className="lg:col-span-2 space-y-4">
             <Link
@@ -383,6 +387,7 @@ export default function Footer() {
             <Link href="/contact" className="hover:text-gray-400">Factory Inquiries</Link>
           </div>
         </div>
+        </FadeIn>
       </div>
     </footer>
   );

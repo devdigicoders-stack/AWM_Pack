@@ -27,6 +27,7 @@ import {
   Tag,
   HelpCircle,
 } from "lucide-react";
+import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from "../../components/motion/MotionComponents";
 
 export default function SolutionsPage() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -316,15 +317,16 @@ export default function SolutionsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProducts.map((prod) => {
                 const IconComponent = prod.icon;
                 return (
-                  <div
-                    key={prod.id}
-                    id={prod.id}
-                    className="bg-[#f8fafc] border border-gray-200/90 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#0099e5]/60 transition-all group"
-                  >
+                  <FadeInStaggerItem key={prod.id}>
+                    <HoverCard lift={8} className="h-full">
+                      <div
+                        id={prod.id}
+                        className="bg-[#f8fafc] border border-gray-200/90 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#0099e5]/60 transition-all group h-full"
+                      >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <div className="w-12 h-12 rounded-2xl bg-blue-100 text-[#003366] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
@@ -563,9 +565,11 @@ export default function SolutionsPage() {
                       )}
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </HoverCard>
+              </FadeInStaggerItem>
+            );
+          })}
+        </FadeInStagger>
           </div>
         </section>
 
