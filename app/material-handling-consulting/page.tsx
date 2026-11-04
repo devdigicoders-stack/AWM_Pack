@@ -3,3 +3,4 @@ import HandlingMaterialsConsultingPage from "../consulting/material-handling/pag
 export default function LegacyMaterialHandlingConsultingPage() {
   return <HandlingMaterialsConsultingPage />;
 }
+
