@@ -164,9 +164,9 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           <Link
             href="/"
             onClick={closeDropdown}
-            className="flex items-center space-x-3 group py-1"
+            className="flex items-center space-x-3 group py-1 shrink-0"
           >
-            <div className="relative h-10 sm:h-12 w-36 sm:w-48">
+            <div className="relative h-12 sm:h-14 xl:h-16 w-44 sm:w-56 md:w-64 xl:w-72 transition-all">
               <Image
                 src="/logo.jpeg"
                 alt="AWMPACK - Al Waad Manufacturing Packaging Company"
