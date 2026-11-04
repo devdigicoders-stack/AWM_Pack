@@ -326,16 +326,14 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
           {/* Right Action Icons & Button */}
           <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
-            {/* Dark Blue "Contact" Button */}
-            <button
-              onClick={() => {
-                closeDropdown();
-                onOpenContact?.();
-              }}
-              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap"
+            {/* Dark Blue "Contact" Link Button */}
+            <Link
+              href="/contact"
+              onClick={closeDropdown}
+              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap inline-flex items-center justify-center"
             >
               Contact
-            </button>
+            </Link>
 
             {/* Search Icon */}
             <button
@@ -690,15 +688,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     </div>
 
                     <div className="pt-4 mt-2">
-                      <button
-                        onClick={() => {
-                          closeDropdown();
-                          onOpenContact?.();
-                        }}
+                      <Link
+                        href="/contact"
+                        onClick={closeDropdown}
                         className="w-full py-2.5 px-4 rounded-xl bg-[#0099e5] hover:bg-[#0077b6] text-white text-xs font-bold transition-all text-center block shadow-sm"
                       >
                         Request Quote / Factory Visit
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
