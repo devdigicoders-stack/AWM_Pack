@@ -140,7 +140,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             </span>
           </div>
 
-          <div className="flex items-center space-x-2.5 sm:space-x-3 text-xs whitespace-nowrap flex-shrink-0">
+          {/* <div className="flex items-center space-x-2.5 sm:space-x-3 text-xs whitespace-nowrap flex-shrink-0">
             <span className="bg-[#0099e5]/20 text-[#0099e5] border border-[#0099e5]/40 px-2 py-0.5 rounded text-[10px] font-bold">
               ICV Certified
             </span>
@@ -148,7 +148,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               ISPM 15 Heat Treated
             </span>
             <span className="text-gray-300 font-medium">Made in Qatar 🇶🇦</span>
-          </div>
+          </div> */}
         </div>
       </div>
 

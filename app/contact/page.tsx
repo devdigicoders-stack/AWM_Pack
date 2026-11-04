@@ -90,16 +90,18 @@ export default function ContactPage() {
         {/* =========================================================================
             CONTACT HERO SECTION
             ========================================================================= */}
-        <section className="relative w-full py-20 lg:py-28 overflow-hidden bg-[#001829] text-white">
+        <section className="relative w-full py-20 lg:py-28 overflow-hidden bg-[#001424] text-white">
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=90&w=2400&auto=format&fit=crop"
             alt="AWMPACK Birkat Al-Awamer Factory & Logistics Complex"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-25"
+            className="object-cover object-center brightness-105 contrast-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001829] via-[#00223a]/90 to-[#002b49]/70" />
+          {/* High-clarity directional gradient: dark under text, crystal clear transparent on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001424]/90 via-[#001c33]/60 via-50% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20" />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">

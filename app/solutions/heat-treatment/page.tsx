@@ -100,16 +100,18 @@ export default function HeatTreatmentPage() {
         {/* =========================================================================
             HERO & BREADCRUMB
             ========================================================================= */}
-        <section className="relative w-full h-[360px] sm:h-[400px] lg:h-[430px] overflow-hidden">
+        <section className="relative w-full h-[380px] sm:h-[440px] lg:h-[480px] overflow-hidden">
           <Image
             src="/heat-treatment-chamber.png"
             alt="AWMPC Industrial ISPM 15 Heat Treatment Kiln Chamber in Qatar"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center brightness-105 contrast-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/80 to-[#002b49]/40"></div>
+          {/* High-clarity directional gradient: dark under text, crystal clear transparent on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001424]/90 via-[#001c33]/60 via-50% to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
