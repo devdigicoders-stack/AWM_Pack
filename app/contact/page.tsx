@@ -103,7 +103,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#001424]/90 via-[#001c33]/60 via-50% to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20" />
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <FadeIn direction="up">
               <div className="max-w-3xl space-y-4">
                 <div className="flex flex-wrap items-center gap-2">
@@ -152,7 +152,7 @@ export default function ContactPage() {
             3 TOP EXECUTIVE CONTACT CARDS (Highlighting User Details)
             ========================================================================= */}
         <section className="py-12 bg-gray-50 border-b border-gray-200/80 -mt-8 relative z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1: Factory Manager Direct */}
               <FadeInStaggerItem>
@@ -325,7 +325,7 @@ export default function ContactPage() {
             MAIN SECTION: DIRECT CONSULTATION FORM + OFFICIAL BUSINESS CARD
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Left Column (7 cols): Consultation Form */}
               <div className="lg:col-span-7 bg-[#f8fafc] border border-gray-200/90 rounded-3xl p-8 sm:p-10 shadow-xs">
@@ -635,7 +635,7 @@ export default function ContactPage() {
             MAP & FACTORY DISPATCH LOCATION
             ========================================================================= */}
         <section className="py-16 bg-[#f8fafc] border-b border-gray-200/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Logistics Connectivity

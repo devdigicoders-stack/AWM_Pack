@@ -65,7 +65,7 @@ export default function InsightsSection({ onOpenContact }: InsightsSectionProps)
 
   return (
     <section className="py-24 bg-white border-b border-gray-100" id="insights">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Title */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="space-y-3 max-w-2xl">

@@ -98,7 +98,7 @@ export default function IndustrySolutions({ onOpenContact }: IndustrySolutionsPr
 
   return (
     <section className="py-24 bg-white border-b border-gray-100" id="industries">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 text-emerald-700 text-xs font-bold tracking-wider uppercase bg-emerald-50 px-3 py-1 rounded-full">

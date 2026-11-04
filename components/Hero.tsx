@@ -31,7 +31,7 @@ export default function Hero({ onOpenContact, onScrollToGreenCalc }: HeroProps) 
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 right-0 w-[32rem] h-[32rem] bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-32">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 pb-20 lg:pt-24 lg:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Content */}
           <div className="lg:col-span-7 space-y-6">
@@ -195,7 +195,7 @@ export default function Hero({ onOpenContact, onScrollToGreenCalc }: HeroProps) 
 
       {/* Live Global Impact Stats Bar */}
       <div className="border-t border-b border-gray-800 bg-gray-950/90 backdrop-blur-md py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-800">
             <div className="pt-4 md:pt-0">
               <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">39</p>

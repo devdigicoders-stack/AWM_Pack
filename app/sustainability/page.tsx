@@ -62,7 +62,7 @@ export default function SustainabilityPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-emerald-500/25 border border-emerald-400/40 text-emerald-300 text-[11px] sm:text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Waste to Usable Product • Circular Economy</span>
@@ -102,7 +102,7 @@ export default function SustainabilityPage() {
 
         {/* 6 Core Pillars */}
         <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="framework">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Sustainable Commitments
@@ -231,7 +231,7 @@ export default function SustainabilityPage() {
             GREENCALC LCA CALCULATOR
             ========================================================================= */}
         <section id="greencalc" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <GreenCalcCalculator
               onOpenContactWithTopic={(topic) => {
                 setContactTopic(topic);

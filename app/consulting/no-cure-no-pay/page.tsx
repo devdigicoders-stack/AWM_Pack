@@ -82,7 +82,7 @@ export default function NoCureNoPayPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 {/* Breadcrumbs */}
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
@@ -140,7 +140,7 @@ export default function NoCureNoPayPage() {
             HERO VALUE PROPOSITION
             ========================================================================= */}
         <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/50 to-white">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Content */}
               <div className="lg:col-span-7 space-y-6">
@@ -259,7 +259,7 @@ export default function NoCureNoPayPage() {
             WHAT WE ARE OFFERING - 3 ANALYSES
             ========================================================================= */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-b border-gray-200">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
                 Three-Pillar Evaluation Framework
@@ -412,7 +412,7 @@ export default function NoCureNoPayPage() {
             AUDIT REQUEST & CONTACT SECTION
             ========================================================================= */}
         <section id="audit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               {/* Form */}
               <div className="lg:col-span-7 bg-gray-50 p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-sm">

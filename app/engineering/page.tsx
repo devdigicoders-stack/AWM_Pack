@@ -83,7 +83,7 @@ export default function EngineeringPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Certified Quality &amp; Thermal Testing • Qatar</span>
@@ -126,7 +126,7 @@ export default function EngineeringPage() {
 
         {/* 4 Core Pillars */}
         <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="ispm15">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Certified Technical Quality
@@ -217,7 +217,7 @@ export default function EngineeringPage() {
 
         {/* Detailed Testing Standards Showcase */}
         <section className="py-20 bg-white" id="testing-details">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Quality Assured

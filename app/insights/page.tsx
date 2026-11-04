@@ -124,7 +124,7 @@ export default function InsightsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>AWMPACK Knowledge Hub &amp; Press</span>
@@ -164,7 +164,7 @@ export default function InsightsPage() {
 
         {/* Filter Navigation Bar */}
         <div className="border-b border-gray-200 bg-[#edf2f7] py-3.5 sticky top-[73px] z-30 shadow-xs">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-2 text-xs font-bold">
               {[
                 { id: "all", label: "All Insights" },
@@ -198,7 +198,7 @@ export default function InsightsPage() {
 
         {/* Articles Grid */}
         <section className="py-20 bg-white" id="articles-grid">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.map((item) => (
                 <article

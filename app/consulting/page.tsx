@@ -68,7 +68,7 @@ export default function ConsultingHubPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 {/* Breadcrumbs */}
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
@@ -119,7 +119,7 @@ export default function ConsultingHubPage() {
             01-04 PILLARS QUICK STRIP
             ========================================================================= */}
         <section className="bg-white border-b border-gray-100 py-6 sm:py-8 shadow-xs">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <FadeInStagger className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               <FadeInStaggerItem className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
                 <span className="text-2xl sm:text-3xl font-black text-[#0099e5] block group-hover:scale-105 transition-transform">
@@ -176,7 +176,7 @@ export default function ConsultingHubPage() {
             TWO CONSULTING PROGRAMS
             ========================================================================= */}
         <section id="offerings" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
                 Specialized Consulting Programs
@@ -338,7 +338,7 @@ export default function ConsultingHubPage() {
             FAST DIRECT CONTACT STRIP
             ========================================================================= */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h4 className="text-lg font-bold text-[#002b49]">
                 Ready to optimize your packaging operations?

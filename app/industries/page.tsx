@@ -138,7 +138,7 @@ export default function IndustriesPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Specialized Sector Engineering • Qatar 🇶🇦</span>
@@ -181,7 +181,7 @@ export default function IndustriesPage() {
 
         {/* Industry Grid */}
         <section className="py-20 bg-white" id="all-industries">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-16">
             {industries.map((ind, idx) => {
               const Icon = ind.icon;
               const isEven = idx % 2 === 1;

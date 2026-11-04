@@ -68,7 +68,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Al Waad Manufacturing Packaging Company (AWMPC) • Qatar 🇶🇦</span>
@@ -110,7 +110,7 @@ export default function AboutPage() {
             01-04 PILLARS STRIP (From awmpack.com official about page)
             ========================================================================= */}
         <section className="bg-white border-b border-gray-100 py-6 sm:py-8 shadow-xs">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* 01 Quality Services */}
               <div className="p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-gray-200/80 hover:border-[#0099e5] transition-all group">
@@ -171,7 +171,7 @@ export default function AboutPage() {
             PROVEN TRACK RECORD & STATS (From awmpack.com official about page)
             ========================================================================= */}
         <div className="bg-[#002b49] border-t border-b border-blue-900/60 text-white py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
               <div>
                 <p className="text-3xl sm:text-5xl font-black text-white tracking-tight">315+</p>
@@ -211,7 +211,7 @@ export default function AboutPage() {
             COMPANY PROFILE, MISSION & VISION
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100" id="profile">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
@@ -341,7 +341,7 @@ export default function AboutPage() {
             (Featuring client images: Phytosanitary Certification & ISPM Seal Requirement)
             ========================================================================= */}
         <section className="py-20 bg-[#001829] text-white border-b border-blue-950" id="strict-ht">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="inline-block bg-[#0099e5]/20 border border-[#0099e5]/40 text-[#0099e5] text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full mb-3">
                 Global Export Compliance
@@ -443,7 +443,7 @@ export default function AboutPage() {
             CERTIFICATIONS & ACCREDITATIONS
             ========================================================================= */}
         <section className="py-20 bg-[#edf2f7]" id="certifications">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Quality Assurance

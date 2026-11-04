@@ -71,7 +71,7 @@ export default function AwmpcPalletsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 {/* Breadcrumb */}
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
@@ -122,7 +122,7 @@ export default function AwmpcPalletsPage() {
             SECTION 1: OUR UNIQUE PALLET SOLUTION (With User Image)
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100" id="unique-solution">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Image with Lightbox Preview */}
               <div className="lg:col-span-6">
@@ -199,7 +199,7 @@ export default function AwmpcPalletsPage() {
             SECTION 2: SPECIFICATIONS (With User Technical Blueprint Image)
             ========================================================================= */}
         <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="specifications">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-3xl mb-12">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Engineering Data
@@ -304,7 +304,7 @@ export default function AwmpcPalletsPage() {
             SECTION 3: GET A QUOTE FORM
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100" id="quote">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Form Column */}
               <div className="lg:col-span-7 bg-[#f8fafc] border border-gray-200 rounded-3xl p-8 sm:p-10 shadow-xs">

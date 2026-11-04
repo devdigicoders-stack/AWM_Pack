@@ -137,7 +137,7 @@ export default function UsedPalletsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
                   <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -192,7 +192,7 @@ export default function UsedPalletsPage() {
 
         {/* SECTION 1: COMPREHENSIVE PALLET SERVICES */}
         <section className="py-20 bg-white border-b border-gray-100" id="services">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
                 <div
@@ -296,7 +296,7 @@ export default function UsedPalletsPage() {
 
         {/* SECTION 2: TWO DISTINCT CATEGORIES */}
         <section className="py-20 bg-[#edf2f7] border-b border-gray-200" id="categories">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Two Distinct Categories
@@ -445,7 +445,7 @@ export default function UsedPalletsPage() {
 
         {/* SECTION 3: WHY CHOOSE CERTIFIED USED PALLETS */}
         <section className="py-20 bg-white border-b border-gray-100" id="why-choose">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
                 Strict Engineering Standards
@@ -498,7 +498,7 @@ export default function UsedPalletsPage() {
 
         {/* SECTION 4: PALLET BUYBACK */}
         <section className="py-20 bg-[#001829] text-white" id="buyback">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/20 border border-[#0099e5]/40 text-[#0099e5] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
@@ -589,7 +589,7 @@ export default function UsedPalletsPage() {
 
         {/* SECTION 5: GET A QUOTE FORM */}
         <section className="py-20 bg-white" id="quote">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7 bg-[#f8fafc] border border-gray-200 p-8 sm:p-10 rounded-3xl shadow-sm">
                 <div className="space-y-2 mb-8">

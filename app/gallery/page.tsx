@@ -238,7 +238,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 {/* Breadcrumb */}
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
@@ -288,7 +288,7 @@ export default function GalleryPage() {
             FILTER TABS
             ========================================================================= */}
         <div className="sticky top-[73px] z-30 bg-[#edf2f7] border-b border-gray-200 py-3 shadow-xs" id="gallery-grid">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between overflow-x-auto text-xs font-bold whitespace-nowrap gap-4">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between overflow-x-auto text-xs font-bold whitespace-nowrap gap-4">
             <div className="flex items-center space-x-2">
               <span className="text-gray-400 uppercase tracking-wider hidden sm:inline mr-2">Category:</span>
               {categories.map((cat) => (
@@ -319,7 +319,7 @@ export default function GalleryPage() {
             GALLERY GRID
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item) => (
                 <FadeInStaggerItem key={item.id}>
@@ -416,7 +416,7 @@ export default function GalleryPage() {
             FACILITY HIGHLIGHTS BANNER
             ========================================================================= */}
         <section className="py-20 bg-[#001829] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5] block">

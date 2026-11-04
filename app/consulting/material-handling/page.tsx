@@ -85,7 +85,7 @@ export default function HandlingMaterialsConsultingPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#001424]/40 via-transparent to-black/20"></div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 {/* Breadcrumbs */}
                 <div className="flex items-center space-x-2 text-xs font-semibold text-blue-200">
@@ -143,7 +143,7 @@ export default function HandlingMaterialsConsultingPage() {
             ENGAGEMENT MODELS: "YOU HAVE A CHOICE"
             ========================================================================= */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/40 via-white to-gray-50 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
                 Flexible Commercial Collaboration
@@ -283,7 +283,7 @@ export default function HandlingMaterialsConsultingPage() {
             MATERIALS HANDLING CONSULTING - 4 STRATEGIC PILLARS
             ========================================================================= */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
                 Four Strategic Competencies
@@ -388,7 +388,7 @@ export default function HandlingMaterialsConsultingPage() {
             WHAT WE ARE OFFERING: SUSTAINABLE LOGISTICS & SUPPLY CHAIN OPTIMIZATION
             ========================================================================= */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-b border-gray-200">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-black uppercase tracking-widest text-[#0099e5] block mb-2">
                 Specialized Solutions
@@ -477,7 +477,7 @@ export default function HandlingMaterialsConsultingPage() {
             GET A QUOTE & CONSULTATION REQUEST FORM
             ========================================================================= */}
         <section id="consultation-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               {/* Form Column */}
               <div className="lg:col-span-7 bg-gray-50 p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-sm">

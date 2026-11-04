@@ -70,7 +70,7 @@ export default function CaseStudies({ onOpenContact }: CaseStudiesProps) {
 
   return (
     <section className="py-24 bg-gray-50 border-b border-gray-200" id="cases">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 text-[#002b49] text-xs font-bold tracking-wider uppercase bg-blue-100/70 px-3.5 py-1.5 rounded-full border border-blue-200">
