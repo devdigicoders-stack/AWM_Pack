@@ -116,7 +116,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
     <header className="sticky top-0 z-50 w-full bg-white transition-all duration-200">
       {/* Top Notification / Fast Contact Strip */}
       <div className="bg-[#002b49] text-white text-xs py-1.5 px-4 sm:px-6 lg:px-8 hidden md:block border-b border-blue-900/40">
-        <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap overflow-hidden">
             <span className="flex items-center text-blue-200 font-medium">
               <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] flex-shrink-0" />
@@ -158,14 +158,14 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
         }`}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-2 xl:gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 xl:gap-3">
           {/* Logo - AWMPACK (Al Waad Manufacturing Packaging Company) */}
           <Link
             href="/"
             onClick={closeDropdown}
             className="flex items-center space-x-3 group py-1 shrink-0"
           >
-            <div className="relative w-[155px] sm:w-[175px] xl:w-[190px] aspect-[1499/529] transition-all">
+            <div className="relative w-[150px] sm:w-[165px] xl:w-[180px] aspect-[1499/529] transition-all">
               <Image
                 src="/logo.jpeg"
                 alt="AWMPACK - Al Waad Manufacturing Packaging Company"
@@ -187,7 +187,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/solutions"
                 onClick={() => handleNavClick("/solutions")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "solutions"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -206,7 +206,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/consulting"
                 onClick={() => handleNavClick("/consulting")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "consulting"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -225,7 +225,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/industries"
                 onClick={() => handleNavClick("/industries")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "industries"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -244,7 +244,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/sustainability"
                 onClick={() => handleNavClick("/sustainability")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "sustainability"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -263,7 +263,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/engineering"
                 onClick={() => handleNavClick("/engineering")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "engineering"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -282,13 +282,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/insights"
                 onClick={() => handleNavClick("/insights")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "insights"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
                 }`}
               >
-                News & Insights
+                News &amp; Insights
               </Link>
             </div>
 
@@ -301,7 +301,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/about"
                 onClick={() => handleNavClick("/about")}
-                className={`px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap ${
+                className={`px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap ${
                   activeDropdown === "about"
                     ? "bg-[#edf2f7] text-[#002b49] font-bold shadow-2xs"
                     : "text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
@@ -316,7 +316,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Link
                 href="/gallery"
                 onClick={() => handleNavClick("/gallery")}
-                className="px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-[14px] font-semibold transition-all rounded-full whitespace-nowrap text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
+                className="px-2 xl:px-2.5 py-1.5 text-[12.5px] xl:text-[13.5px] font-semibold transition-all rounded-full whitespace-nowrap text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70"
               >
                 Gallery
               </Link>
@@ -324,12 +324,12 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </div>
 
           {/* Right Action Icons & Button */}
-          <div className="flex items-center space-x-1.5 sm:space-x-2.5 flex-shrink-0">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
             {/* Dark Blue "Contact" Link Button */}
             <Link
               href="/contact"
               onClick={closeDropdown}
-              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-[13px] px-4 xl:px-5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap inline-flex items-center justify-center"
+              className="bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs sm:text-[13px] px-3.5 xl:px-4.5 py-2 rounded-full shadow-xs hover:shadow transition-all whitespace-nowrap inline-flex items-center justify-center"
             >
               Contact
             </Link>
@@ -340,20 +340,20 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 closeDropdown();
                 onOpenSearch?.();
               }}
-              className="p-1.5 xl:p-2 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex-shrink-0"
+              className="p-1.5 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex-shrink-0"
               title="Search AWMPACK"
             >
-              <Search className="w-4.5 h-4.5 xl:w-5 xl:h-5 stroke-[2.2]" />
+              <Search className="w-4.5 h-4.5 stroke-[2.2]" />
             </button>
 
             {/* Languages Icon */}
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="p-1.5 xl:p-2 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex items-center justify-center flex-shrink-0"
+                className="p-1.5 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex items-center justify-center flex-shrink-0"
                 title="Select language"
               >
-                <Languages className="w-4.5 h-4.5 xl:w-5 xl:h-5 stroke-[2.2]" />
+                <Languages className="w-4.5 h-4.5 stroke-[2.2]" />
               </button>
 
               {langMenuOpen && (
