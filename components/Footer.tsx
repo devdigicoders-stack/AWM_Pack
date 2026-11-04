@@ -93,7 +93,7 @@ export default function Footer() {
               href="/"
               className="inline-block bg-white px-3 py-1.5 rounded-xl shadow-xs hover:shadow-md transition-all shrink-0"
             >
-              <div className="relative w-[165px] sm:w-[195px] xl:w-[220px] aspect-[1499/529] transition-all">
+              <div className="relative w-[135px] sm:w-[155px] xl:w-[175px] aspect-[1499/529] transition-all">
                 <Image
                   src="/logo.jpeg"
                   alt="AWMPACK - Al Waad Manufacturing Packaging Company"
@@ -103,17 +103,17 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-xs text-gray-300 leading-relaxed font-medium">
-              <strong>Al Waad Manufacturing Packaging Company (AWMPC)</strong> is Qatar&apos;s leading provider of industrial-grade wooden pallets, custom boxes, export crates, and wood recycling solutions.
+            <p className="text-sm sm:text-[15px] text-gray-200 leading-relaxed font-normal">
+              <strong className="text-white font-semibold">Al Waad Manufacturing Packaging Company (AWMPC)</strong> is Qatar&apos;s leading provider of industrial-grade wooden pallets, custom boxes, export crates, and wood recycling solutions.
             </p>
 
             {/* Trust Badges & Contact Button */}
             <div className="space-y-4 pt-2">
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-3 py-1 rounded-full bg-blue-900/40 text-blue-300 border border-blue-800 text-[11px] font-semibold">
+                <span className="px-3.5 py-1.5 rounded-full bg-blue-900/40 text-blue-200 border border-blue-800 text-xs font-semibold">
                   Zone 91, Birkat Al-Awamer, Qatar
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-800/80 text-[11px] font-semibold">
+                <span className="px-3.5 py-1.5 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-800/80 text-xs font-semibold">
                   ISPM 15 &amp; ICV Certified
                 </span>
               </div>
@@ -121,16 +121,16 @@ export default function Footer() {
               <div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-[#0099e5] hover:bg-[#0077b6] text-white text-xs font-bold shadow-md hover:shadow-lg transition-all"
+                  className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-[#0099e5] hover:bg-[#0077b6] text-white text-sm font-bold shadow-md hover:shadow-lg transition-all"
                 >
                   <span>Contact Factory &amp; Sales</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
-              <p className="text-[11px] text-gray-400">
+              <p className="text-xs sm:text-sm text-gray-300 font-medium">
                 P.O. Box: 12451 • Direct Hotline:{" "}
-                <a href="tel:+97451191223" className="text-white hover:text-[#0099e5] font-semibold">
+                <a href="tel:+97451191223" className="text-white hover:text-[#0099e5] font-bold">
                   +974 5119 1223
                 </a>
               </p>
@@ -139,42 +139,42 @@ export default function Footer() {
 
           {/* Col 1: Products */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
+            <h4 className="text-sm font-extrabold text-white uppercase tracking-wider mb-4 border-b border-blue-900/80 pb-2.5">
               Products &amp; Crates
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
-                <Link href="/solutions#wooden-pallets" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#wooden-pallets" className="hover:text-white transition-colors block">
                   Standard Wooden Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#custom-pallets" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#custom-pallets" className="hover:text-white transition-colors block">
                   Custom / Special Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#metal-pallets" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#metal-pallets" className="hover:text-white transition-colors block">
                   Heavy Steel Pallets
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#wooden-boxes" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#wooden-boxes" className="hover:text-white transition-colors block">
                   Heavy Wooden Boxes
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#custom-crates" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#custom-crates" className="hover:text-white transition-colors block">
                   Export Crates &amp; Skids
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#pallet-collars" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#pallet-collars" className="hover:text-white transition-colors block">
                   Hinged Pallet Collars
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#sawdust-blocks" className="hover:text-[#0099e5] transition-colors text-emerald-400 font-semibold">
+                <Link href="/solutions#sawdust-blocks" className="hover:text-emerald-300 transition-colors text-emerald-400 font-semibold block">
                   Compressed Sawdust Blocks
                 </Link>
               </li>
@@ -183,44 +183,44 @@ export default function Footer() {
 
           {/* Col 2: Services & Quality */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
+            <h4 className="text-sm font-extrabold text-white uppercase tracking-wider mb-4 border-b border-blue-900/80 pb-2.5">
               Services &amp; Compliance
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
-                <Link href="/engineering#ispm15" className="hover:text-[#0099e5] transition-colors flex items-center">
+                <Link href="/engineering#ispm15" className="hover:text-white transition-colors flex items-center justify-between">
                   <span>ISPM 15 Heat Treatment</span>
-                  <span className="ml-1 text-[9px] bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded">HT</span>
+                  <span className="ml-1.5 text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-bold">HT</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#pallet-repair" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#pallet-repair" className="hover:text-white transition-colors block">
                   Pallet Repair &amp; Sorting
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#pallet-pooling" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/solutions#pallet-pooling" className="hover:text-white transition-colors block">
                   Closed-Loop Pallet Pooling
                 </Link>
               </li>
               <li>
-                <Link href="/sustainability#waste-to-product" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/sustainability#waste-to-product" className="hover:text-white transition-colors block">
                   &quot;Waste to Usable Product&quot;
                 </Link>
               </li>
               <li>
-                <Link href="/consulting/no-cure-no-pay" className="hover:text-[#0099e5] transition-colors flex items-center justify-between">
+                <Link href="/consulting/no-cure-no-pay" className="hover:text-white transition-colors flex items-center justify-between">
                   <span>No-Cure-No-Pay Analysis</span>
-                  <span className="text-[9px] bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded font-bold">4% Save</span>
+                  <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-bold">4% Save</span>
                 </Link>
               </li>
               <li>
-                <Link href="/consulting/material-handling" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/consulting/material-handling" className="hover:text-white transition-colors block">
                   Handling Materials Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/engineering#load-testing" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/engineering#load-testing" className="hover:text-white transition-colors block">
                   Heavy Load Testing
                 </Link>
               </li>
@@ -229,42 +229,42 @@ export default function Footer() {
 
           {/* Col 3: Company & Qatar */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">
+            <h4 className="text-sm font-extrabold text-white uppercase tracking-wider mb-4 border-b border-blue-900/80 pb-2.5">
               Company
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
-                <Link href="/about" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/about" className="hover:text-white transition-colors block">
                   About Al Waad (AWMPC)
                 </Link>
               </li>
               <li>
-                <Link href="/about#made-in-qatar" className="hover:text-[#0099e5] transition-colors text-emerald-400 font-semibold">
+                <Link href="/about#made-in-qatar" className="hover:text-emerald-300 transition-colors text-emerald-400 font-semibold block">
                   Made in Qatar 🇶🇦
                 </Link>
               </li>
               <li>
-                <Link href="/about#icv" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/about#icv" className="hover:text-white transition-colors block">
                   In-Country Value (ICV)
                 </Link>
               </li>
               <li>
-                <Link href="/about#facility" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/about#facility" className="hover:text-white transition-colors block">
                   Birkat Al-Awamer Plant
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/insights" className="hover:text-white transition-colors block">
                   News &amp; Factory Updates
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-[#0099e5] transition-colors">
+                <Link href="/gallery" className="hover:text-white transition-colors block">
                   Factory &amp; Product Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#0099e5] transition-colors font-bold text-[#0099e5]">
+                <Link href="/contact" className="hover:text-blue-300 transition-colors font-bold text-[#0099e5] block">
                   Contact &amp; Factory Location
                 </Link>
               </li>
@@ -273,36 +273,36 @@ export default function Footer() {
         </div>
 
         {/* Accreditations Badges (Exact from Client Business Card) */}
-        <div className="mt-14 pt-8 border-t border-blue-900/60 flex flex-wrap items-center justify-between gap-6 text-xs text-gray-400">
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="font-semibold text-white">Certified Accreditations:</span>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-blue-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#0099e5]" />
+        <div className="mt-14 pt-8 border-t border-blue-900/60 flex flex-wrap items-center justify-between gap-6 text-sm text-gray-300">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-bold text-white text-sm">Certified Accreditations:</span>
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-blue-200 text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4 text-[#0099e5]" />
               <span>ISO 9001:2015</span>
             </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
-              <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
+              <Leaf className="w-4 h-4 text-emerald-400" />
               <span>ISO 14001:2015</span>
             </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-teal-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-teal-200 text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4 text-teal-400" />
               <span>ISO 45001:2018</span>
             </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-amber-200">
-              <Award className="w-3.5 h-3.5 text-amber-400" />
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-amber-200 text-xs font-semibold">
+              <Award className="w-4 h-4 text-amber-400" />
               <span>ICV Certified (Qatar)</span>
             </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>ISPM 15 Heat Treated</span>
             </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3 py-1.5 rounded-md text-emerald-200">
-              <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
+              <Leaf className="w-4 h-4 text-emerald-400" />
               <span>FSC® Certified</span>
             </div>
           </div>
 
-          <div className="text-gray-300 font-semibold text-xs flex items-center space-x-2">
+          <div className="text-gray-200 font-bold text-sm flex items-center space-x-2">
             <span>State of Qatar Industrial Excellence</span>
             <span>🇶🇦</span>
           </div>
