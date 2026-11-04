@@ -107,102 +107,33 @@ export default function Footer() {
               <strong>Al Waad Manufacturing Packaging Company (AWMPC)</strong> is Qatar&apos;s leading provider of industrial-grade wooden pallets, custom boxes, export crates, and wood recycling solutions.
             </p>
 
-            {/* Direct Client Contact Box from Business Card */}
-            <div className="p-4 rounded-2xl bg-[#00223a] border border-blue-900/80 space-y-2 text-xs">
-              <div className="flex items-center justify-between border-b border-blue-800/60 pb-2">
-                <div>
-                  <p className="font-bold text-white text-sm">Eng. Maher Marjy</p>
-                  <p className="text-[#0099e5] font-semibold text-[11px]">Factory Manager</p>
-                </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  Direct Factory Contact
+            {/* Trust Badges & Contact Button */}
+            <div className="space-y-4 pt-2">
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="px-3 py-1 rounded-full bg-blue-900/40 text-blue-300 border border-blue-800 text-[11px] font-semibold">
+                  Zone 91, Birkat Al-Awamer, Qatar
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-800/80 text-[11px] font-semibold">
+                  ISPM 15 &amp; ICV Certified
                 </span>
               </div>
 
-              {/* Quick WhatsApp Pill */}
-              <div className="pt-1">
-                <a
-                  href="https://wa.me/97451191223?text=Hello%20AWMPACK,%20I%20would%20like%20to%20inquire%20about%20pallets%20and%20crating"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center space-x-2 w-full py-1.5 px-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold text-xs shadow-xs transition-all"
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-[#0099e5] hover:bg-[#0077b6] text-white text-xs font-bold shadow-md hover:shadow-lg transition-all"
                 >
-                  <span>Chat on WhatsApp (+974 5119 1223)</span>
-                </a>
+                  <span>Contact Factory &amp; Sales</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-300 pt-1">
-                <p className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="tel:+97451191223" className="hover:text-white font-medium">+974 5119 1223 (Mobile)</a>
-                </p>
-                <p className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="tel:+97440394581" className="hover:text-white font-medium">+974 4039 4581 (Office)</a>
-                </p>
-                <p className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="tel:+97466864923" className="hover:text-white font-medium">+974 6686 4923 (Sales)</a>
-                </p>
-                <p className="flex items-center">
-                  <Mail className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="mailto:maher@awmpack.com" className="hover:text-white">maher@awmpack.com</a>
-                </p>
-                <p className="flex items-center">
-                  <Mail className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="mailto:info@awmpack.com" className="hover:text-white">info@awmpack.com</a>
-                </p>
-                <p className="flex items-center">
-                  <Globe className="w-3.5 h-3.5 mr-1.5 text-[#0099e5] shrink-0" />
-                  <a href="https://www.awmpack.com" target="_blank" rel="noreferrer" className="hover:text-white">www.awmpack.com</a>
-                </p>
-              </div>
-
-              <div className="pt-2 border-t border-blue-800/60 text-gray-400 text-[11px] flex flex-col space-y-1">
-                <div className="flex items-start space-x-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#0099e5] shrink-0 mt-0.5" />
-                  <span>
-                    Building No. 89, Street No. 3012, Zone No. 91, Birkat Al-Awamer, Al Wukair, State of Qatar (P.O. Box 12451)
-                  </span>
-                </div>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Birkat+Al-Awamer+Zone+91+Street+3012+Qatar"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#0099e5] hover:underline font-bold text-[11px] pl-5"
-                >
-                  View on Google Maps →
+              <p className="text-[11px] text-gray-400">
+                P.O. Box: 12451 • Direct Hotline:{" "}
+                <a href="tel:+97451191223" className="text-white hover:text-[#0099e5] font-semibold">
+                  +974 5119 1223
                 </a>
-              </div>
-
-              {/* Social Media Links */}
-              <div className="pt-2 border-t border-blue-800/60 flex items-center space-x-3 text-xs text-gray-300">
-                <span className="text-[10px] uppercase font-bold text-gray-400">Social:</span>
-                <a
-                  href="https://www.linkedin.com/company/awmpack"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-2 py-0.5 rounded bg-blue-900/40 text-blue-300 hover:text-white hover:bg-[#0099e5] transition-all font-semibold"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://wa.me/97451191223"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-2 py-0.5 rounded bg-emerald-900/40 text-emerald-300 hover:text-white hover:bg-emerald-600 transition-all font-semibold"
-                >
-                  WhatsApp
-                </a>
-                <a
-                  href="https://www.awmpack.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-2 py-0.5 rounded bg-blue-900/40 text-blue-300 hover:text-white hover:bg-[#0099e5] transition-all font-semibold"
-                >
-                  awmpack.com
-                </a>
-              </div>
+              </p>
             </div>
           </div>
 
