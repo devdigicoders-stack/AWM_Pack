@@ -464,7 +464,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("solutions")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -766,7 +766,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("consulting")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1033,7 +1033,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("industries")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1176,7 +1176,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("sustainability")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1315,7 +1315,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("engineering")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1454,7 +1454,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("insights")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">
@@ -1566,7 +1566,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onMouseEnter={() => handleMouseEnter("about")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full max-w-[1600px] mx-auto">
+            <div className="w-full">
               {/* Header Title & Link */}
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
                 <div className="flex items-center space-x-2.5">

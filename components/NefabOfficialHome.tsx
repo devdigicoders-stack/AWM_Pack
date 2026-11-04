@@ -93,7 +93,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
 
           {/* Hero Typography */}
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="max-w-3xl space-y-3.5">
                 <div className="inline-flex items-center space-x-2 bg-[#0099e5]/25 border border-[#0099e5]/40 text-blue-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full backdrop-blur-md">
                   <span>Waste to Usable Product • State of Qatar 🇶🇦</span>
@@ -133,7 +133,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
 
         {/* 4 Pillars White Section Below Hero */}
         <div className="bg-white py-8 sm:py-10 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
@@ -242,7 +242,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 2: "Sustainable packaging solutions for Qatar's core industries"
           ========================================================================= */}
       <section className="py-20 bg-white border-b border-gray-100" id="industries-carousel">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="max-w-2xl space-y-4 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
               Specialized Industrial Solutions
@@ -319,7 +319,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/95 via-[#00223a]/80 to-[#002b49]/60"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <FadeIn direction="left" className="max-w-xl space-y-6 text-white">
             <span className="text-xs font-bold uppercase tracking-widest text-[#0099e5] bg-[#0099e5]/20 px-3 py-1 rounded-full border border-[#0099e5]/40">
               No-Cure No-Pay Consulting
@@ -346,7 +346,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 4: "Are you prepared for international export quarantine (ISPM 15)?"
           ========================================================================= */}
       <section className="py-20 bg-white border-b border-gray-100" id="ispm-banner">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Top Image: Container Ship at Hamad Port */}
           <FadeIn direction="up">
             <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
@@ -397,7 +397,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#001829]/90 via-[#00223a]/75 to-[#002b49]/40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
           <FadeIn direction="up" className="max-w-2xl mx-auto space-y-6 text-white">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
               Made in Qatar 🇶🇦
@@ -424,7 +424,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 6: "With you wherever you operate across Qatar & GCC"
           ========================================================================= */}
       <section className="py-20 bg-gradient-to-b from-[#e6f4fb] via-white to-[#edf7fc] border-b border-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Section Header */}
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 bg-[#002b49] text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xs">
@@ -669,7 +669,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 7: "About us" (Deep Royal Navy Blue with 4 Big Numbers)
           ========================================================================= */}
       <section className="py-24 bg-[#00223a] text-white relative overflow-hidden" id="about-stats">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 text-center space-y-12">
           <div className="max-w-3xl mx-auto space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-[#0099e5]">
               Al Waad Manufacturing Packaging Company (AWMPC)
@@ -740,7 +740,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 8: LOGISTICS & POOLING ("Optimizing your logistics flow")
           ========================================================================= */}
       <section className="py-20 bg-white border-b border-gray-100" id="logistics-flow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Top Image: Port Shipping Cranes */}
           <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
             <Image
@@ -779,7 +779,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 9: CIRCULAR SUSTAINABILITY (Compressed Sawdust Blocks)
           ========================================================================= */}
       <section className="py-20 bg-[#e8f6f0] border-b border-emerald-100" id="sustainability-banner">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Top Image: Eco Foliage with Wood Recycling */}
           <FadeIn direction="up">
             <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md mb-8">
@@ -840,7 +840,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
           SECTION 10: "Turnkey Packaging Solutions"
           ========================================================================= */}
       <section className="py-20 bg-white" id="solutions-banner">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <FadeIn direction="up" className="max-w-3xl space-y-4 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
               Full Industrial Portfolio

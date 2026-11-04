@@ -36,7 +36,7 @@ export default function Footer() {
       {/* Newsletter & Highlight Banner */}
       <div className="bg-[#002b49] border-b border-blue-900/60 py-12 px-4 sm:px-6 lg:px-8 xl:px-12">
         <FadeIn direction="up">
-          <div className="w-full max-w-[1600px] mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-xl">
               <div className="inline-flex items-center space-x-2 text-[#0099e5] text-xs font-semibold tracking-wider uppercase mb-2">
                 <Leaf className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Links */}
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
         <FadeIn direction="up" delay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Direct Card Contact Column */}
