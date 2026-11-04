@@ -85,11 +85,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Direct Card Contact Column */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block bg-white p-2.5 rounded-xl">
-              <div className="relative h-12 w-48 sm:w-56">
+            <Link
+              href="/"
+              className="inline-block bg-white px-3 py-1.5 rounded-xl shadow-xs hover:shadow-md transition-all shrink-0"
+            >
+              <div className="relative w-[165px] sm:w-[195px] xl:w-[220px] aspect-[1499/529] transition-all">
                 <Image
                   src="/logo.jpeg"
-                  alt="AWMPACK Logo"
+                  alt="AWMPACK - Al Waad Manufacturing Packaging Company"
                   fill
                   className="object-contain"
                 />

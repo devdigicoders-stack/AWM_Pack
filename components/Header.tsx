@@ -166,13 +166,13 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
             onClick={closeDropdown}
             className="flex items-center space-x-3 group py-1 shrink-0"
           >
-            <div className="relative h-12 sm:h-14 xl:h-16 w-44 sm:w-56 md:w-64 xl:w-72 transition-all">
+            <div className="relative w-[165px] sm:w-[195px] xl:w-[220px] aspect-[1499/529] transition-all">
               <Image
                 src="/logo.jpeg"
                 alt="AWMPACK - Al Waad Manufacturing Packaging Company"
                 fill
                 priority
-                className="object-contain object-left"
+                className="object-contain"
               />
             </div>
           </Link>
@@ -1745,7 +1745,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               </div>
             </div>
           </div>
-        )}\n\n        {/* Mobile Navigation Drawer */}
+        )}       {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="xl:hidden bg-white border-t border-gray-200 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
             <div className="space-y-4">
