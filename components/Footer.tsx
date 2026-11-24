@@ -19,6 +19,45 @@ import {
 } from "lucide-react";
 import { FadeIn } from "./motion/MotionComponents";
 
+const certificateLogos = [
+  {
+    name: "ISO 9001:2015",
+    standard: "Quality Management System",
+    src: "/certificates/ISO9001.png",
+    widthClass: "w-16 sm:w-20 md:w-22",
+  },
+  {
+    name: "ISO 14001:2015",
+    standard: "Environmental Management",
+    src: "/certificates/ISO14001.png",
+    widthClass: "w-16 sm:w-20 md:w-22",
+  },
+  {
+    name: "ISO 45001:2018",
+    standard: "Occupational Health & Safety",
+    src: "/certificates/ISO45001.png",
+    widthClass: "w-16 sm:w-20 md:w-22",
+  },
+  {
+    name: "ICV Certified (Qatar)",
+    standard: "In-Country Value Certified",
+    src: "/certificates/ICV.png",
+    widthClass: "w-28 sm:w-32 md:w-36",
+  },
+  {
+    name: "ISPM 15 Heat Treated",
+    standard: "IPPC Phyto-Sanitary Compliance",
+    src: "/certificates/ISPM.png",
+    widthClass: "w-22 sm:w-26 md:w-30",
+  },
+  {
+    name: "FSC® Certified",
+    standard: "Responsible Sustainable Forestry",
+    src: "/certificates/FSC.png",
+    widthClass: "w-16 sm:w-20 md:w-22",
+  },
+];
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -272,53 +311,70 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Accreditations Badges (Exact from Client Business Card) */}
-        <div className="mt-14 pt-8 border-t border-blue-900/60 flex flex-wrap items-center justify-between gap-6 text-sm text-gray-300">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="font-bold text-white text-sm">Certified Accreditations:</span>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-blue-200 text-xs font-semibold">
-              <ShieldCheck className="w-4 h-4 text-[#0099e5]" />
-              <span>ISO 9001:2015</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
-              <Leaf className="w-4 h-4 text-emerald-400" />
-              <span>ISO 14001:2015</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-teal-200 text-xs font-semibold">
-              <ShieldCheck className="w-4 h-4 text-teal-400" />
-              <span>ISO 45001:2018</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-amber-200 text-xs font-semibold">
-              <Award className="w-4 h-4 text-amber-400" />
-              <span>ICV Certified (Qatar)</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>ISPM 15 Heat Treated</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-[#00223a] border border-blue-800 px-3.5 py-1.5 rounded-md text-emerald-200 text-xs font-semibold">
-              <Leaf className="w-4 h-4 text-emerald-400" />
-              <span>FSC® Certified</span>
-            </div>
-          </div>
-
-          <div className="text-gray-200 font-bold text-sm flex items-center space-x-2">
-            <span>State of Qatar Industrial Excellence</span>
-            <span>🇶🇦</span>
-          </div>
-        </div>
-
-        {/* Bottom Legal Copyright */}
-        <div className="mt-8 pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© 2026 Al Waad Manufacturing Packaging Company (AWMPC / AWMPACK). All rights reserved.</p>
-          <div className="flex flex-wrap gap-4 sm:gap-6">
-            <Link href="/about" className="hover:text-gray-400">Quality Policy</Link>
-            <Link href="/about" className="hover:text-gray-400">HSE Safety Charter</Link>
-            <Link href="/sustainability" className="hover:text-gray-400">Environmental Policy</Link>
-            <Link href="/contact" className="hover:text-gray-400">Factory Inquiries</Link>
-          </div>
-        </div>
         </FadeIn>
+      </div>
+
+      {/* =========================================================================
+          1. FULL-WIDTH WHITE PATTI - CERTIFIED ACCREDITATIONS & GLOBAL STANDARDS
+          ========================================================================= */}
+      <div className="w-full bg-white text-[#002b49] border-t-2 border-b border-gray-200 py-6 sm:py-7 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-xs">
+        <div className="w-full flex flex-col xl:flex-row items-center justify-between gap-6 sm:gap-8">
+          
+          {/* Left Title / Badge */}
+          <div className="flex items-center space-x-3.5 text-center xl:text-left shrink-0">
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse hidden sm:inline-block" />
+            <div>
+              <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#002b49] block">
+                Certified Accreditations &amp; Global Standards
+              </span>
+              <span className="text-[11px] sm:text-xs text-gray-500 font-semibold flex items-center justify-center xl:justify-start gap-1.5 mt-0.5">
+                <span>State of Qatar Industrial Supply Chain Excellence</span>
+                <span>•</span>
+                <span>ICV &amp; ISPM 15 Certified 🇶🇦</span>
+              </span>
+            </div>
+          </div>
+
+          {/* 6 Official Certificate Logos */}
+          <div className="flex flex-wrap items-center justify-center xl:justify-end gap-6 sm:gap-8 md:gap-10">
+            {certificateLogos.map((cert) => (
+              <div
+                key={cert.name}
+                className="group relative flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                title={`${cert.name} - ${cert.standard}`}
+              >
+                <div className={`relative h-11 sm:h-13 md:h-14 ${cert.widthClass} transition-transform group-hover:scale-105 duration-300`}>
+                  <Image
+                    src={cert.src}
+                    alt={cert.name}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 120px, 160px"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      {/* =========================================================================
+          2. BOTTOM LEGAL COPYRIGHT BAR (Dark Sleek Finish)
+          ========================================================================= */}
+      <div className="w-full bg-[#001220] py-5 px-4 sm:px-6 lg:px-8 xl:px-12 border-t border-blue-950/80">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <p className="text-center sm:text-left">
+            © 2026 Al Waad Manufacturing Packaging Company (AWMPC / AWMPACK). All rights reserved.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 font-medium text-gray-400">
+            <Link href="/about" className="hover:text-white transition-colors">Quality Policy</Link>
+            <Link href="/about" className="hover:text-white transition-colors">HSE Safety Charter</Link>
+            <Link href="/sustainability" className="hover:text-white transition-colors">Environmental Policy</Link>
+            <Link href="/engineering#ispm15" className="hover:text-white transition-colors">ISPM 15 Compliance</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Factory Inquiries</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

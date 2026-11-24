@@ -260,8 +260,8 @@ export default function AboutPage() {
               <div className="lg:col-span-5 bg-[#00223a] text-white p-8 sm:p-10 rounded-3xl space-y-6 border border-blue-900/60 shadow-xl" id="leadership">
                 <div className="flex items-center justify-between border-b border-blue-800 pb-4">
                   <div>
-                    <h3 className="text-2xl font-black text-white">Eng. Maher Marjy</h3>
-                    <p className="text-[#0099e5] font-bold text-sm">Factory Manager</p>
+                    <h3 className="text-2xl font-black text-white">Technical Team</h3>
+                    <p className="text-[#0099e5] font-bold text-sm">Factory &amp; Engineering Operations</p>
                   </div>
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                     Executive Leadership
@@ -323,7 +323,7 @@ export default function AboutPage() {
                 <div className="pt-2">
                   <button
                     onClick={() => {
-                      setContactTopic("Meeting with Eng. Maher Marjy");
+                      setContactTopic("Meeting with Technical Team");
                       setContactOpen(true);
                     }}
                     className="w-full py-2.5 px-4 rounded-full bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs shadow-md transition-all text-center"

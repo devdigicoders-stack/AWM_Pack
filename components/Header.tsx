@@ -46,6 +46,57 @@ interface HeaderProps {
   onOpenContact?: () => void;
 }
 
+const industryDropdownCards = [
+  {
+    id: "energy",
+    title: "ENERGY",
+    image: "/industry/energy.png",
+    href: "/industries#energy",
+  },
+  {
+    id: "lib-emobility",
+    title: "LIB & E-MOBILITY",
+    image: "/industry/lib.png",
+    href: "/industries#lib-emobility",
+  },
+  {
+    id: "datacom-cloud",
+    title: "DATACOM & CLOUD",
+    image: "/industry/datacome.png",
+    href: "/industries#datacom-cloud",
+  },
+  {
+    id: "defense",
+    title: "DEFENSE",
+    image: "/industry/defence.png",
+    href: "/industries#defense",
+  },
+  {
+    id: "mining-construction",
+    title: "MINING & CONSTRUCTION",
+    image: "/industry/mining.png",
+    href: "/industries#mining-construction",
+  },
+  {
+    id: "medtech",
+    title: "MEDTECH",
+    image: "/industry/medtech.png",
+    href: "/industries#medtech",
+  },
+  {
+    id: "telecom",
+    title: "TELECOM",
+    image: "/industry/telecom.png",
+    href: "/industries#telecom",
+  },
+  {
+    id: "semiconductors",
+    title: "SEMICONDUCTORS",
+    image: "/industry/semiconductor.png",
+    href: "/industries#semiconductors",
+  },
+];
+
 export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -1026,144 +1077,41 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
           </div>
         )}
 
-        {/* 3. INDUSTRIES MEGA MENU */}
+        {/* 3. INDUSTRIES MEGA MENU (Matches Exact Nefab Screenshot - 8 Cards, Clean Images & Minimal Content) */}
         {activeDropdown === "industries" && (
           <div
-            className="absolute top-full left-0 right-0 w-full bg-white/98 backdrop-blur-xl border-b border-gray-200/90 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
+            className="absolute top-full left-0 right-0 w-full bg-white border-b border-gray-200 shadow-2xl py-6 px-4 sm:px-6 lg:px-8 xl:px-12 z-50 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-5 transition-all duration-200"
             onMouseEnter={() => handleMouseEnter("industries")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-full">
-              {/* Header Title & Link */}
-              <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-gray-100">
-                <div className="flex items-center space-x-2.5">
-                  <span className="w-2 h-2 rounded-full bg-[#0099e5]"></span>
-                  <h3 className="text-xs font-black uppercase tracking-wider text-[#002b49]">
-                    Packaging Engineered for Critical Industrial Sectors • Qatar
-                  </h3>
-                </div>
-                <Link
-                  href="/industries"
-                  onClick={() => handleNavClick("/industries")}
-                  className="text-xs font-bold text-[#0099e5] hover:text-[#002b49] flex items-center group transition-colors"
-                >
-                  <span>Explore All Sectors</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
+            <div className="w-full max-w-[1440px] mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4 xl:gap-5">
+                {industryDropdownCards.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    onClick={() => handleNavClick(item.href)}
+                    className="group block bg-white border border-gray-200/90 hover:border-gray-400 hover:shadow-lg transition-all duration-200 overflow-hidden"
+                  >
+                    {/* Card Image */}
+                    <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 640px) 50vw, 25vw"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
 
-              <div className="grid grid-cols-4 gap-6">
-                {/* 1. Oil & Gas */}
-                <Link
-                  href="/industries#oil-gas"
-                  onClick={() => handleNavClick("/industries#oil-gas")}
-                  className="group bg-gradient-to-b from-gray-50/70 to-white hover:from-amber-50/50 hover:to-white p-5 rounded-2xl border border-gray-200/80 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform">
-                      <Flame className="w-5 h-5" />
+                    {/* Card Title Bar (Clean, Bold, Uppercase - Matching Nefab Screenshot) */}
+                    <div className="p-3 sm:p-3.5 bg-white border-t border-gray-100 flex items-center justify-between">
+                      <span className="text-[12px] sm:text-[13px] xl:text-[13.5px] font-extrabold uppercase tracking-wider text-[#002b49] group-hover:text-[#0099e5] transition-colors block truncate">
+                        {item.title}
+                      </span>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#002b49] group-hover:text-amber-700 transition-colors">
-                        Oil &amp; Gas / Petrochemicals
-                      </h4>
-                      <p className="text-[11px] font-semibold text-gray-400 mt-0.5">
-                        Ras Laffan, Mesaieed &amp; Offshore
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Heavy-duty timber crates, drum pallets, and ISPM 15 certified platforms engineered for extreme industrial environments.
-                    </p>
-                  </div>
-                  <div className="pt-4 mt-3 border-t border-gray-100 flex items-center text-xs font-bold text-amber-600 group-hover:translate-x-1 transition-transform">
-                    <span>Explore Oil &amp; Gas</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                  </div>
-                </Link>
-
-                {/* 2. Construction */}
-                <Link
-                  href="/industries#construction"
-                  onClick={() => handleNavClick("/industries#construction")}
-                  className="group bg-gradient-to-b from-gray-50/70 to-white hover:from-blue-50/50 hover:to-white p-5 rounded-2xl border border-gray-200/80 hover:border-blue-300 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0099e5] flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform">
-                      <Building2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#002b49] group-hover:text-[#0099e5] transition-colors">
-                        Construction &amp; Infrastructure
-                      </h4>
-                      <p className="text-[11px] font-semibold text-gray-400 mt-0.5">
-                        Qatar National Vision 2030
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Reinforced precast transport frames, heavy timber skids, and durable platforms for large-scale mega-projects.
-                    </p>
-                  </div>
-                  <div className="pt-4 mt-3 border-t border-gray-100 flex items-center text-xs font-bold text-[#0099e5] group-hover:translate-x-1 transition-transform">
-                    <span>Explore Construction</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                  </div>
-                </Link>
-
-                {/* 3. Manufacturing */}
-                <Link
-                  href="/industries#manufacturing"
-                  onClick={() => handleNavClick("/industries#manufacturing")}
-                  className="group bg-gradient-to-b from-gray-50/70 to-white hover:from-purple-50/50 hover:to-white p-5 rounded-2xl border border-gray-200/80 hover:border-purple-300 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform">
-                      <Factory className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#002b49] group-hover:text-purple-700 transition-colors">
-                        Manufacturing &amp; Metals
-                      </h4>
-                      <p className="text-[11px] font-semibold text-gray-400 mt-0.5">
-                        Aluminium, Cables &amp; Machinery
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Custom heavy steel pallets, stillages, and machinery crating engineered for high-tonnage industrial payloads.
-                    </p>
-                  </div>
-                  <div className="pt-4 mt-3 border-t border-gray-100 flex items-center text-xs font-bold text-purple-700 group-hover:translate-x-1 transition-transform">
-                    <span>Explore Manufacturing</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                  </div>
-                </Link>
-
-                {/* 4. Logistics & Ports */}
-                <Link
-                  href="/industries#logistics"
-                  onClick={() => handleNavClick("/industries#logistics")}
-                  className="group bg-gradient-to-b from-gray-50/70 to-white hover:from-emerald-50/50 hover:to-white p-5 rounded-2xl border border-gray-200/80 hover:border-emerald-300 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#002b49] group-hover:text-emerald-700 transition-colors">
-                        Logistics, Ports &amp; Food
-                      </h4>
-                      <p className="text-[11px] font-semibold text-gray-400 mt-0.5">
-                        Hamad Port &amp; Cold-Chain
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Seaworthy export packaging, air freight platforms, and hygienic food-grade pallets for global distribution loops.
-                    </p>
-                  </div>
-                  <div className="pt-4 mt-3 border-t border-gray-100 flex items-center text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">
-                    <span>Explore Logistics</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                  </div>
-                </Link>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -1963,45 +1911,43 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                 </div>
               </div>
 
-              {/* SECTION: Strategic Industries */}
+              {/* SECTION: Strategic Industries (All 8 Categories matching Nefab) */}
               <div className="bg-white rounded-2xl border border-gray-200/80 p-3.5 shadow-xs">
-                <div className="flex items-center space-x-2 text-[#002b49] font-black text-xs uppercase tracking-wider pb-2 mb-2 border-b border-gray-100">
-                  <Factory className="w-4 h-4 text-[#0099e5]" />
-                  <span>Qatar Strategic Industries</span>
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
+                  <div className="flex items-center space-x-2 text-[#002b49] font-black text-xs uppercase tracking-wider">
+                    <Factory className="w-4 h-4 text-[#0099e5]" />
+                    <span>Industry Sectors (8 Categories)</span>
+                  </div>
+                  <Link
+                    href="/industries"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[11px] font-bold text-[#0099e5] hover:underline"
+                  >
+                    View All &rarr;
+                  </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-xs">
-                  <Link
-                    href="/industries#oil-gas"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
-                  >
-                    <span>🛢️</span>
-                    <span>Oil &amp; Gas / Energy</span>
-                  </Link>
-                  <Link
-                    href="/industries#construction"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
-                  >
-                    <span>🏗️</span>
-                    <span>Construction</span>
-                  </Link>
-                  <Link
-                    href="/industries#manufacturing"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
-                  >
-                    <span>⚙️</span>
-                    <span>Manufacturing</span>
-                  </Link>
-                  <Link
-                    href="/industries#logistics"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#002b49] font-semibold flex items-center space-x-2"
-                  >
-                    <span>🚢</span>
-                    <span>Hamad Port Freight</span>
-                  </Link>
+                  {industryDropdownCards.map((ind) => (
+                    <Link
+                      key={ind.id}
+                      href={ind.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="group p-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 border border-gray-200/60 transition-all flex flex-col overflow-hidden"
+                    >
+                      <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-gray-100 mb-1.5">
+                        <Image
+                          src={ind.image}
+                          alt={ind.title}
+                          fill
+                          sizes="50vw"
+                          className="object-cover group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                      <span className="text-[11px] font-bold text-[#002b49] group-hover:text-[#0099e5] truncate uppercase">
+                        {ind.title}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
