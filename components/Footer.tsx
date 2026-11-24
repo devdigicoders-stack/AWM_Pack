@@ -24,37 +24,37 @@ const certificateLogos = [
     name: "ISO 9001:2015",
     standard: "Quality Management System",
     src: "/certificates/ISO9001.png",
-    widthClass: "w-16 sm:w-20 md:w-22",
+    widthClass: "w-9 sm:w-10 md:w-11",
   },
   {
     name: "ISO 14001:2015",
     standard: "Environmental Management",
     src: "/certificates/ISO14001.png",
-    widthClass: "w-16 sm:w-20 md:w-22",
+    widthClass: "w-9 sm:w-10 md:w-11",
   },
   {
     name: "ISO 45001:2018",
-    standard: "Occupational Health & Safety",
+    standard: "Occupational Health and Safety",
     src: "/certificates/ISO45001.png",
-    widthClass: "w-16 sm:w-20 md:w-22",
+    widthClass: "w-9 sm:w-10 md:w-11",
   },
   {
     name: "ICV Certified (Qatar)",
     standard: "In-Country Value Certified",
     src: "/certificates/ICV.png",
-    widthClass: "w-28 sm:w-32 md:w-36",
+    widthClass: "w-20 sm:w-22 md:w-24",
   },
   {
     name: "ISPM 15 Heat Treated",
     standard: "IPPC Phyto-Sanitary Compliance",
     src: "/certificates/ISPM.png",
-    widthClass: "w-22 sm:w-26 md:w-30",
+    widthClass: "w-15 sm:w-16 md:w-18",
   },
   {
     name: "FSC® Certified",
     standard: "Responsible Sustainable Forestry",
     src: "/certificates/FSC.png",
-    widthClass: "w-16 sm:w-20 md:w-22",
+    widthClass: "w-9 sm:w-10 md:w-11",
   },
 ];
 
@@ -317,17 +317,17 @@ export default function Footer() {
       {/* =========================================================================
           1. FULL-WIDTH WHITE PATTI - CERTIFIED ACCREDITATIONS & GLOBAL STANDARDS
           ========================================================================= */}
-      <div className="w-full bg-white text-[#002b49] border-t-2 border-b border-gray-200 py-6 sm:py-7 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-xs">
-        <div className="w-full flex flex-col xl:flex-row items-center justify-between gap-6 sm:gap-8">
+      <div className="w-full bg-white text-[#002b49] border-t border-b border-gray-200 py-3.5 sm:py-4 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
           
           {/* Left Title / Badge */}
-          <div className="flex items-center space-x-3.5 text-center xl:text-left shrink-0">
-            <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse hidden sm:inline-block" />
+          <div className="flex items-center space-x-3 text-center lg:text-left shrink-0">
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse hidden sm:inline-block shrink-0" />
             <div>
               <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#002b49] block">
                 Certified Accreditations &amp; Global Standards
               </span>
-              <span className="text-[11px] sm:text-xs text-gray-500 font-semibold flex items-center justify-center xl:justify-start gap-1.5 mt-0.5">
+              <span className="text-[11px] sm:text-xs text-gray-500 font-semibold flex items-center justify-center lg:justify-start gap-1.5 mt-0.5">
                 <span>State of Qatar Industrial Supply Chain Excellence</span>
                 <span>•</span>
                 <span>ICV &amp; ISPM 15 Certified 🇶🇦</span>
@@ -335,21 +335,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 6 Official Certificate Logos */}
-          <div className="flex flex-wrap items-center justify-center xl:justify-end gap-6 sm:gap-8 md:gap-10">
+          {/* 6 Official Certificate Logos:
+              - Mobile (<640px): 3 columns x 2 rows (perfect symmetry, zero orphan logos)
+              - Tablet / Laptop / Desktop: Clean single row with lg:flex-nowrap (never breaks)
+          */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 lg:flex lg:items-center lg:justify-end gap-4 sm:gap-5 lg:gap-6 xl:gap-8 shrink-0 items-center justify-items-center">
             {certificateLogos.map((cert) => (
               <div
                 key={cert.name}
-                className="group relative flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                className="group relative flex flex-col items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
                 title={`${cert.name} - ${cert.standard}`}
               >
-                <div className={`relative h-11 sm:h-13 md:h-14 ${cert.widthClass} transition-transform group-hover:scale-105 duration-300`}>
+                <div className={`relative h-8 sm:h-9 md:h-10 ${cert.widthClass} transition-transform group-hover:scale-105 duration-200`}>
                   <Image
                     src={cert.src}
                     alt={cert.name}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 120px, 160px"
+                    sizes="(max-width: 768px) 80px, 120px"
                   />
                 </div>
               </div>
@@ -360,20 +363,43 @@ export default function Footer() {
       </div>
 
       {/* =========================================================================
-          2. BOTTOM LEGAL COPYRIGHT BAR (Dark Sleek Finish)
+          2. BOTTOM LEGAL COPYRIGHT BAR (Dark Sleek Finish - Multi-tier Spacious Format)
           ========================================================================= */}
-      <div className="w-full bg-[#001220] py-5 px-4 sm:px-6 lg:px-8 xl:px-12 border-t border-blue-950/80">
-        <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
-          <p className="text-center sm:text-left">
-            © 2026 Al Waad Manufacturing Packaging Company (AWMPC / AWMPACK). All rights reserved.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 font-medium text-gray-400">
+      <div className="w-full bg-[#001220] py-5 px-4 sm:px-6 lg:px-8 border-t border-blue-950/80">
+        <div className="max-w-7xl mx-auto space-y-4">
+          
+          {/* Top Row: Compliance & Policy Links (Evenly spaced & centered) */}
+          <div className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-7 gap-y-2 text-xs font-medium text-gray-400 pb-3 border-b border-blue-950/80">
             <Link href="/about" className="hover:text-white transition-colors">Quality Policy</Link>
+            <span className="text-blue-900 hidden sm:inline">•</span>
             <Link href="/about" className="hover:text-white transition-colors">HSE Safety Charter</Link>
+            <span className="text-blue-900 hidden sm:inline">•</span>
             <Link href="/sustainability" className="hover:text-white transition-colors">Environmental Policy</Link>
+            <span className="text-blue-900 hidden sm:inline">•</span>
             <Link href="/engineering#ispm15" className="hover:text-white transition-colors">ISPM 15 Compliance</Link>
+            <span className="text-blue-900 hidden sm:inline">•</span>
             <Link href="/contact" className="hover:text-white transition-colors">Factory Inquiries</Link>
           </div>
+
+          {/* Bottom Row: Copyright Left & Designer Credit Right (Never wrap awkwardly) */}
+          <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2.5">
+            <p className="text-center sm:text-left text-gray-400">
+              © 2026 Al Waad Manufacturing Packaging Company (AWMPC / AWMPACK). All rights reserved.
+            </p>
+            
+            <p className="text-center sm:text-right text-gray-400 shrink-0">
+              Designed &amp; Developed By{' '}
+              <a
+                href="https://www.worknestconnect.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0099e5] hover:text-white font-bold transition-colors hover:underline underline-offset-2"
+              >
+                Worknest Connect
+              </a>
+            </p>
+          </div>
+
         </div>
       </div>
     </footer>
