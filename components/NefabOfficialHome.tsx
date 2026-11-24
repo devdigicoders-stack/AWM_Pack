@@ -335,7 +335,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 onClick={() => onOpenContactWithTopic("Book a Site Packaging & Pallet Review")}
                 className="bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all"
               >
-                Book a factory review with Eng. Maher Marjy
+                Book a factory review with Technical Team
               </button>
             </div>
           </FadeIn>
@@ -678,7 +678,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
               About AWMPACK
             </h2>
             <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Under the leadership of Factory Manager <strong>Eng. Maher Marjy</strong>, AWMPACK delivers superior packaging solutions through advanced automated technology, responsible FSC® timber sourcing, and groundbreaking wood recycling under the motto <em>&quot;Waste to Usable Product.&quot;</em>
+              Under the leadership of our <strong>Technical Team</strong>, AWMPACK delivers superior packaging solutions through advanced automated technology, responsible FSC® timber sourcing, and groundbreaking wood recycling under the motto <em>&quot;Waste to Usable Product.&quot;</em>
             </p>
           </div>
 

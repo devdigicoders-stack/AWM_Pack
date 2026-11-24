@@ -609,7 +609,7 @@ export default function UsedPalletsPage() {
                     <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
                     <h4 className="text-lg font-black">Quotation Request Received!</h4>
                     <p className="text-xs text-emerald-700">
-                      Eng. Maher Marjy and our Birkat Al-Awamer sales department will review your specifications and send a formal commercial quotation within 2 business hours.
+                      Technical Team and our Birkat Al-Awamer sales department will review your specifications and send a formal commercial quotation within 2 business hours.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -760,7 +760,7 @@ export default function UsedPalletsPage() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
                       <div>
-                        <span className="text-gray-400 block text-[10px]">Mobile (Eng. Maher Marjy):</span>
+                        <span className="text-gray-400 block text-[10px]">Mobile (Technical Team):</span>
                         <a href="tel:+97451191223" className="font-bold text-white hover:text-[#0099e5]">+974 5119 1223</a>
                       </div>
                     </div>

@@ -344,7 +344,7 @@ export default function ConsultingHubPage() {
                 Ready to optimize your packaging operations?
               </h4>
               <p className="text-xs text-gray-600 mt-1">
-                Connect directly with Factory Manager Eng. Maher Marjy (+974 5119 1223) or our Doha office (+974 4039 4581).
+                Connect directly with Technical Team (+974 5119 1223) or our Doha office (+974 4039 4581).
               </p>
             </div>
 

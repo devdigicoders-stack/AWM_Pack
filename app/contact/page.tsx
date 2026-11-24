@@ -66,7 +66,7 @@ export default function ContactPage() {
     },
     {
       q: "Can we schedule a factory visit to inspect production facilities?",
-      a: "Absolutely. Industrial procurement managers, supply chain directors, and logistics engineers are welcome to tour our automated assembly lines and thermal kilns in Birkat Al-Awamer. You can schedule a visit directly with Factory Manager Eng. Maher Marjy (+974 5119 1223).",
+      a: "Absolutely. Industrial procurement managers, supply chain directors, and logistics engineers are welcome to tour our automated assembly lines and thermal kilns in Birkat Al-Awamer. You can schedule a visit directly with our Technical Team (+974 5119 1223).",
     },
     {
       q: "Do you offer custom dimensions and CAD-engineered heavy crating?",
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 </h1>
 
                 <p className="text-sm sm:text-base text-gray-200 leading-relaxed max-w-2xl">
-                  Reach out directly to our 15,000 m² industrial facility in Birkat Al-Awamer, Al Wukair. Led by Factory Manager <strong>Eng. Maher Marjy</strong>, our technical team provides rapid quotes, custom pallet engineering, and verified export crating solutions.
+                  Reach out directly to our 15,000 m² industrial facility in Birkat Al-Awamer, Al Wukair. Our <strong>Technical Team</strong> provides rapid quotes, custom pallet engineering, and verified export crating solutions.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-3">
@@ -169,8 +169,8 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-black text-[#002b49]">Eng. Maher Marjy</h3>
-                        <p className="text-xs font-bold text-[#0099e5] mt-0.5">Factory Manager</p>
+                        <h3 className="text-lg font-black text-[#002b49]">Technical Team</h3>
+                        <p className="text-xs font-bold text-[#0099e5] mt-0.5">Factory &amp; Engineering Operations</p>
                         <p className="text-xs text-gray-500 mt-1">Al Waad Manufacturing Packaging Company</p>
                       </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
                     <div className="pt-4 mt-4 border-t border-gray-100">
                       <a
-                        href="https://wa.me/97451191223?text=Hello%20Eng.%20Maher,%20I%20would%20like%20to%20inquire%20about%20pallets%20and%20crating"
+                        href="https://wa.me/97451191223?text=Hello%20Technical%20Team,%20I%20would%20like%20to%20inquire%20about%20pallets%20and%20crating"
                         target="_blank"
                         rel="noreferrer"
                         className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all text-center flex items-center justify-center space-x-2 shadow-xs"
@@ -348,7 +348,7 @@ export default function ContactPage() {
                       Inquiry Received by AWMPACK Factory!
                     </h3>
                     <p className="text-xs text-emerald-800 max-w-md mx-auto">
-                      Thank you, <strong>{formData.name}</strong>. Eng. Maher Marjy and our production team in Birkat Al-Awamer will review your specifications and contact you at <strong>{formData.email}</strong> shortly.
+                      Thank you, <strong>{formData.name}</strong>. Our Technical Team and production engineers in Birkat Al-Awamer will review your specifications and contact you at <strong>{formData.email}</strong> shortly.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -459,7 +459,7 @@ export default function ContactPage() {
                         type="submit"
                         className="w-full py-3.5 px-6 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2"
                       >
-                        <span>Submit to Factory Manager</span>
+                        <span>Submit to Technical Team</span>
                         <Send className="w-4 h-4" />
                       </button>
                     </div>
@@ -483,8 +483,8 @@ export default function ContactPage() {
                         Qatar Facility HQ
                       </span>
                     </div>
-                    <h3 className="text-2xl font-black text-white">Eng. Maher Marjy</h3>
-                    <p className="text-xs text-[#0099e5] font-semibold">Factory Manager</p>
+                    <h3 className="text-2xl font-black text-white">Technical Team</h3>
+                    <p className="text-xs text-[#0099e5] font-semibold">Factory &amp; Engineering Operations</p>
                     <p className="text-[11px] text-gray-300">Al Waad Manufacturing Packaging Company (AWMPC)</p>
                   </div>
 
@@ -737,7 +737,7 @@ export default function ContactPage() {
             <div className="p-8 rounded-3xl bg-[#002b49] text-white text-center space-y-3">
               <h3 className="text-xl font-bold">Have a custom packaging inquiry?</h3>
               <p className="text-xs text-blue-200 max-w-md mx-auto">
-                Call Eng. Maher Marjy directly or start a quick WhatsApp chat to discuss technical drawings, load simulations, or urgent orders.
+                Call our Technical Team directly or start a quick WhatsApp chat to discuss technical drawings, load simulations, or urgent orders.
               </p>
               <div className="pt-2 flex justify-center gap-3">
                 <a
@@ -746,7 +746,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className="px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-md"
                 >
-                  WhatsApp Factory Manager
+                  WhatsApp Technical Team
                 </a>
                 <a
                   href="tel:+97451191223"

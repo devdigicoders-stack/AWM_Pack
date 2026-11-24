@@ -212,124 +212,45 @@ export default function AboutPage() {
             ========================================================================= */}
         <section className="py-20 bg-white border-b border-gray-100" id="profile">
           <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
-                  About Us • Al Waad Manufacturing Packaging Company
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
-                  Driving Qatar&apos;s Industrial Packaging Competitiveness
-                </h2>
-                <div className="p-5 rounded-2xl bg-blue-50/60 border border-blue-200/80 text-sm text-[#002b49] leading-relaxed">
-                  <p>
-                    <strong>AWMPACK</strong> is a leading provider of wood and metal packaging solutions based in Doha, Qatar. With a strong production and distribution network, we offer industrial-grade wooden pallets, crates, metal cages, and compressed wood products. Our services include pallet repair and pallet pooling to support cost-effective logistics and sustainability. Designed to meet global export standards, our packaging is trusted by industries across Qatar. With centralized purchasing, rapid delivery, and a focus on quality, AWMPACK is your reliable partner for all packaging needs in Doha.
+            <div className="max-w-5xl mx-auto space-y-6">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0099e5]">
+                About Us • Al Waad Manufacturing Packaging Company
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
+                Driving Qatar&apos;s Industrial Packaging Competitiveness
+              </h2>
+              <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-200/80 text-sm sm:text-base text-[#002b49] leading-relaxed">
+                <p>
+                  <strong>AWMPACK</strong> is a leading provider of wood and metal packaging solutions based in Doha, Qatar. With a strong production and distribution network, we offer industrial-grade wooden pallets, crates, metal cages, and compressed wood products. Our services include pallet repair and pallet pooling to support cost-effective logistics and sustainability. Designed to meet global export standards, our packaging is trusted by industries across Qatar. With centralized purchasing, rapid delivery, and a focus on quality, AWMPACK is your reliable partner for all packaging needs in Doha.
+                </p>
+              </div>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                Our advanced facility in Birkat Al-Awamer integrates automated pallet nailing lines, certified ISPM 15 thermal heat-treatment kilns, and state-of-the-art wood recycling machinery that converts sawdust and wood waste into high-density pallet blocks under our signature circular initiative: <em>&quot;Waste to Usable Product.&quot;</em>
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4" id="mission-vision">
+                <div className="p-6 rounded-2xl bg-[#f8fafc] border border-gray-200 space-y-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#0099e5] bg-blue-50 px-2 py-0.5 rounded">
+                    Our Mission
+                  </span>
+                  <h3 className="text-lg font-bold text-[#002b49]">
+                    Innovation &amp; Advanced Technology
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    &quot;To offer a new era in pallet manufacturing and wood waste management, committed to providing the market with superior products through innovation and advanced technology that increases the competitiveness of our customers.&quot;
                   </p>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Our advanced facility in Birkat Al-Awamer integrates automated pallet nailing lines, certified ISPM 15 thermal heat-treatment kilns, and state-of-the-art wood recycling machinery that converts sawdust and wood waste into high-density pallet blocks under our signature circular initiative: <em>&quot;Waste to Usable Product.&quot;</em>
-                </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2" id="mission-vision">
-                  <div className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-200 space-y-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0099e5] bg-blue-50 px-2 py-0.5 rounded">
-                      Our Mission
-                    </span>
-                    <h3 className="text-base font-bold text-[#002b49]">
-                      Innovation &amp; Advanced Technology
-                    </h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      &quot;To offer a new era in pallet manufacturing and wood waste management, committed to providing the market with superior products through innovation and advanced technology that increases the competitiveness of our customers.&quot;
-                    </p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-200 space-y-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                      Our Vision
-                    </span>
-                    <h3 className="text-base font-bold text-[#002b49]">
-                      Major Global Player
-                    </h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      &quot;To be one of the major players in pallet manufacturing and wood waste management, fully committed to continuous research and development of sustainable, total packaging solutions.&quot;
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side: Factory Manager Visiting Card Showcase */}
-              <div className="lg:col-span-5 bg-[#00223a] text-white p-8 sm:p-10 rounded-3xl space-y-6 border border-blue-900/60 shadow-xl" id="leadership">
-                <div className="flex items-center justify-between border-b border-blue-800 pb-4">
-                  <div>
-                    <h3 className="text-2xl font-black text-white">Technical Team</h3>
-                    <p className="text-[#0099e5] font-bold text-sm">Factory &amp; Engineering Operations</p>
-                  </div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                    Executive Leadership
+                <div className="p-6 rounded-2xl bg-[#f8fafc] border border-gray-200 space-y-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                    Our Vision
                   </span>
-                </div>
-
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Leading our daily factory operations, technical engineering team, ISPM 15 compliance certifications, and customer consultations across Qatar.
-                </p>
-
-                <div className="space-y-3 pt-2 text-xs text-gray-200">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
-                    <div>
-                      <span className="text-gray-400 block text-[10px]">Mobile / WhatsApp:</span>
-                      <a href="tel:+97451191223" className="font-bold text-white hover:text-[#0099e5]">+974 5119 1223</a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
-                    <div>
-                      <span className="text-gray-400 block text-[10px]">Office Landline:</span>
-                      <a href="tel:+97440394581" className="font-bold text-white hover:text-[#0099e5]">+974 4039 4581</a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
-                    <div>
-                      <span className="text-gray-400 block text-[10px]">General Sales:</span>
-                      <a href="tel:+97466864923" className="font-bold text-white hover:text-[#0099e5]">+974 6686 4923</a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-4 h-4 text-[#0099e5] shrink-0" />
-                    <div>
-                      <span className="text-gray-400 block text-[10px]">Direct Email:</span>
-                      <div className="flex flex-col space-y-0.5">
-                        <a href="mailto:maher@awmpack.com" className="font-bold text-white hover:text-[#0099e5]">maher@awmpack.com</a>
-                        <a href="mailto:info@awmpack.com" className="text-blue-300 hover:text-white">info@awmpack.com</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3 pt-1 border-t border-blue-800">
-                    <MapPin className="w-4 h-4 text-[#0099e5] shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-gray-400 block text-[10px]">Plant Address:</span>
-                      <p className="text-gray-200 leading-tight">
-                        Building No. 89, Street No. 3012, Zone No. 91,<br />
-                        Birkat Al-Awamer, Al Wukair, State of Qatar (P.O. Box 12451)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={() => {
-                      setContactTopic("Meeting with Technical Team");
-                      setContactOpen(true);
-                    }}
-                    className="w-full py-2.5 px-4 rounded-full bg-[#0099e5] hover:bg-[#0077b6] text-white font-bold text-xs shadow-md transition-all text-center"
-                  >
-                    Schedule Meeting / Plant Visit
-                  </button>
+                  <h3 className="text-lg font-bold text-[#002b49]">
+                    Major Global Player
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    &quot;To be one of the major players in pallet manufacturing and wood waste management, fully committed to continuous research and development of sustainable, total packaging solutions.&quot;
+                  </p>
                 </div>
               </div>
             </div>

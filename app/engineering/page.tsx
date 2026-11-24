@@ -135,7 +135,7 @@ export default function EngineeringPage() {
                 Engineering &amp; Treatment Capabilities
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Factory Manager Eng. Maher Marjy and our engineering squad oversee rigorous quality control across all automated production lines.
+                Technical Team and our engineering squad oversee rigorous quality control across all automated production lines.
               </p>
             </div>
 

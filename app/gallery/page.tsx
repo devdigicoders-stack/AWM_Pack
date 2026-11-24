@@ -472,7 +472,7 @@ export default function GalleryPage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#0099e5] block mb-1">
                     Direct Contact
                   </span>
-                  <h4 className="text-xl font-black text-white">Eng. Maher Marjy</h4>
+                  <h4 className="text-xl font-black text-white">Technical Team</h4>
                   <p className="text-xs text-blue-300">Factory Manager &bull; AWMPC Qatar</p>
                 </div>
 

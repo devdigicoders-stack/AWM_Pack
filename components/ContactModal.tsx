@@ -82,7 +82,7 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
             <span>AWMPACK Factory Inquiries • State of Qatar 🇶🇦</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
-            Connect with Eng. Maher Marjy
+            Connect with Technical Team
           </h3>
           <p className="text-xs sm:text-sm text-blue-100 mt-1">
             Factory Manager, Al Waad Manufacturing Packaging Company (AWMPC)
@@ -100,7 +100,7 @@ export default function ContactModal({ isOpen, onClose, defaultTopic }: ContactM
                 Inquiry Received by AWMPACK Factory!
               </h4>
               <p className="text-sm text-gray-600 max-w-md mx-auto">
-                Thank you, <span className="font-semibold text-gray-900">{formData.name}</span>. Eng. Maher Marjy and our production team in Birkat Al-Awamer will review your specifications and contact you at <span className="font-semibold">{formData.email}</span> within 1 business day.
+                Thank you, <span className="font-semibold text-gray-900">{formData.name}</span>. Technical Team and our production team in Birkat Al-Awamer will review your specifications and contact you at <span className="font-semibold">{formData.email}</span> within 1 business day.
               </p>
               <div className="pt-4">
                 <button

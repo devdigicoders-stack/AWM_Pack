@@ -244,7 +244,7 @@ export default function PalletCollarsPage() {
                     className="text-xs font-bold text-[#0099e5] hover:underline flex items-center space-x-1.5"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>+974 5119 1223 (Eng. Maher)</span>
+                    <span>+974 5119 1223 (Technical Team)</span>
                   </a>
                 </div>
               </div>
@@ -551,7 +551,7 @@ export default function PalletCollarsPage() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
                       <div>
-                        <span className="text-gray-400 block text-[10px]">Mobile (Eng. Maher Marjy):</span>
+                        <span className="text-gray-400 block text-[10px]">Mobile (Technical Team):</span>
                         <a href="tel:+97451191223" className="font-bold text-white hover:text-[#0099e5]">+974 5119 1223</a>
                       </div>
                     </div>

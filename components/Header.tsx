@@ -786,7 +786,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     <div className="border-t border-blue-900/80 pt-3 space-y-1.5 text-xs text-gray-300">
                       <div className="flex items-center justify-between">
                         <span className="text-gray-400">Factory Manager:</span>
-                        <span className="font-bold text-white">Eng. Maher Marjy</span>
+                        <span className="font-bold text-white">Technical Team</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-gray-400">Direct WhatsApp:</span>
@@ -1710,7 +1710,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
                     </span>
                     <div>
                       <h5 className="font-bold text-[#002b49] text-sm">
-                        Eng. Maher Marjy
+                        Technical Team
                       </h5>
                       <p className="text-xs text-gray-500">Factory Manager</p>
                     </div>
@@ -1732,12 +1732,12 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
                     <div className="pt-2">
                       <a
-                        href="https://wa.me/97451191223?text=Hello%20Eng.%20Maher,%20I%20would%20like%20to%20discuss%20packaging%20at%20AWMPACK"
+                        href="https://wa.me/97451191223?text=Hello%20Technical%20Team,%20I%20would%20like%20to%20discuss%20packaging%20at%20AWMPACK"
                         target="_blank"
                         rel="noreferrer"
                         className="w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all text-center block shadow-xs"
                       >
-                        WhatsApp Factory Manager
+                        WhatsApp Technical Team
                       </a>
                     </div>
                   </div>
@@ -2012,7 +2012,7 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <div className="p-4 rounded-2xl bg-gradient-to-br from-[#002b49] to-[#001829] text-white border border-blue-900 shadow-md space-y-2.5">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="font-extrabold text-sm text-white">Eng. Maher Marjy</p>
+                    <p className="font-extrabold text-sm text-white">Technical Team</p>
                     <p className="text-[11px] text-blue-200 font-medium">Factory Manager • AWMPACK Qatar</p>
                   </div>
                   <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-bold">

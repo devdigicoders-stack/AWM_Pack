@@ -433,7 +433,7 @@ export default function NoCureNoPayPage() {
                       Audit Request Submitted Successfully!
                     </h4>
                     <p className="text-xs text-emerald-800 leading-relaxed">
-                      Thank you. Our Factory Manager Eng. Maher Marjy and senior consulting team will review your requirements and reach out within 24 hours.
+                      Thank you. Our Technical Team and senior consulting team will review your requirements and reach out within 24 hours.
                     </p>
                     <div className="pt-2">
                       <a
@@ -606,7 +606,7 @@ export default function NoCureNoPayPage() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                       <a href="tel:+97451191223" className="hover:text-white font-semibold text-emerald-300">
-                        (+974) 5119 1223 (Eng. Maher Marjy - Factory Manager)
+                        (+974) 5119 1223 (Technical Team - Factory Manager)
                       </a>
                     </div>
 

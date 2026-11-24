@@ -498,7 +498,7 @@ export default function HandlingMaterialsConsultingPage() {
                       Consultation Request Received!
                     </h4>
                     <p className="text-xs text-emerald-800 leading-relaxed">
-                      Thank you. Eng. Maher Marjy and our senior logistics consultants will contact you shortly to schedule an initial briefing.
+                      Thank you. Technical Team and our senior logistics consultants will contact you shortly to schedule an initial briefing.
                     </p>
                     <div className="pt-2">
                       <a
@@ -669,7 +669,7 @@ export default function HandlingMaterialsConsultingPage() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                       <a href="tel:+97451191223" className="hover:text-white font-semibold text-emerald-300">
-                        (+974) 5119 1223 (Eng. Maher Marjy - Factory Manager)
+                        (+974) 5119 1223 (Technical Team - Factory Manager)
                       </a>
                     </div>
 

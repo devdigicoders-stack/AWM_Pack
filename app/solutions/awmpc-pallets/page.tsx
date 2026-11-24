@@ -327,7 +327,7 @@ export default function AwmpcPalletsPage() {
                       Quote Request Received!
                     </h4>
                     <p className="text-xs text-emerald-800 max-w-md mx-auto">
-                      Thank you, <strong>{formData.name}</strong>. Eng. Maher Marjy and our production team in Birkat Al-Awamer will calculate your volume pricing and email you at <strong>{formData.email}</strong> shortly.
+                      Thank you, <strong>{formData.name}</strong>. Technical Team and our production team in Birkat Al-Awamer will calculate your volume pricing and email you at <strong>{formData.email}</strong> shortly.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -449,7 +449,7 @@ export default function AwmpcPalletsPage() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-[#0099e5] shrink-0" />
                       <div>
-                        <span className="text-gray-400 block text-[10px]">Mobile (Eng. Maher Marjy):</span>
+                        <span className="text-gray-400 block text-[10px]">Mobile (Technical Team):</span>
                         <a href="tel:+97451191223" className="font-bold text-white hover:text-[#0099e5]">+974 5119 1223</a>
                       </div>
                     </div>
