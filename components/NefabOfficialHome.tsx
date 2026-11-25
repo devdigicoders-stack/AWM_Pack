@@ -45,14 +45,14 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
       id: "oil-gas",
       title: "Oil, Gas & Petrochemicals",
       desc: "Heavy-duty certified timber skids, chemical drum pallets, and export crates engineered for Ras Laffan, Mesaieed, and offshore rigs.",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+      image: "/oil-gas-petrochemicals.jpg",
       tag: "Qatar Energy & Heavy Industry",
     },
     {
       id: "construction",
       title: "Construction & Infrastructure",
       desc: "Reinforced wooden pallets and steel frames supporting precast concrete, structural steel, and Qatar National Vision 2030 mega-projects.",
-      image: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?q=80&w=1200&auto=format&fit=crop",
+      image: "/industry/mining.png",
       tag: "Mega Projects & Infrastructure",
     },
     {
@@ -737,7 +737,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
               About AWMPACK
             </h2>
             <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Under the leadership of our <strong>Technical Team</strong>, AWMPACK delivers superior packaging solutions through advanced automated technology, responsible FSC® timber sourcing, and groundbreaking wood recycling under the motto <em>&quot;Waste to Usable Product.&quot;</em>
+              Under the visionary leadership of our CEO &amp; Founder <strong>Mr. Antonio</strong>, AWMPACK delivers superior packaging solutions through advanced automated technology, responsible FSC® timber sourcing, and groundbreaking wood recycling under the motto <em>&quot;Waste to Usable Product.&quot;</em>
             </p>
           </div>
 
