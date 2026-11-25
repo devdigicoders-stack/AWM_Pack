@@ -44,6 +44,138 @@ export default function GalleryPage() {
 
   const galleryItems = [
     {
+      id: "client-gallery-1",
+      title: "Heavy-Duty 4-Way Solid Pine Pallet",
+      category: "pallets",
+      categoryName: "Pallets & Skids",
+      image: "/gallery/1.png",
+      badge: "4-Way Entry",
+      description:
+        "Precision-engineered 4-way solid pine timber pallet built with heavy-duty top deckboards, chamfered bottom runners, and high-tensile nailing for automated warehouse racking and heavy freight handling across Qatar.",
+      link: "/solutions/awmpc-pallets",
+    },
+    {
+      id: "client-gallery-2",
+      title: "Custom Export Plywood Crates Lineup",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/2.png",
+      badge: "ISPM 15 Stamped",
+      description:
+        "Full warehouse batch of custom-built vertical plywood and pine export packaging crates with international shipping and fragile handling stencils.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
+      id: "client-gallery-3",
+      title: "Heavy Industrial Machinery Skid (14,800 kg)",
+      category: "pallets",
+      categoryName: "Pallets & Heavy Skids",
+      image: "/gallery/3.png",
+      badge: "14.8 Ton Payload",
+      description:
+        "Heavy-duty reinforced timber skid with custom saddle chocks and ratchet tie-down straps securing a 14.8-ton hydraulic cutter for crane rigging and export transport.",
+      link: "/solutions/special-pallets",
+    },
+    {
+      id: "client-gallery-4",
+      title: "Oversized Solid Timber Export Crate",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/4.png",
+      badge: "Seaworthy Heavy Crate",
+      description:
+        "Full-length external solid timber shipping box engineered with perimeter batten reinforcement and certified phytosanitary heat-treatment marking.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
+      id: "client-gallery-5",
+      title: "A-Frame Wooden Glass & Panel Transport Rack",
+      category: "boxes",
+      categoryName: "Custom Crating & Racks",
+      image: "/gallery/5.png",
+      badge: "Custom A-Frame",
+      description:
+        "Engineered A-frame wooden transport cradle with diagonal lateral braces for vertical shipping of fragile architectural glass, solar panels, and stone slabs.",
+      link: "/solutions/special-pallets",
+    },
+    {
+      id: "client-gallery-6",
+      title: "Precision Engineered Machinery Base Skid",
+      category: "pallets",
+      categoryName: "Pallets & Heavy Skids",
+      image: "/gallery/6.png",
+      badge: "Industrial Rigging Base",
+      description:
+        "Reinforced dimensional timber base with engineered bearer distribution blocks, built to support heavy hydraulic industrial machinery during factory moves.",
+      link: "/solutions/special-pallets",
+    },
+    {
+      id: "client-gallery-7",
+      title: "Custom Internal Wooden Chocking & Bracing Crate",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/7.png",
+      badge: "Internal Cushioning",
+      description:
+        "Top-down view of heavy export crate featuring bespoke internal wooden cradles and lock-in crossbeams holding precision machinery components immovably.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
+      id: "client-gallery-8",
+      title: "AWMPC Technical Export Crate Architecture",
+      category: "certifications",
+      categoryName: "Engineering & QA",
+      image: "/gallery/8.png",
+      badge: "Technical Blueprint",
+      description:
+        "Official 3D anatomical cutaway of an AWMPC seaworthy crate showing plywood skin, internal foam lining, reinforced pine frame, and ISPM 15 HT QA 006 stamp.",
+      link: "/about",
+    },
+    {
+      id: "client-gallery-9",
+      title: "Heavy Equipment Transport Skid - Side Profile",
+      category: "pallets",
+      categoryName: "Pallets & Heavy Skids",
+      image: "/gallery/9.png",
+      badge: "Engineered Load-Bearing",
+      description:
+        "Profile inspection of multi-stringer reinforced timber skid engineered to withstand dynamic crane lifting tension and multi-ton industrial loads.",
+      link: "/solutions/special-pallets",
+    },
+    {
+      id: "client-gallery-10",
+      title: "275-Ton SWL Crane Hook Heavy Duty Crate",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/10.png",
+      badge: "275T SWL Marine Crate",
+      description:
+        "Bespoke heavy-duty wooden box with engineered timber blocking and high-tensile lashing straps securing a massive 275-ton safe-working-load crane hook assembly.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
+      id: "client-gallery-11",
+      title: "Factory Overhead Crane Rigging & Crate Lift",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/11.png",
+      badge: "Crane Lift Tested",
+      description:
+        "Overhead crane hoisting an oversized fully enclosed pine export crate inside the AWMPC Birkat Al-Awamer manufacturing facility.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
+      id: "client-gallery-12",
+      title: "Certified Plywood Shipping Enclosures Facility",
+      category: "boxes",
+      categoryName: "Boxes & Collars",
+      image: "/gallery/12.png",
+      badge: "Birkat Al-Awamer Plant",
+      description:
+        "Aisle of completed export-grade wooden packaging cases awaiting phytosanitary certification stamps and dispatch to industrial clients across Qatar.",
+      link: "/solutions/wooden-boxes-crates",
+    },
+    {
       id: "awmpc-pallets",
       title: "AWMPC Pallets (Our Unique Pallet Solution)",
       category: "pallets",
@@ -201,11 +333,11 @@ export default function GalleryPage() {
 
   const categories = [
     { id: "all", label: `All Facilities & Products (${galleryItems.length})` },
-    { id: "pallets", label: "Pallets (7)" },
-    { id: "boxes", label: "Boxes & Collars (2)" },
-    { id: "treatment", label: "Heat Treatment & Kilns (2)" },
-    { id: "recycling", label: "Recycled Blocks (1)" },
-    { id: "certifications", label: "Certifications (2)" },
+    { id: "pallets", label: `Pallets & Skids (${galleryItems.filter((i) => i.category === "pallets").length})` },
+    { id: "boxes", label: `Boxes & Crates (${galleryItems.filter((i) => i.category === "boxes").length})` },
+    { id: "treatment", label: `Heat Treatment (${galleryItems.filter((i) => i.category === "treatment").length})` },
+    { id: "recycling", label: `Recycled Blocks (${galleryItems.filter((i) => i.category === "recycling").length})` },
+    { id: "certifications", label: `Certifications & QA (${galleryItems.filter((i) => i.category === "certifications").length})` },
   ];
 
   const filteredItems =

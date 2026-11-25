@@ -71,6 +71,65 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
     },
   ];
 
+  const homeGalleryPhotos = [
+    {
+      id: "gal-1",
+      title: "Heavy-Duty 4-Way Solid Pine Pallet",
+      category: "Industrial Pallets",
+      image: "/gallery/1.png",
+      badge: "4-Way Entry",
+      description: "Solid pine timber pallet with heavy-duty deckboards, built for high-capacity warehouse racking and logistics.",
+    },
+    {
+      id: "gal-3",
+      title: "Heavy Industrial Machinery Skid (14,800 kg)",
+      category: "Heavy Skids",
+      image: "/gallery/3.png",
+      badge: "14.8 Ton Payload",
+      description: "Reinforced timber skid with custom saddle chocks and ratchet lashing securing a 14.8t hydraulic cutter.",
+    },
+    {
+      id: "gal-2",
+      title: "Custom Export Plywood Crates Lineup",
+      category: "Export Crates",
+      image: "/gallery/2.png",
+      badge: "ISPM 15 Stamped",
+      description: "Batch of vertical plywood and pine export packaging crates with international shipping stencils.",
+    },
+    {
+      id: "gal-10",
+      title: "275-Ton SWL Crane Hook Heavy Duty Crate",
+      category: "Heavy Marine Crate",
+      image: "/gallery/10.png",
+      badge: "275T SWL Rated",
+      description: "Bespoke heavy timber crate engineered to hold a massive 275-ton safe-working-load crane hook assembly.",
+    },
+    {
+      id: "gal-5",
+      title: "A-Frame Wooden Glass & Panel Transport Rack",
+      category: "Custom A-Frames",
+      image: "/gallery/5.png",
+      badge: "Custom A-Frame",
+      description: "Engineered A-frame wooden cradle for vertical shipping of fragile architectural glass and solar panels.",
+    },
+    {
+      id: "gal-11",
+      title: "Factory Overhead Crane Rigging & Crate Lift",
+      category: "Plant Rigging",
+      image: "/gallery/11.png",
+      badge: "Crane Lift Tested",
+      description: "Overhead crane hoisting an oversized fully enclosed pine export crate inside the Birkat Al-Awamer facility.",
+    },
+    {
+      id: "gal-8",
+      title: "AWMPC Technical Export Crate Architecture",
+      category: "Engineering & QA",
+      image: "/gallery/8.png",
+      badge: "Technical Blueprint",
+      description: "Official 3D cutaway showing plywood skin, internal foam lining, reinforced pine frame, and ISPM 15 QA stamp.",
+    },
+  ];
+
   return (
     <div className="w-full text-[#002b49]">
       {/* =========================================================================
@@ -836,7 +895,79 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
         </div>
       </section>
 
-      {/* =========================================================================
+            {/* =========================================================================
+          FACTORY & PRODUCT GALLERY SHOWCASE (Real Client Production Photos)
+          ========================================================================= */}
+      <section className="py-20 bg-[#f8fafc] border-b border-gray-100" id="factory-gallery">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <FadeIn direction="up" className="space-y-3 max-w-2xl">
+              <span className="text-xs font-black uppercase tracking-wider text-[#0099e5] block">
+                Visual Manufacturing Portfolio
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#002b49] tracking-tight">
+                Factory &amp; Engineered Packaging Gallery
+              </h2>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Explore real production photos from our 15,000 m² Birkat Al-Awamer plant — including heavy machinery skids, custom seaworthy crates, overhead crane rigging, and certified ISPM-15 export packaging.
+              </p>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.1}>
+              <Link
+                href="/gallery"
+                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white text-xs sm:text-sm font-bold transition-all shadow-md shrink-0"
+              >
+                <span>View Full 12+ Photo Gallery</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {homeGalleryPhotos.map((item, idx) => (
+              <FadeIn key={item.id} direction="up" delay={idx * 0.08}>
+                <Link
+                  href="/gallery"
+                  className="group block bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-[#0099e5]/60 hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between"
+                >
+                  <div className="relative w-full h-64 sm:h-72 bg-gray-50 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                      className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-[#002b49]/90 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full backdrop-blur-sm">
+                      {item.badge}
+                    </div>
+                  </div>
+                  <div className="p-5 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#0099e5] block">
+                        {item.category}
+                      </span>
+                      <h3 className="text-base font-black text-[#002b49] group-hover:text-[#0099e5] transition-colors line-clamp-1 mt-0.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mt-1">
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#0099e5] mt-2">
+                      <span>View in Gallery</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+{/* =========================================================================
           SECTION 10: "Turnkey Packaging Solutions"
           ========================================================================= */}
       <section className="py-20 bg-white" id="solutions-banner">
