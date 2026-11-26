@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ScrollProgressBar, PageTransition } from "../components/motion/MotionComponents";
+import GoogleTranslate from "../components/GoogleTranslate";
 
 export const metadata: Metadata = {
   title: "AWMPACK | Al Waad Manufacturing Packaging Company - Qatar",
@@ -45,6 +46,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ScrollProgressBar />
+        <GoogleTranslate />
         <PageTransition>{children}</PageTransition>
       </body>
     </html>

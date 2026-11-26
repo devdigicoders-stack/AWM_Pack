@@ -106,6 +106,75 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
   const [isZoomedOrMobile, setIsZoomedOrMobile] = useState(false);
   const pathname = usePathname();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const langMenuRef = useRef<HTMLDivElement>(null);
+
+  // Sync and persist language selection
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("awm_lang");
+      if (savedLang === "ar") {
+        setSelectedLanguage("العربية");
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+      } else {
+        setSelectedLanguage("English");
+        document.documentElement.lang = "en";
+        document.documentElement.dir = "ltr";
+      }
+    }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setLangMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelectLanguage = (lang: "en" | "ar") => {
+    const isArabic = lang === "ar";
+    setSelectedLanguage(isArabic ? "العربية" : "English");
+    setLangMenuOpen(false);
+    setMobileMenuOpen(false);
+
+    if (typeof window === "undefined") return;
+
+    // Persist to localStorage
+    localStorage.setItem("awm_lang", lang);
+
+    // Apply HTML dir and lang attributes immediately
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+
+    // Set Google Translate cookie
+    const hostname = window.location.hostname;
+    const cookiePath = "/";
+    const cookieVal = isArabic ? "/en/ar" : "/en/en";
+
+    document.cookie = `googtrans=${cookieVal}; path=${cookiePath};`;
+    if (hostname) {
+      document.cookie = `googtrans=${cookieVal}; path=${cookiePath}; domain=${hostname};`;
+      document.cookie = `googtrans=${cookieVal}; path=${cookiePath}; domain=.${hostname};`;
+    }
+
+    if (!isArabic) {
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+      if (hostname) {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname};`;
+      }
+    }
+
+    // Trigger Google Translate engine
+    const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event("change"));
+    } else {
+      window.location.reload();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -450,39 +519,51 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
               <Search className="w-4.5 h-4.5 stroke-[2.2]" />
             </button>
 
-            {/* Languages Icon */}
-            <div className="relative">
+            {/* Languages Icon & Selector */}
+            <div className="relative" ref={langMenuRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 className="p-1.5 text-[#002b49] hover:text-[#0099e5] hover:bg-gray-100/70 rounded-full transition-colors flex items-center justify-center flex-shrink-0"
-                title="Select language"
+                title="Select language / تغيير اللغة"
               >
                 <Languages className="w-4.5 h-4.5 stroke-[2.2]" />
+                <span className="text-[10px] font-extrabold ml-1 px-1.5 py-0.5 rounded bg-blue-50 text-[#0099e5] border border-blue-200/60 uppercase">
+                  {selectedLanguage === "العربية" ? "عربي" : "EN"}
+                </span>
               </button>
 
               {langMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 py-1.5 z-50 text-xs">
+                <div
+                  className={`absolute ${
+                    selectedLanguage === "العربية" ? "left-0 right-auto" : "right-0 left-auto"
+                  } mt-2 w-56 sm:w-60 bg-white rounded-2xl shadow-2xl border border-gray-200 py-2 z-50 text-xs transition-all`}
+                >
+                  <div className="px-3.5 py-1.5 border-b border-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                    {selectedLanguage === "العربية" ? "اختر اللغة / Select Language" : "Choose Language / اختر اللغة"}
+                  </div>
                   <button
-                    onClick={() => {
-                      setSelectedLanguage("English");
-                      setLangMenuOpen(false);
-                    }}
-                    className={`w-full text-left px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${selectedLanguage === "English" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
-                      }`}
+                    onClick={() => handleSelectLanguage("en")}
+                    className={`w-full text-left px-3.5 py-2.5 hover:bg-gray-50 flex items-center justify-between transition-colors ${
+                      selectedLanguage === "English" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
+                    }`}
                   >
-                    <span>English (Qatar & Global)</span>
-                    {selectedLanguage === "English" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
+                    <span className="flex items-center space-x-2.5">
+                      <span className="text-base">🇬🇧</span>
+                      <span>English (Qatar &amp; Global)</span>
+                    </span>
+                    {selectedLanguage === "English" && <CheckCircle2 className="w-4 h-4 text-[#0099e5]" />}
                   </button>
                   <button
-                    onClick={() => {
-                      setSelectedLanguage("العربية");
-                      setLangMenuOpen(false);
-                    }}
-                    className={`w-full text-right px-3.5 py-2 hover:bg-gray-50 flex items-center justify-between ${selectedLanguage === "العربية" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
-                      }`}
+                    onClick={() => handleSelectLanguage("ar")}
+                    className={`w-full text-right px-3.5 py-2.5 hover:bg-gray-50 flex items-center justify-between transition-colors ${
+                      selectedLanguage === "العربية" ? "font-bold text-[#0099e5] bg-blue-50/50" : "text-gray-700"
+                    }`}
                   >
-                    <span>العربية (دولة قطر)</span>
-                    {selectedLanguage === "العربية" && <CheckCircle2 className="w-3.5 h-3.5 text-[#0099e5]" />}
+                    <span className="flex items-center space-x-2.5">
+                      <span className="text-base">🇶🇦</span>
+                      <span className="font-bold">العربية (دولة قطر)</span>
+                    </span>
+                    {selectedLanguage === "العربية" && <CheckCircle2 className="w-4 h-4 text-[#0099e5]" />}
                   </button>
                 </div>
               )}
@@ -1749,8 +1830,40 @@ export default function Header({ onOpenSearch, onOpenContact }: HeaderProps) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className={`${isZoomedOrMobile ? "block" : "lg:hidden"} bg-slate-50/98 backdrop-blur-md border-t border-gray-200 px-4 sm:px-6 py-5 space-y-5 max-h-[85vh] overflow-y-auto shadow-2xl`}>
+          <div className={`${isZoomedOrMobile ? "block" : "lg:hidden"} bg-slate-50/98 backdrop-blur-md border-t border-gray-200 px-4 sm:px-6 py-5 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl`}>
             
+            {/* Language Switcher in Mobile Drawer */}
+            <div className="bg-white p-3 rounded-2xl border border-gray-200/90 shadow-xs flex items-center justify-between">
+              <div className="flex items-center space-x-2 text-xs font-bold text-[#002b49]">
+                <Languages className="w-4 h-4 text-[#0099e5]" />
+                <span>Language / اللغة</span>
+              </div>
+              <div className="flex items-center space-x-1.5 bg-gray-100 p-1 rounded-xl text-xs font-semibold">
+                <button
+                  onClick={() => handleSelectLanguage("en")}
+                  className={`px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1 ${
+                    selectedLanguage === "English"
+                      ? "bg-[#002b49] text-white shadow-xs font-bold"
+                      : "text-gray-600 hover:text-[#002b49]"
+                  }`}
+                >
+                  <span>🇬🇧</span>
+                  <span>English</span>
+                </button>
+                <button
+                  onClick={() => handleSelectLanguage("ar")}
+                  className={`px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1 ${
+                    selectedLanguage === "العربية"
+                      ? "bg-[#0099e5] text-white shadow-xs font-bold"
+                      : "text-gray-600 hover:text-[#002b49]"
+                  }`}
+                >
+                  <span>🇶🇦</span>
+                  <span>العربية</span>
+                </button>
+              </div>
+            </div>
+
             {/* 1. Quick CTA Banner (WhatsApp & Direct Call) */}
             <div className="bg-white p-3.5 rounded-2xl border border-blue-100 shadow-xs space-y-2.5">
               <div className="flex items-center justify-between text-[11px] font-semibold px-1">
