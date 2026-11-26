@@ -128,6 +128,46 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
       badge: "Technical Blueprint",
       description: "Official 3D cutaway showing plywood skin, internal foam lining, reinforced pine frame, and ISPM 15 QA stamp.",
     },
+    {
+      id: "gal-26",
+      title: "Seaworthy Heavy Machinery Crate - Exploded Architecture",
+      category: "Engineering & QA",
+      image: "/gallery/26.jpeg",
+      badge: "Exploded 3D Model",
+      description: "Detailed 3D exploded diagram of seaworthy crate with barrier foil, internal equipment cradles, and ISPM 15 HT certification.",
+    },
+    {
+      id: "gal-25",
+      title: "Advanced Pallet Dynamic Stability Testing Bench",
+      category: "Engineering & QA",
+      image: "/gallery/25.jpeg",
+      badge: "EUMOS 40509 Testing",
+      description: "In-house automated stability test bench simulating vehicle transport deceleration up to 0.8g with high-speed video analysis.",
+    },
+    {
+      id: "gal-33",
+      title: "Custom Engineered Motorcycle Transport Crate",
+      category: "Export Crates",
+      image: "/gallery/33.jpeg",
+      badge: "Vehicle Crating",
+      description: "Bespoke open-frame timber transport crate with integrated wheel chocks and high-tensile ratchet tie-downs.",
+    },
+    {
+      id: "gal-20",
+      title: "12.9-Meter Seaworthy Mega OSB Box Blueprint",
+      category: "Engineering & QA",
+      image: "/gallery/20.jpeg",
+      badge: "22-Ton Payload Blueprint",
+      description: "Engineering master drawing for 12,900 x 2,500 x 3,000 mm seaworthy wooden box designed for 22,000 kg machinery.",
+    },
+    {
+      id: "gal-56",
+      title: "Automated Compressed Wood Block Extrusion Facility",
+      category: "Recycling & Sustainability",
+      image: "/gallery/56.jpeg",
+      badge: "Automated Extrusion",
+      description: "Panoramic view of our high-pressure wood waste extrusion plant converting sawdust into dense pallet blocks.",
+    },
   ];
 
   return (
@@ -918,7 +958,7 @@ export default function NefabOfficialHome({ onOpenContactWithTopic }: NefabOffic
                 href="/gallery"
                 className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#002b49] hover:bg-[#0099e5] text-white text-xs sm:text-sm font-bold transition-all shadow-md shrink-0"
               >
-                <span>View Full 12+ Photo Gallery</span>
+                <span>View Full 57+ Photo Gallery</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

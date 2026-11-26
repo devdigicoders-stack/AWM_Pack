@@ -258,7 +258,7 @@ export default function AboutPage() {
         </section>
 
         
-        {/* =========================================================================
+                {/* =========================================================================
             EXECUTIVE LEADERSHIP - A MESSAGE FROM OUR CEO & FOUNDER
             ========================================================================= */}
         <section className="py-20 lg:py-24 bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9] border-b border-gray-200" id="ceo-message">
@@ -274,14 +274,17 @@ export default function AboutPage() {
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002b49] tracking-tight">
                   A Message from Our CEO &amp; Founder
                 </h2>
+                <p className="text-sm sm:text-base font-bold text-[#0099e5] tracking-wide">
+                  Building Strength. Delivering Excellence. Shaping a Sustainable Future.
+                </p>
                 <div className="w-16 h-1 bg-[#0099e5] mx-auto rounded-full"></div>
               </div>
 
               {/* CEO Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
                 
-                {/* Left: Professional Photo of Mr. Antonio */}
-                <div className="lg:col-span-5 flex justify-center">
+                {/* Left: Professional Photo of Mr. Antonio (Sticky on Desktop) */}
+                <div className="lg:col-span-5 flex justify-center lg:sticky lg:top-28">
                   <div className="relative w-full max-w-md">
                     {/* Glowing Decorative Backdrop */}
                     <div className="absolute -top-4 -left-4 w-32 h-32 bg-[#0099e5]/20 rounded-3xl blur-2xl pointer-events-none" />
@@ -291,7 +294,7 @@ export default function AboutPage() {
                       <div className="relative w-full aspect-[4/5] sm:h-[500px]">
                         <Image
                           src="/ceo.jpg"
-                          alt="Mr. Antonio - CEO & Founder, AWMPACK"
+                          alt="Mr. Antonio - CEO & Founder, Al Waad Manufacturing and Packaging Company"
                           fill
                           sizes="(max-width: 1024px) 100vw, 500px"
                           className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -305,8 +308,8 @@ export default function AboutPage() {
                             Executive Leadership
                           </span>
                           <h3 className="text-2xl font-black text-white">Mr. Antonio</h3>
-                          <p className="text-xs text-blue-200 font-semibold">CEO &amp; Founder • AWMPACK</p>
-                          <p className="text-[11px] text-gray-300">Al Waad Manufacturing Packaging Company</p>
+                          <p className="text-xs text-blue-200 font-semibold">CEO &amp; Founder</p>
+                          <p className="text-[11px] text-gray-300">Al Waad Manufacturing and Packaging Company</p>
                         </div>
                       </div>
                     </div>
@@ -319,40 +322,101 @@ export default function AboutPage() {
                       </div>
                       <span className="text-[10px] text-gray-500 font-semibold">State of Qatar</span>
                     </div>
+
+                    {/* 3 Core Principles Badge Card */}
+                    <div className="mt-3 p-4 rounded-2xl bg-[#00223a] text-white border border-blue-900/60 shadow-md space-y-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#0099e5] block">
+                        Our 3 Essential Principles
+                      </span>
+                      <div className="grid grid-cols-3 gap-2 text-center pt-1">
+                        <div className="bg-[#002b49] py-2 px-1 rounded-xl border border-blue-800/60">
+                          <span className="text-xs font-black text-white block">Strength</span>
+                        </div>
+                        <div className="bg-[#002b49] py-2 px-1 rounded-xl border border-blue-800/60">
+                          <span className="text-xs font-black text-white block">Reliability</span>
+                        </div>
+                        <div className="bg-[#002b49] py-2 px-1 rounded-xl border border-blue-800/60">
+                          <span className="text-xs font-black text-emerald-400 block">Performance</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Right: The Full Message */}
+                {/* Right: The Full Official Message */}
                 <div className="lg:col-span-7 space-y-6">
                   
-                  {/* Lead Quote */}
-                  <div className="relative pl-6 border-l-4 border-[#0099e5] space-y-1.5">
-                    <p className="text-lg sm:text-xl font-bold text-[#002b49] leading-relaxed italic">
-                      &ldquo;When we started this journey in Doha, our goal was simple: to give Qatar&apos;s industries packaging they could truly rely on.&rdquo;
-                    </p>
+                  {/* Lead Welcome Heading & Quote */}
+                  <div className="space-y-3">
+                    <span className="text-xs font-extrabold uppercase tracking-wider text-[#0099e5] block">
+                      Welcome to Al Waad Manufacturing and Packaging Company
+                    </span>
+                    <div className="relative pl-6 border-l-4 border-[#0099e5] space-y-1.5 py-1">
+                      <p className="text-lg sm:text-xl font-bold text-[#002b49] leading-relaxed italic">
+                        &ldquo;When we founded Al Waad in the state of Qatar, our ambition was clear: to provide Qatar’s industrial and commercial sectors with reliable, high-quality packaging solutions that meet the demands of modern business and international trade.&rdquo;
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Body Copy */}
+                  {/* Body Paragraphs */}
                   <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
                     <p>
-                      <strong>Welcome to AWMPACK.</strong> When we started this journey in Doha, our goal was simple: to give Qatar&apos;s industries packaging they could truly rely on. Today, from our advanced facility in Birkat Al-Awamer, we manufacture industrial-grade wooden pallets, crates, metal cages and compressed wood products that meet global export standards. Our automated pallet nailing lines and ISPM 15 certified thermal heat-treatment kilns ensure that every product leaving our site is built for strength, safety and smooth international shipping.
+                      Today, we have grown into a trusted manufacturing partner, operating from our advanced production facility in Birkat Al-Awamer. We specialize in the manufacturing of industrial-grade wooden pallets, crates, metal cages and compressed sawdust wooden blocks and products, delivering solutions designed to meet demanding export and logistics requirements.
                     </p>
 
                     <p>
-                      <strong>Sustainability is at the heart of everything we do.</strong> Through our pallet repair and pallet pooling services, we help businesses cut logistics costs while reducing waste. Our circular initiative, <em>&quot;Waste to Usable Product,&quot;</em> turns sawdust and wood waste into high-density pallet blocks, so nothing goes to waste. We believe innovation and advanced technology make our customers more competitive, and we keep investing in research and development to deliver smarter, greener, total packaging solutions.
+                      Our investment in advanced manufacturing technology, automated pallet nailing lines and ISPM 15-certified heat treatment facilities reflects our unwavering commitment to quality, operational efficiency and international standards. Every product we manufacture is built around three essential principles: <strong>strength, reliability and performance</strong>.
                     </p>
 
+                    {/* Sustainability Subsection */}
+                    <div className="pt-2 space-y-2">
+                      <h4 className="text-base sm:text-lg font-black text-[#002b49] flex items-center space-x-2">
+                        <Leaf className="w-5 h-5 text-emerald-600 shrink-0" />
+                        <span>Sustainability is fundamental to the way we operate</span>
+                      </h4>
+                      <p>
+                        Through our pallet repair and pooling services, we help customers optimize logistics costs, extend product life cycles and minimize waste. Our innovative <em>&quot;Waste to Usable Product&quot;</em> initiative transforms sawdust and wood residues into high-density pallet blocks, creating value from materials that would otherwise go unused.
+                      </p>
+                      <p>
+                        We firmly believe that continuous innovation, technological advancement and responsible resource management are essential to building a more competitive and sustainable industrial future. This philosophy drives our ongoing investment in research, development and smarter, more efficient packaging solutions.
+                      </p>
+                    </div>
+
+                    {/* Expanding Our Horizons Subsection */}
+                    <div className="pt-2 space-y-2">
+                      <h4 className="text-base sm:text-lg font-black text-[#002b49] flex items-center space-x-2">
+                        <Globe2 className="w-5 h-5 text-[#0099e5] shrink-0" />
+                        <span>Expanding Our Horizons – From Qatar to Global Markets</span>
+                      </h4>
+                      <p>
+                        As we look towards the future, Al Waad is entering an exciting new chapter of growth, expanding its presence beyond Qatar and establishing new opportunities across African markets.
+                      </p>
+                      <p>
+                        We recognize the significant potential of Africa’s developing industrial and commercial sectors and are committed to bringing our manufacturing expertise, international quality standards, competitive solutions and dependable service to new markets and business partners.
+                      </p>
+                      <p>
+                        Our ambition extends beyond manufacturing. We aim to become a recognized international player in wooden packaging, pallet manufacturing, recycling and sustainable wood waste management.
+                      </p>
+                    </div>
+
                     <p>
-                      <strong>Now, we are proud to be taking AWMPACK beyond Qatar as we expand into African markets.</strong> Africa&apos;s growing trade and industry need dependable export packaging, and we are ready to bring our quality, rapid delivery and sustainable expertise to new partners across the continent. Our vision is to become a major global player in pallet manufacturing and wood waste management, and we invite you to grow with us on this journey.
+                      At Al Waad, we believe that lasting success is built on trust, innovation, strong partnerships and an uncompromising commitment to excellence. As we continue this journey, we invite our customers, partners and stakeholders to grow with us and be part of our vision.
                     </p>
+
+                    {/* Final Punchline Quote Callout */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-white to-emerald-50/50 border border-blue-200/80 shadow-xs">
+                      <p className="text-base sm:text-lg font-black text-[#002b49] tracking-tight">
+                        &ldquo;Together, we are building more than packaging. We are building lasting value.&rdquo;
+                      </p>
+                    </div>
                   </div>
 
                   {/* Signature Block */}
                   <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <h4 className="text-xl font-black text-[#002b49] tracking-tight">Mr. Antonio</h4>
-                      <p className="text-sm font-bold text-[#0099e5]">CEO &amp; Founder, AWMPACK</p>
-                      <p className="text-xs text-gray-500 mt-0.5">Al Waad Manufacturing Packaging Company (AWMPC)</p>
+                      <h4 className="text-2xl font-black text-[#002b49] tracking-tight">Mr. Antonio</h4>
+                      <p className="text-sm font-bold text-[#0099e5]">CEO &amp; Founder</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Al Waad Manufacturing and Packaging Company</p>
                     </div>
 
                     <div className="flex items-center space-x-3">
